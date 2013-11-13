@@ -1,4 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+
+
+<%= @project.title%>
+<br />
+<%= image_tag @project.image.url(:thumb)%>
+<br />
+<iframe width="560" height="315" src="<%= strip_tags(@project.youtube_embed)%>" frameborder="0" allowfullscreen></iframe>
+<br />
+<%= @project.description%>
+<br />
+<%= @project.goal%>
+<br />
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

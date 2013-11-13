@@ -14,23 +14,23 @@
   <div class="actions">
     <div class="field">
       <%= f.label :title %><br />
-      <%= f.text_field :title %>
+      <%= f.text_field :title, :required=>:true %>
     </div>
     <div class="field">
       <%= f.label :image %><br />
-      <%= f.file_field :image%>
+      <%= f.file_field :image, :required=>:true%>
     </div>
     <div class="field">
       <%= f.label :video %><br />
-      <%= f.text_field :video%>
+      <%= f.text_field :video, :required=>:true%>
     </div>
     <div class="field">
       <%= f.label :description %><br />
-      <%= f.text_area :description %>
+      <%= f.text_area :description, :required=>:true %>
     </div>
     <div class="field">
-      <%= f.label :author %><br />
-      <%= f.text_field :author %>
+      <%= f.label :goal %><br />
+      <%= f.number_field :goal, step: 0.01, :required=>:true %>
     </div>
     <%= f.submit %>
   </div>
