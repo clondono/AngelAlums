@@ -38,7 +38,7 @@
       <%end%>
     </div>
     <div class = "field">
-      <%= f.fields_for :collaborators do |builder|%>
+      <%= f.fields_for :collaborations do |builder|%>
        <%=render "collaborator_fields", :f => builder %>
       <%end%>
     </div>

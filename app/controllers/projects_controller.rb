@@ -25,10 +25,10 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
-
+    puts "***********"
+    puts params.inspect
     respond_to do |format|
       if @project.save
-        @project.add(params[:iou][:co_payers_attributes])
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render action: 'show', status: :created, location: @project }
       else
