@@ -4,10 +4,6 @@ class Project < ActiveRecord::Base
     has_many :advisors
     has_many :taggables
  	has_many :tags, through: :taggables
- 	accepts_nested_attributes_for :advisors
- 	accepts_nested_attributes_for :tags
-	accepts_nested_attributes_for :collaborations
-
 	
 	def youtube_embed
 	  if self.video[/youtu\.be\/([^\?]*)/]
@@ -23,6 +19,40 @@ class Project < ActiveRecord::Base
 	  	return ""
 	  end
 	end
+
+	def add_advisors(advisors)
+		advisors = make_array(advisors)
+        advisors.each do |advisor_params|
+                advisor=self.advisors.new(:project_id => self.id, :name =>advisor_params[:name], :email =>advisor_params[:email])
+                advisor.save
+        end
+    end
+
+    def add_tags(tags)
+    	tags = make_array(tags)
+        tags.each do |tag_params|
+                taggable=self.taggables.new(:project_id => self.id, :tag_id => tag_params[:tag_id])
+                taggable.save
+        end
+    end
+
+    def add_collaborators(collaborators)
+    	collaborators = make_array(collaborators)
+        collaborators.each do |collaborator_params|
+                collaborator=self.collaborations.new(:project_id => self.id, :name => collaborator_params[:name], :email => collaborator_params[:email], :user_id => nil)
+                collaborator.save
+        end
+    end
+
+    private
+    def make_array(obj)
+    	if obj.instance_of?(Array)
+    		obj
+    	else
+    		obj = [obj]
+    		return obj
+    	end
+    end
 
 	
 end

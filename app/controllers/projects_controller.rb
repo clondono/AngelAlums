@@ -29,6 +29,9 @@ class ProjectsController < ApplicationController
     puts params.inspect
     respond_to do |format|
       if @project.save
+        @project.add_advisors(params[:project][:advisors])
+        @project.add_tags(params[:project][:tags])
+        @project.add_collaborators(params[:project][:collaborations])
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render action: 'show', status: :created, location: @project }
       else
