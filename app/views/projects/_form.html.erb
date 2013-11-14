@@ -32,6 +32,21 @@
       <%= f.label :goal %><br />
       <%= f.number_field :goal, step: 0.01, :required=>:true %>
     </div>
+    <div class = "field">
+      <%= f.fields_for :advisors do |builder|%>
+       <%=render "advisor_fields", :f => builder %>
+      <%end%>
+    </div>
+    <div class = "field">
+      <%= f.fields_for :collaborators do |builder|%>
+       <%=render "collaborator_fields", :f => builder %>
+      <%end%>
+    </div>
+    <div class = "field">
+      <%= f.fields_for :tags do |builder|%>
+       <%=render "tag_fields", :f => builder %>
+      <%end%>
+    </div>
     <%= f.submit %>
   </div>
 <% end %>

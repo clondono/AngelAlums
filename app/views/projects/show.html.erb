@@ -1,17 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-
-
-<%= @project.title%>
+Title:<%= @project.title%>
 <br />
 <%= image_tag @project.image.url(:thumb)%>
 <br />
+Video:
 <iframe width="560" height="315" src="<%= strip_tags(@project.youtube_embed)%>" frameborder="0" allowfullscreen></iframe>
 <br />
-<%= @project.description%>
+Description: <%= @project.description%>
 <br />
-<%= @project.goal%>
+Goal: <%= @project.goal%>
 <br />
+Advisors:
+<%@project.advisors.each do |advisor|%>
+	<p>name: <%=advisor.name%></p>
+	<p>email: <%= advisor.email%></p>
+<%end%>
+<br />
+Collaborators:
+<%@project.collaborations.each do |collaborator|%>
+	<p>name: <%=collaborator.name%></p>
+	<p>email: <%= collaborator.email%></p>
+<%end%>
+Tags:
+<%@project.tags.each do |tag|%>
+	<p>name: <%=tag.title%></p>
+	<p>description: <%= tag.description%></p>
+<%end%>
+
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
