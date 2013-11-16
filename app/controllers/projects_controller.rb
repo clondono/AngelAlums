@@ -15,6 +15,9 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+    @project.taggables.build
+    @project.advisors.build
+    @project.collaborations.build
   end
 
   # GET /projects/1/edit
@@ -29,9 +32,9 @@ class ProjectsController < ApplicationController
     puts params.inspect
     respond_to do |format|
       if @project.save
-        @project.add_advisors(params[:project][:advisors])
-        @project.add_tags(params[:project][:tags])
-        @project.add_collaborators(params[:project][:collaborations])
+        @project.add_advisors(params[:project][:advisors_attributes])
+        @project.add_tags(params[:project][:taggables_attributes])
+        @project.add_collaborators(params[:project][:collaborations_attributes])
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render action: 'show', status: :created, location: @project }
       else
