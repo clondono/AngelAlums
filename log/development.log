@@ -3464,3 +3464,1737 @@ Migrating to AddTypeToUser (20131114225953)
   [1m[35mSQL (1.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131114225953"]]
   [1m[36m (155.3ms)[0m  [1mcommit transaction[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 12:32:37 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/templates/rails/welcome/index.html.erb (4.2ms)
+Completed 200 OK in 113ms (Views: 90.7ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 12:48:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 993ms (Views: 973.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 12:48:49 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 12:48:49 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 12:48:49 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 12:48:49 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 12:48:49 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 12:48:49 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 12:48:49 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 12:48:49 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 12:48:49 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 12:48:49 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:02:35 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered partials/_navbar.html.erb (11.3ms)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:02:35 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:02:35 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:07:53 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (39.4ms)
+  Rendered partials/_navbar.html.erb (18.2ms)
+Completed 200 OK in 198ms (Views: 173.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:07:53 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:07:53 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:07:55 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:07:55 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:07:55 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:08:01 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+Completed 200 OK in 55ms (Views: 54.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:08:01 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:08:01 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:08:02 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:08:02 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:08:02 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:16:14 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 2503ms (Views: 2501.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:16:16 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 13:16:16 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:16:16 -0500
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-11-16 13:16:41 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-3.1.0/app/views/devise/shared/_links.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-3.1.0/app/views/devise/sessions/new.html.erb within layouts/application (174.3ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 278ms (Views: 194.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 13:16:45 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-3.1.0/app/views/devise/shared/_links.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-3.1.0/app/views/devise/registrations/new.html.erb within layouts/application (10.1ms)
+  Rendered partials/_navbar.html.erb (2.0ms)
+Completed 200 OK in 61ms (Views: 57.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:20:58 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered partials/_navbar.html.erb (2.0ms)
+Completed 200 OK in 92ms (Views: 90.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:20:59 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 13:20:59 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:20:59 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:21:02 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:21:02 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 13:21:02 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:21:02 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:21:59 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered partials/_navbar.html.erb (2.0ms)
+Completed 200 OK in 53ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:21:59 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:21:59 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 13:21:59 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 13:22:03 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-3.1.0/app/views/devise/shared/_links.erb (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-3.1.0/app/views/devise/registrations/new.html.erb within layouts/application (7.2ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:22:44 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+  Rendered partials/_navbar.html.erb (6.3ms)
+Completed 200 OK in 38ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:24:19 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 1068ms (Views: 1066.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:24:20 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 13:24:20 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:24:20 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:34:53 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:34:53 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:34:53 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 13:34:53 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 13:34:58 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.6ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 41ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 13:35:47 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (13.3ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+Completed 200 OK in 47ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 13:35:48 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 13:35:48 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 13:35:48 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:35:48 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 13:35:48 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 13:35:48 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 13:35:48 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 13:35:48 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:35:48 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 13:35:48 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 13:35:48 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 13:36:35 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.9ms)
+  Rendered partials/_navbar.html.erb (2.2ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 13:36:35 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:36:35 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 13:36:35 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 13:36:35 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 13:36:35 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 13:36:35 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 13:36:35 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 13:36:35 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:36:35 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 13:36:35 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 13:36:35 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 13:37:16 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.9ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 13:37:16 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 13:37:16 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:37:16 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 13:37:16 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 13:37:16 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 13:37:16 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 13:37:16 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 13:37:16 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:37:16 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 13:37:16 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 13:37:16 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 13:37:17 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.7ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 13:37:17 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:37:17 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 13:37:17 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 13:37:17 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 13:37:17 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 13:37:17 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 13:37:17 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 13:37:17 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:37:17 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 13:37:17 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 13:37:17 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 13:43:32 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.5ms)
+  Rendered partials/_navbar.html.erb (3.0ms)
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 13:43:32 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:43:32 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 13:43:32 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 13:43:32 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 13:43:32 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 13:43:32 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 13:43:32 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 13:43:32 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:43:32 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 13:43:32 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 13:43:32 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 13:43:55 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.2ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 13:43:55 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 13:43:55 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 13:43:55 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:43:55 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 13:43:55 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 13:43:55 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 13:43:55 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 13:43:55 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:43:55 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 13:43:55 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 13:43:55 -0500
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-16 13:44:10 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MrmtqnuEK5EkfMDcHb/7WtylLzxSfVw+IS/qXk6rUqI=", "user"=>{"email"=>"christianlondono91@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "type"=>"student", "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'christianlondono91@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (84.8ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 16 Nov 2013 18:44:10 UTC +00:00], ["email", "christianlondono91@gmail.com"], ["encrypted_password", "$2a$10$3YEhV8pS9flYDEVCeVCt2.D9YJ1yIDzKwKTNgKrS9PWcrmsnc0sH2"], ["updated_at", Sat, 16 Nov 2013 18:44:10 UTC +00:00]]
+  [1m[36m (164.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Binary data inserted for `string` type on column `last_sign_in_ip`
+Binary data inserted for `string` type on column `current_sign_in_ip`
+  [1m[36mSQL (2.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["last_sign_in_at", Sat, 16 Nov 2013 18:44:10 UTC +00:00], ["current_sign_in_at", Sat, 16 Nov 2013 18:44:10 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Sat, 16 Nov 2013 18:44:10 UTC +00:00]]
+  [1m[35m (147.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 635ms (ActiveRecord: 400.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:44:10 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (47.2ms)
+Completed 500 Internal Server Error in 59ms
+
+ActionView::Template::Error (undefined method `first_name' for #<User:0x0000000443afb8>):
+     9:             <% if user_signed_in? %>
+    10: 
+    11:                 <li class="dropdown">
+    12:                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.first_name %>
+    13:                     <b class="caret"></b>
+    14:                 </a>
+    15:                 <ul class="dropdown-menu">
+  app/views/partials/_navbar.html.erb:12:in `_app_views_partials__navbar_html_erb__1477092054377906477_70229090656200'
+  app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb___2374025101858023929_38973140'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:44:56 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered partials/_navbar.html.erb (3.6ms)
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 13:44:56 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:44:56 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 13:44:56 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 13:44:56 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 13:44:56 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 13:44:56 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 13:44:56 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 13:44:56 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:44:56 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 13:44:56 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 13:44:56 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:45:00 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (5.4ms)
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:45:08 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered partials/_navbar.html.erb (2.8ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 13:45:08 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:45:08 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 13:45:08 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 13:45:08 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 13:45:08 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 13:45:08 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 13:45:08 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 13:45:08 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:45:08 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 13:45:08 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 13:45:08 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:45:11 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.4ms)
+  [1m[36mUser Load (4.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36m (206.0ms)[0m  [1mCREATE TABLE "advisors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "name" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (319.2ms)[0m  CREATE TABLE "collaborations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "name" varchar(255), "email" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (174.3ms)[0m  [1mCREATE TABLE "donations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "alum_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (163.6ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "image_file_name" varchar(255), "image_content_type" varchar(255), "image_file_size" integer, "image_updated_at" datetime, "video" varchar(255), "description" text, "goal" float, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (173.1ms)[0m  [1mCREATE TABLE "taggables" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "tag_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (164.0ms)[0m  CREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (166.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "type" varchar(255)) [0m
+  [1m[35m (181.7ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (173.5ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (176.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (182.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.5ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (397.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131114225953')[0m
+  [1m[35m (166.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131112074322')
+  [1m[36m (166.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131113071551')[0m
+  [1m[35m (166.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131113071646')
+  [1m[36m (157.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131113071657')[0m
+  [1m[35m (158.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131113071727')
+  [1m[36m (157.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131114002929')[0m
+  [1m[35m (157.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131114215736')
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:49:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (37.0ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered partials/_navbar.html.erb (64.9ms)
+Completed 200 OK in 244ms (Views: 219.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 13:49:07 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 13:49:07 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 13:49:07 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 13:49:07 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:07 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:49:07 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:07 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:07 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:07 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:07 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:07 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 13:49:09 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (131.6ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 148ms (Views: 145.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-16 13:49:13 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MrmtqnuEK5EkfMDcHb/7WtylLzxSfVw+IS/qXk6rUqI=", "user"=>{"email"=>"christianlondono91@Gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'christianlondono91@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.0ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 212ms (Views: 19.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 13:49:14 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:49:14 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 13:49:14 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 13:49:14 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 13:49:14 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:14 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:14 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:14 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:14 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:14 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:14 -0500
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-16 13:49:27 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MrmtqnuEK5EkfMDcHb/7WtylLzxSfVw+IS/qXk6rUqI=", "user"=>{"email"=>"christianlondono91@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "type"=>"student", "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'christianlondono91@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (44.6ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 16 Nov 2013 18:49:27 UTC +00:00], ["email", "christianlondono91@gmail.com"], ["encrypted_password", "$2a$10$Ncr4fBZLKL9fZK/xFJy9I.2zjHR/dpumAcKeOriyWpUVDg52EVTPq"], ["updated_at", Sat, 16 Nov 2013 18:49:27 UTC +00:00]]
+  [1m[36m (134.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Binary data inserted for `string` type on column `last_sign_in_ip`
+Binary data inserted for `string` type on column `current_sign_in_ip`
+  [1m[36mSQL (2.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["last_sign_in_at", Sat, 16 Nov 2013 18:49:28 UTC +00:00], ["current_sign_in_at", Sat, 16 Nov 2013 18:49:28 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Sat, 16 Nov 2013 18:49:28 UTC +00:00]]
+  [1m[35m (346.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 635ms (ActiveRecord: 529.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 13:49:28 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.8ms)
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 13:49:28 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 13:49:28 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 13:49:28 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:28 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 13:49:28 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 13:49:28 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:28 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:28 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:28 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:28 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 13:49:28 -0500
+  [1m[36mAlumni Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:08:40 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (37.2ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered partials/_navbar.html.erb (77.7ms)
+Completed 200 OK in 288ms (Views: 260.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 14:08:41 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 14:08:41 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 14:08:41 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 14:08:41 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 14:08:41 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 14:08:41 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 14:08:41 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 14:08:41 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 14:08:41 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 14:08:41 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 14:08:41 -0500
+  [1m[36mUser Load (5.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (10.8ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 1]]
+  [1m[36m (143.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:09:33 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (18.4ms)
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 14:09:33 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 14:09:33 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 14:09:33 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 14:09:33 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 14:09:33 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 14:09:33 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 14:09:33 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 14:09:33 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 14:09:33 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 14:09:33 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 14:09:33 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 14:09:35 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (79.2ms)
+  Rendered partials/_navbar.html.erb (2.1ms)
+Completed 200 OK in 103ms (Views: 99.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-16 14:09:43 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MrmtqnuEK5EkfMDcHb/7WtylLzxSfVw+IS/qXk6rUqI=", "user"=>{"email"=>"christianlondono91@Gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "type"=>"student", "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'christianlondono91@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (29.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 16 Nov 2013 19:09:43 UTC +00:00], ["email", "christianlondono91@gmail.com"], ["encrypted_password", "$2a$10$mbbrC.NXcL66JYX8e.dcpuqwJdtm12v3l39Ytn77c8ZgdUe0n.zCy"], ["updated_at", Sat, 16 Nov 2013 19:09:43 UTC +00:00]]
+  [1m[36m (235.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Binary data inserted for `string` type on column `last_sign_in_ip`
+Binary data inserted for `string` type on column `current_sign_in_ip`
+  [1m[36mSQL (15.0ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["last_sign_in_at", Sat, 16 Nov 2013 19:09:44 UTC +00:00], ["current_sign_in_at", Sat, 16 Nov 2013 19:09:44 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Sat, 16 Nov 2013 19:09:44 UTC +00:00]]
+  [1m[35m (168.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 681ms (ActiveRecord: 448.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:09:44 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.3ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 14:09:44 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 14:09:44 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 14:09:44 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 14:09:44 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 14:09:44 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 14:09:44 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 14:09:44 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 14:09:44 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 14:09:44 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 14:09:44 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 14:09:44 -0500
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (12.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 2]]
+  [1m[36m (159.8ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:19:19 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered partials/_navbar.html.erb (7.1ms)
+Completed 200 OK in 39ms (Views: 26.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 14:19:19 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 14:19:19 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 14:19:19 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 14:19:19 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 14:19:19 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 14:19:19 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 14:19:19 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 14:19:19 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 14:19:19 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 14:19:19 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 14:19:19 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 14:19:22 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (30.0ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 14:19:22 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.2ms)
+  Rendered partials/_navbar.html.erb (2.4ms)
+Completed 200 OK in 38ms (Views: 34.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:19:49 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered partials/_navbar.html.erb (2.1ms)
+Completed 200 OK in 23ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 14:19:49 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 14:19:49 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 14:19:49 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 14:19:49 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 14:19:49 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 14:19:49 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 14:19:49 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 14:19:49 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 14:19:49 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 14:19:49 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 14:19:49 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 14:19:50 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (37.2ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 67ms (Views: 60.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-16 14:19:59 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MrmtqnuEK5EkfMDcHb/7WtylLzxSfVw+IS/qXk6rUqI=", "user"=>{"email"=>"christianlondono91@Gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "type"=>"student", "commit"=>"Sign up"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'christianlondono91@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.7ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+Completed 200 OK in 115ms (Views: 24.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 14:20:00 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 14:20:00 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 14:20:00 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 14:20:00 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 14:20:00 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 14:20:00 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 14:20:00 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 14:20:00 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 14:20:00 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 14:20:00 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 14:20:00 -0500
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-16 14:20:09 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MrmtqnuEK5EkfMDcHb/7WtylLzxSfVw+IS/qXk6rUqI=", "user"=>{"email"=>"christianlondono91@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "type"=>"student", "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'christianlondono91@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (23.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 16 Nov 2013 19:20:10 UTC +00:00], ["email", "christianlondono91@gmail.com"], ["encrypted_password", "$2a$10$Tn83XueSO/.IPs2Pm3FiHOeTk9gUomr/pIKQsFFx9KwTVwfWqbm5u"], ["updated_at", Sat, 16 Nov 2013 19:20:10 UTC +00:00]]
+  [1m[36m (318.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `last_sign_in_ip`
+Binary data inserted for `string` type on column `current_sign_in_ip`
+  [1m[36mSQL (18.8ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 3[0m  [["last_sign_in_at", Sat, 16 Nov 2013 19:20:10 UTC +00:00], ["current_sign_in_at", Sat, 16 Nov 2013 19:20:10 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Sat, 16 Nov 2013 19:20:10 UTC +00:00]]
+  [1m[35m (218.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 678ms (ActiveRecord: 579.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:20:10 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (3.2ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 14:20:10 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 14:20:10 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 14:20:10 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 14:20:10 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 14:20:10 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 14:20:10 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 14:20:10 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 14:20:10 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 14:20:10 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 14:20:10 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 14:20:10 -0500
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'clondono@mit.edu' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (19.1ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sat, 16 Nov 2013 19:22:42 UTC +00:00], ["email", "clondono@mit.edu"], ["encrypted_password", "$2a$10$0e8FLZPReazPguCWmiWTOe0nzRqunP.yDIazXIod1p6dyMBdfTTDC"], ["type", "Student"], ["updated_at", Sat, 16 Nov 2013 19:22:42 UTC +00:00]]
+  [1m[35m (167.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (18.9ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[35m (175.8ms)[0m  commit transaction
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (12.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = ?[0m  [["id", 4]]
+  [1m[35m (167.1ms)[0m  commit transaction
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:23:30 -0500
+
+SyntaxError (/media/storage/Dropbox/code/6.170/AngelAlums/app/controllers/application_controller.rb:11: syntax error, unexpected tXSTRING_BEG, expecting $end):
+  app/controllers/home_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:23:33 -0500
+
+SyntaxError (/media/storage/Dropbox/code/6.170/AngelAlums/app/controllers/application_controller.rb:11: syntax error, unexpected tXSTRING_BEG, expecting $end):
+  app/controllers/home_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:23:35 -0500
+
+SyntaxError (/media/storage/Dropbox/code/6.170/AngelAlums/app/controllers/application_controller.rb:11: syntax error, unexpected tXSTRING_BEG, expecting $end):
+  app/controllers/home_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:23:40 -0500
+
+SyntaxError (/media/storage/Dropbox/code/6.170/AngelAlums/app/controllers/application_controller.rb:11: syntax error, unexpected tXSTRING_BEG, expecting $end):
+  app/controllers/home_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (44.7ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (60.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:26:13 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered partials/_navbar.html.erb (3.9ms)
+Completed 200 OK in 20ms (Views: 13.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 14:26:13 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 14:26:13 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 14:26:13 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 14:26:13 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 14:26:13 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 14:26:13 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 14:26:13 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 14:26:13 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 14:26:13 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 14:26:13 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 14:26:13 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 14:26:15 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (79.2ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 99ms (Views: 95.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-16 14:26:25 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MrmtqnuEK5EkfMDcHb/7WtylLzxSfVw+IS/qXk6rUqI=", "user"=>{"email"=>"christianlondono91@Gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "type"=>"Student", "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'christianlondono91@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (14.5ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 16 Nov 2013 19:26:26 UTC +00:00], ["email", "christianlondono91@gmail.com"], ["encrypted_password", "$2a$10$Qa/Fbfd9e37SMhld6Rf/lez.EHx1qlZJPPLSJRdsnoi67oVeJV/Im"], ["updated_at", Sat, 16 Nov 2013 19:26:26 UTC +00:00]]
+  [1m[35m (174.6ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `last_sign_in_ip`
+Binary data inserted for `string` type on column `current_sign_in_ip`
+  [1m[35mSQL (2.7ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 5  [["last_sign_in_at", Sat, 16 Nov 2013 19:26:26 UTC +00:00], ["current_sign_in_at", Sat, 16 Nov 2013 19:26:26 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Sat, 16 Nov 2013 19:26:26 UTC +00:00]]
+  [1m[36m (183.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 486ms (ActiveRecord: 375.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:26:26 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered partials/_navbar.html.erb (4.2ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 14:26:26 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 14:26:26 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 14:26:26 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 14:26:26 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 14:26:26 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 14:26:26 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 14:26:26 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 14:26:26 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 14:26:26 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 14:26:26 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 14:26:26 -0500
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users"
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:42:15 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.1ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 14:42:16 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 14:42:16 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 14:42:16 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:16 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 14:42:16 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 14:42:16 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:16 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:16 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:16 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:16 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:16 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:42:19 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered partials/_navbar.html.erb (5.2ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.7ms)
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (12.5ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[35m (159.4ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:42:38 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.4ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 14:42:39 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 14:42:39 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 14:42:39 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:39 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 14:42:39 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 14:42:39 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:39 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:39 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:39 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:39 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:39 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 14:42:40 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.0ms)
+  Rendered partials/_navbar.html.erb (2.2ms)
+Completed 200 OK in 39ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-16 14:42:51 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MrmtqnuEK5EkfMDcHb/7WtylLzxSfVw+IS/qXk6rUqI=", "user"=>{"email"=>"christianlondono91@Gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "type"=>"Student", "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'christianlondono91@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (13.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 16 Nov 2013 19:42:51 UTC +00:00], ["email", "christianlondono91@gmail.com"], ["encrypted_password", "$2a$10$vMLEWbpsRO549wCLXpCVWeXDiAr4z2ZLGJVCem9GsmifILVvrguu2"], ["updated_at", Sat, 16 Nov 2013 19:42:51 UTC +00:00]]
+  [1m[36m (167.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `last_sign_in_ip`
+Binary data inserted for `string` type on column `current_sign_in_ip`
+  [1m[36mSQL (2.9ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 6[0m  [["last_sign_in_at", Sat, 16 Nov 2013 19:42:51 UTC +00:00], ["current_sign_in_at", Sat, 16 Nov 2013 19:42:51 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Sat, 16 Nov 2013 19:42:51 UTC +00:00]]
+  [1m[35m (176.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 457ms (ActiveRecord: 360.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:42:51 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (3.1ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 14:42:52 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 14:42:52 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 14:42:52 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 14:42:52 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 14:42:52 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:52 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:52 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:52 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:52 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:52 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 14:42:52 -0500
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (1.7ms)[0m  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (48.0ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 6]]
+  [1m[36m (175.7ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:44:11 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered partials/_navbar.html.erb (2.5ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:12 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:12 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:12 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:12 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:12 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:12 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:12 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:12 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:12 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:12 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:12 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 14:44:13 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (71.0ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+Completed 200 OK in 100ms (Views: 97.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-16 14:44:23 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MrmtqnuEK5EkfMDcHb/7WtylLzxSfVw+IS/qXk6rUqI=", "user"=>{"email"=>"christianlondono91@Gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "type"=>"Alumni"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'christianlondono91@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (15.8ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sat, 16 Nov 2013 19:44:23 UTC +00:00], ["email", "christianlondono91@gmail.com"], ["encrypted_password", "$2a$10$OeJyGo.QphdG6VDW3r1U0OxPRR38pihnIFcJdhJACSuOI8pJ2TRoi"], ["type", "Alumni"], ["updated_at", Sat, 16 Nov 2013 19:44:23 UTC +00:00]]
+  [1m[35m (183.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `last_sign_in_ip`
+Binary data inserted for `string` type on column `current_sign_in_ip`
+  [1m[35mSQL (3.6ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."type" IN ('Alumni') AND "users"."id" = 7  [["last_sign_in_at", Sat, 16 Nov 2013 19:44:23 UTC +00:00], ["current_sign_in_at", Sat, 16 Nov 2013 19:44:23 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Sat, 16 Nov 2013 19:44:23 UTC +00:00]]
+  [1m[36m (165.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 498ms (ActiveRecord: 368.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:44:23 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 7 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered partials/_navbar.html.erb (4.4ms)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:24 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:24 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:24 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:24 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:24 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:24 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:24 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:24 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:24 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:24 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:24 -0500
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (16.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."type" IN ('Alumni') AND "users"."id" = ?[0m  [["id", 7]]
+  [1m[35m (192.6ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:44:45 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 7 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (3.1ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:45 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:45 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:45 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:45 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:45 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:45 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:45 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:45 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:45 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:45 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:45 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 14:44:46 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.8ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-16 14:44:53 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MrmtqnuEK5EkfMDcHb/7WtylLzxSfVw+IS/qXk6rUqI=", "user"=>{"email"=>"christianlondono91@Gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "type"=>"Student"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'christianlondono91@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (17.1ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sat, 16 Nov 2013 19:44:53 UTC +00:00], ["email", "christianlondono91@gmail.com"], ["encrypted_password", "$2a$10$NRvfORUWf6xLZzz2RLr05.Ne/IZwAswBdj9Nark3gFTJ1rUTkMDlW"], ["type", "Student"], ["updated_at", Sat, 16 Nov 2013 19:44:53 UTC +00:00]]
+  [1m[36m (181.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Binary data inserted for `string` type on column `last_sign_in_ip`
+Binary data inserted for `string` type on column `current_sign_in_ip`
+  [1m[36mSQL (3.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."type" IN ('Student') AND "users"."id" = 8[0m  [["last_sign_in_at", Sat, 16 Nov 2013 19:44:54 UTC +00:00], ["current_sign_in_at", Sat, 16 Nov 2013 19:44:54 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Sat, 16 Nov 2013 19:44:54 UTC +00:00]]
+  [1m[35m (173.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 508ms (ActiveRecord: 376.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 14:44:54 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.4ms)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:54 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:54 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:54 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:54 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 14:44:54 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:54 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:54 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:54 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:54 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:54 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 14:44:54 -0500
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
