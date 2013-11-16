@@ -28,6 +28,6 @@ Tags:
 	<p>description: <%= tag.description%></p>
 <%end%>
 
-
+<%= link_to 'Donate', new_project_donation_path(@project) %>
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
