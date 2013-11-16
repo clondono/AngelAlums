@@ -43,3 +43,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
