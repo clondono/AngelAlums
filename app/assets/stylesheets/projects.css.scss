@@ -61,12 +61,11 @@
 		padding: 10px;
 		text-align: center;
 		.proj-tag{
-			width: 50px;
 			height: 20px;
 			background-color: #2cabe2;
 			border-radius: 5px;
 			text-align: center;
-
+			padding: 5px;
 		}
 	}
 }
@@ -92,6 +91,8 @@
 			margin-top: 10px;
 		}
 		.proj-advisor{
+			margin-right: 20px;
+			margin-left: 10px;
 		}
 	}
 	.proj-collabs{
@@ -101,6 +102,8 @@
 			margin-top: 10px;
 		}
 		.proj-collab{
+			margin-right: 20px;
+			margin-left: 10px;
 		}
 	}
 }
@@ -114,4 +117,15 @@
 	width: 500px;
 	vertical-align: top;
 	text-align: center;
+	.select2-container{
+		width: 200px;
+	}
+}
+
+.carousel-inner{
+	height: 600px;
+	img{
+		width: 300px;
+		height: 300px;
+	}
 }

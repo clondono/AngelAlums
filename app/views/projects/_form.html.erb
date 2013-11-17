@@ -40,19 +40,26 @@
       <div class="control-group">
         <%= f.label :goal , :class => 'control-label' %>
         <div class="controls">
-          <%= f.number_field :goal, step: 0.01, :required=>:true, :placeholder =>'goal' %>
+          <%= f.number_field :goal, step: 0.01, :required=>:true,min: 0, :placeholder =>'goal' %>
         </div>
       </div>
     </div>
     <div class="proj-extra inlineb">
-      <%= f.fields_for :advisors do |builder|%>
-       <%=render "advisor_fields", :f => builder %>
-      <%end%>
-      <%= link_to_add_fields "Add more Advisors", f, :advisors %>
-      <%= f.fields_for :collaborations do |builder|%>
-       <%=render "collaboration_fields", :f => builder %>
-      <%end%>        
+      <h3>Advisor form</h3>
+      <div>
+        <%= f.fields_for :advisors do |builder|%>
+         <%=render "advisor_fields", :f => builder %>
+        <%end%>
+        <%= link_to_add_fields "Add more Advisors", f, :advisors %>
+      </div>
+      <h3>Add Collaborations</h3>
+      <div>
+        <%= f.fields_for :collaborations do |builder|%>
+         <%=render "collaboration_fields", :f => builder %>
+        <%end%>        
       <%= link_to_add_fields "Add more Collaborators", f, :collaborations %>
+      </div>
+      <h3>Add Tags<h3>
       <%= f.fields_for :taggables do |builder|%>
       <%=render "tag_fields", :f => builder %>
       <%end%>

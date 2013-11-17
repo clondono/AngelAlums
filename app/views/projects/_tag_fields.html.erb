@@ -1,2 +1,1 @@
-<h3>Add Tags<h3>
-<%= f.collection_select :tag_id, Tag.all, :id, :title, {:multiple => true}%>
+<%= f.collection_select :tag_id, Tag.all, :id, :title, {}, {:multiple => true, :class => "tag-select"}%>

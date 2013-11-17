@@ -36,9 +36,12 @@ class Project < ActiveRecord::Base
 
     def add_tags(tags)
         if tags != nil
-            tags.values.each do |tag_params|
-                taggable=self.taggables.new(:project_id => self.id, :tag_id => tag_params[:tag_id])
-                taggable.save
+            tags = tags.values[0][:tag_id]
+            tags.each do |tag_params|
+                if tag_params != ""
+                    taggable=self.taggables.new(:project_id => self.id, :tag_id => tag_params)
+                    taggable.save
+                end
             end
         end
     end

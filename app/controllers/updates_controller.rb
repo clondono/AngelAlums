@@ -19,8 +19,6 @@ class UpdatesController < ApplicationController
   # GET /updates/1
   # GET /updates/1.json
   def show
-    update = Update.find(params[:id])
-    @project = update.project
   end
 
   # GET /updates/new
@@ -83,8 +81,8 @@ class UpdatesController < ApplicationController
     end
     
     def set_project
-	  if params[:project_id]
-        @project = Project.find(params[:project_id])
+  	  if params[:project_id]
+          @project = Project.find(params[:project_id])
       else
         @project = Update.find(params[:id]).project
       end

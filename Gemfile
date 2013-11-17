@@ -45,6 +45,8 @@ gem "nested_form"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem "select2-rails"
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
