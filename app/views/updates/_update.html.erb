@@ -1,0 +1,17 @@
+<!-- Parameters : update -->
+<!-- image_tag update.image.url, simple_foramt -->
+
+
+
+        
+         
+          <h1><%= update.title %></h1>
+          <p class="lead">by author name</a></p>
+          <hr>
+          <p><%= glyph(:time) %> Posted on <%= update.updated_at %></p>
+          <hr>
+          <img src="<%= update.image.url %>" class="img-responsive">
+          <p><%= simple_format update.content %>
+		  </p>
+          <hr>
+
