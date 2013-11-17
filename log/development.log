@@ -12301,3 +12301,88 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 20:00:49
 
 
 Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 20:00:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-11-16 20:04:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (0.9ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mAdvisor Load (4.1ms)[0m  [1mSELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mCollaboration Load (1.1ms)[0m  SELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1  [["project_id", 2]]
+  [1m[36mTag Load (1.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mAdvisor Load (0.5ms)[0m  SELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1  [["project_id", 4]]
+  [1m[36mCollaboration Load (0.5ms)[0m  [1mSELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1  [["project_id", 4]]
+  [1m[36mAdvisor Load (0.5ms)[0m  [1mSELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1[0m  [["project_id", 35]]
+  [1m[35mCollaboration Load (0.4ms)[0m  SELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1  [["project_id", 35]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1[0m  [["project_id", 35]]
+  [1m[35mAdvisor Load (0.5ms)[0m  SELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1  [["project_id", 36]]
+  [1m[36mCollaboration Load (0.4ms)[0m  [1mSELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1[0m  [["project_id", 36]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1  [["project_id", 36]]
+  [1m[36mAdvisor Load (0.5ms)[0m  [1mSELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1[0m  [["project_id", 50]]
+  [1m[35mCollaboration Load (0.5ms)[0m  SELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1  [["project_id", 50]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1[0m  [["project_id", 50]]
+  Rendered projects/index.html.erb within layouts/application (299.7ms)
+  Rendered partials/_navbar.html.erb (10.8ms)
+Completed 200 OK in 509ms (Views: 431.7ms | ActiveRecord: 26.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 20:04:58 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 20:04:58 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 20:04:58 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 20:04:58 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 20:04:58 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 20:04:58 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 20:04:58 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 20:04:58 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 20:04:58 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 20:04:58 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 20:04:58 -0500
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2013-11-16 20:05:04 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mProject Load (25.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mAdvisor Load (0.7ms)[0m  [1mSELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mCollaboration Load (0.6ms)[0m  SELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1  [["project_id", 2]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1[0m  [["project_id", 2]]
+  Rendered projects/show.html.erb within layouts/application (14.6ms)
+  Rendered partials/_navbar.html.erb (2.9ms)
+Completed 200 OK in 66ms (Views: 34.5ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/projects/2/donations/new" for 127.0.0.1 at 2013-11-16 20:05:12 -0500
+Processing by DonationsController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  Rendered donations/new.html.erb within layouts/donations (1.2ms)
+Completed 200 OK in 31ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects/2/donations/new" for 127.0.0.1 at 2013-11-16 20:05:12 -0500
+Processing by DonationsController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  Rendered donations/new.html.erb within layouts/donations (1.3ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
