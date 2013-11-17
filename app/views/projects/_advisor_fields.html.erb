@@ -1,8 +1,16 @@
 <h3>Advisor form</h3>
-<p>
-  <%=f.label :name, "Name"%>
-  <%=f.text_field :name %><br>
-  <%=f.label :email, "Email"%>
-  <%=f.text_field :email %><br>
+<div class ="control-group">
+  <%=f.label :name, "Name", :class => 'control-label'%>
+  <div class="controls">
+	<%=f.text_field :name , :class => 'text_field', :placeholder =>'name'%>
+  </div>
+</div>
+<div class ="control-group">
+  <%=f.label :email, "Email", :class => 'control-label'%>
+  <div class="controls">
+  	<%=f.text_field :email , :class => 'text_field', :placeholder =>'email'%>  
+  </div>
+</div>
 
-</p>
+  
+

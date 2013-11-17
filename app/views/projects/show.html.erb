@@ -1,35 +1,75 @@
 <p id="notice"><%= notice %></p>
 
-Title:<%= @project.title%>
-<br />
-<%= image_tag @project.image.url(:thumb)%>
-<br />
-Video:
-<iframe width="560" height="315" src="<%= strip_tags(@project.youtube_embed)%>" frameborder="0" allowfullscreen></iframe>
-<br />
-Description: <%= @project.description%>
-<br />
-Goal: <%= @project.goal%>
-<br />
-Advisors:
-<%@project.advisors.each do |advisor|%>
-	<p>name: <%=advisor.name%></p>
-	<p>email: <%= advisor.email%></p>
-<%end%>
-<br />
-Collaborators:
-<%@project.collaborations.each do |collaborator|%>
-	<p>name: <%=collaborator.name%></p>
-	<p>email: <%= collaborator.email%></p>
-<%end%>
-Tags:
-<%@project.tags.each do |tag|%>
-	<p>name: <%=tag.title%></p>
-	<p>description: <%= tag.description%></p>
-<%end%>
+<div class="proj-header inlineb">
+	<div class = "proj-image inlineb">
+		<%= image_tag @project.image.url(:thumb)%>
+	</div>
+	<div class="rightinfo inlineb">
+		<div class="proj-title inlineb">
+			<h2><%= @project.title%></h2>
+		</div>
+		<div class="proj-owner inlineb">
+			By <%= @project.student.email%>
+		</div>
+	</div>
+	
+</div>
 
-<%= link_to 'Donate', new_project_donation_path(@project) %>
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %> |
-<%= link_to 'Updates', project_updates_path(@project)%> |
-<%= link_to 'Create Update', new_project_update_path(@project)%>
+
+<div class= "proj-video inlineb">
+	<iframe src="<%= strip_tags(@project.youtube_embed)%>" frameborder="0" allowfullscreen></iframe>
+</div>
+<div class = "proj-donations inlineb">
+	<div class="stats">
+		<h4>Number of Donors: <%= @project.donations.length%></h4>
+		<h4>Total: ??</h4>
+		<div class="progress progress-striped">
+		  <div class="bar" style="width: 20%;">??</div>
+		</div>
+		<h6>Raised of $<%= @project.goal%></h6>
+		<%= link_to 'Donate', new_project_donation_path(@project), :class => 'btn btn-primary donate' %>
+	</div>
+	<div class="proj-tags inlineb">
+		Tags: <br/>
+		<%@project.tags.each do |tag|%>
+			<div class="proj-tag inlineb">
+				<%=tag.title%>
+			</div>
+		<%end%>
+	</div>
+</div>
+<div class ="proj-display">
+	<div class="proj-title inlineb wide-width fake-hr">
+		<b>Title:</b><%= @project.title%>
+	</div>
+	<div class = "proj-descrip inlineb wide-width fake-hr">
+		<b>Description:</b> <%= @project.description%>
+	</div>
+	<div class = "proj-advisors inlineb wide-width fake-hr">
+		<div class="title inlineb"><b>Advisors:</b></div>
+		<%@project.advisors.each do |advisor|%>
+			<div class ="proj-advisor inlineb">
+				<%=advisor.name%> <br/> 
+				<%= advisor.email%>
+			</div>
+			
+		<%end%>
+	</div>
+	<div class ="proj-collabs inlineb wide-width fake-hr">
+		<div class="title inlineb"><b>Collaborators:</b></div>
+		<%@project.collaborations.each do |collaborator|%>
+			<div class="proj-collab inlineb">
+				<%=collaborator.name%><br/>
+				<%= collaborator.email%>
+			</div>
+		<%end%>
+	</div>
+	<%= link_to 'Edit', edit_project_path(@project), :class => 'btn' %> 
+	<%= link_to 'Back', projects_path, :class => 'btn' %> 
+	<%= link_to 'Updates', project_updates_path(@project), :class => 'btn'%> 
+	<%= link_to 'Create Update', new_project_update_path(@project), :class => 'btn'%>
+</div>
+
+
+
+

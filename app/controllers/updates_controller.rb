@@ -19,6 +19,8 @@ class UpdatesController < ApplicationController
   # GET /updates/1
   # GET /updates/1.json
   def show
+    update = Update.find(params[:id])
+    @project = update.project
   end
 
   # GET /updates/new
@@ -34,7 +36,7 @@ class UpdatesController < ApplicationController
   # POST /updates.json
   def create
     @update = Update.new(update_params)
-
+    @update.project_id = params[:project_id]
     respond_to do |format|
       if @update.save
         format.html { redirect_to @update, notice: 'Update was successfully created.' }
@@ -90,7 +92,7 @@ class UpdatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def update_params
-      params.require(:update).permit(:title, :content, :image)
+      params.require(:update).permit(:title, :content, :image, :project_id, :user_id)
     end
     
     def authenticate

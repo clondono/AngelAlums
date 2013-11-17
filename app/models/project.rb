@@ -1,9 +1,10 @@
 class Project < ActiveRecord::Base
+    belongs_to :student, foreign_key: "owner_id"
 	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
 	has_many :collaborations, :dependent => :destroy
     has_many :advisors, :dependent => :destroy
+    has_many :donations, :dependent => :destroy
     has_many :taggables, :dependent => :destroy
-    has_many :projects, :dependent => :destroy
  	has_many :tags, through: :taggables
  	accepts_nested_attributes_for :advisors, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
  	accepts_nested_attributes_for :taggables, :reject_if => lambda { |a| a[:tag_id].blank? }, :allow_destroy => true
@@ -25,23 +26,33 @@ class Project < ActiveRecord::Base
 	end
 
 	def add_advisors(advisors)
-        advisors.values.each do |advisor_params|
-            advisor=self.advisors.new(:project_id => self.id, :name =>advisor_params[:name], :email =>advisor_params[:email])
-            advisor.save
+        if advisors != nil
+            advisors.values.each do |advisor_params|
+                advisor=self.advisors.new(:project_id => self.id, :name =>advisor_params[:name], :email =>advisor_params[:email])
+                advisor.save
+            end
         end
     end
 
     def add_tags(tags)
-        tags.values.each do |tag_params|
-            taggable=self.taggables.new(:project_id => self.id, :tag_id => tag_params[:tag_id])
-            taggable.save
+        if tags != nil
+            tags.values.each do |tag_params|
+                taggable=self.taggables.new(:project_id => self.id, :tag_id => tag_params[:tag_id])
+                taggable.save
+            end
         end
     end
 
     def add_collaborators(collaborators)
-        collaborators.values.each do |collaborator_params|
-            collaborator=self.collaborations.new(:project_id => self.id, :name => collaborator_params[:name], :email => collaborator_params[:email], :user_id => nil)
-            collaborator.save
+        if collaborators != nil
+            collaborators.values.each do |collaborator_params|
+                collaborator=self.collaborations.new(:project_id => self.id, :name => collaborator_params[:name], :email => collaborator_params[:email])
+                user = User.find_by_email(collaborator_params[:email])
+                if user
+                    collaborator.user_id = user.id
+                end
+                collaborator.save
+            end
         end
     end
 end

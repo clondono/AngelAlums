@@ -1,3 +1,117 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.inlineb{
+	display: inline-block;
+}
+.proj-header{
+	width: 100%;
+	.proj-image{
+		margin-left: 10%;
+		img{
+			width: 200px;
+			height: 100px;
+		}
+	}
+	.rightinfo{
+		margin-left: 10%;
+		width: 50%;
+		text-align: center;
+		.proj-title{
+			width: inherit;
+			h2{
+				color: #4c4aa9;
+			    font-family: 'Karla', sans-serif;   
+			}
+		}
+		.proj-owner{
+			width: 50%;
+			border-top: 1px solid black;
+		}
+	}
+}
+
+.proj-video{
+	width: 400px;
+	margin-top: 30px;
+	iframe{
+		width: inherit;
+		height: 300px;
+	}
+}
+.proj-donations{
+	margin-top: 23px;
+	margin-left: 30px;
+	padding: 20px;
+	padding-top: 30px;
+	border: 1px solid #4c4aa9;
+	border-radius: 20px;
+	vertical-align: top;
+	width: 400px;
+	height: 290px;
+	.stats{
+		margin-top: 40px;
+		margin-left: 25px;
+		.donate{
+			width: 90%;
+		}
+	}
+	.proj-tags{
+		width: 100%;
+		padding: 10px;
+		text-align: center;
+		.proj-tag{
+			width: 50px;
+			height: 20px;
+			background-color: #2cabe2;
+			border-radius: 5px;
+			text-align: center;
+
+		}
+	}
+}
+
+.wide-width{
+	width: 100%;
+}
+.fake-hr{
+	border-bottom: 1px solid black;
+	margin-bottom: 10px;
+}
+.proj-display{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 20px;
+	text-align: center;
+	.proj-advisors{
+		height: 40px;
+		.title{
+			vertical-align: top;
+			margin-top: 10px;
+		}
+		.proj-advisor{
+		}
+	}
+	.proj-collabs{
+		height: 40px;
+		.title{
+			vertical-align: top;
+			margin-top: 10px;
+		}
+		.proj-collab{
+		}
+	}
+}
+
+.proj-basics{
+	width: 400px;
+	vertical-align: top;
+	margin-top: 100px;
+}
+.proj-extra{
+	width: 500px;
+	vertical-align: top;
+	text-align: center;
+}

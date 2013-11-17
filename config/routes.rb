@@ -6,12 +6,5 @@ Dummy::Application.routes.draw do
     resources :donations, shallow: true
     resources :updates, shallow: true
   end
- 
- 
-  
-  
-
-  
-
    root 'home#index'
 end
