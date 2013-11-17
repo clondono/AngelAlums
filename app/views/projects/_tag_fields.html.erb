@@ -1,4 +1,4 @@
 <div class="fields">
 	<h3>Add Tags<h3>
-	<%= f.collection_select :tag_id, Tag.all, :id, :title%>
+	<%= f.collection_select :tag_id, Tag.all, :id, :title, {:multiple => true}%>
 </div>
