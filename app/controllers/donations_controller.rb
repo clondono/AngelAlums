@@ -18,8 +18,10 @@ class DonationsController < ApplicationController
 	    :currency    => 'usd'
 	  )
 
+	redirect_to project_path(@project)
+
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
-	  redirect_to donations_path
+	  redirect_to donation_path
 	end
 end
