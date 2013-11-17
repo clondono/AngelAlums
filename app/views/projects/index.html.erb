@@ -1,0 +1,56 @@
+<h1>Listing projects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Image</th>
+      <th>Video</th>
+      <th>Description</th>
+      <th>Goal</th>
+      <th>Advisors</th>
+      <th>Collaborators</th>
+      <th>Tags</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.title%></td>
+        <td><%= image_tag project.image.url(:thumb)%></td>
+        <td>
+          <iframe width="200" height="200" src="<%= strip_tags(project.youtube_embed)%>" frameborder="0" allowfullscreen></iframe>
+        </td>
+        <td><%= project.description%></td>
+        <td><%= project.goal%></td>
+        <td>
+        <%project.advisors.each do |advisor|%>
+          <p>name: <%=advisor.name%></p>
+          <p>email: <%= advisor.email%></p>
+        <%end%>
+        </td>
+        <td>
+        <%project.collaborations.each do |collaborator|%>
+          <p>name: <%=collaborator.name%></p>
+          <p>email: <%= collaborator.email%></p>
+        <%end%>
+        </td>
+        <td>
+        <%project.tags.each do |tag|%>
+          <p>name: <%=tag.title%></p>
+          <p>description: <%= tag.description%></p>
+        <%end%>
+        </td>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project', new_project_path %>
