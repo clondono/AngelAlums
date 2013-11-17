@@ -8,7 +8,7 @@
           <h1><%= link_to update.title, update %></h1>
           <p class="lead">by author name</a></p>
           <hr>
-          <p><%= glyph(:time) %> Posted on <%= update.updated_at %></p>
+          <p><%= glyph(:time) %> Posted on <%= update.updated_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %></p>
           <hr>
           <img src="<%= update.image.url %>" class="img-responsive">
           <p><%= simple_format update.content %>

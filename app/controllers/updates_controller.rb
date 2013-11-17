@@ -19,8 +19,8 @@ class UpdatesController < ApplicationController
   # GET /updates/1
   # GET /updates/1.json
   def show
-    update = Update.find(params[:id])
-    @project = update.project
+    #update = Update.find(params[:id])
+    #@project = update.project
   end
 
   # GET /updates/new
