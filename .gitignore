@@ -26,7 +26,6 @@ capybara-*.html
 /spec/tmp
 rerun.txt
 pickle-email-*.html
-config/initializers/secret_token.rb
 
 ## Environment normalisation:
 /.bundle
