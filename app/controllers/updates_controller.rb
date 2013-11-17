@@ -1,5 +1,6 @@
 class UpdatesController < ApplicationController
   before_action :set_update, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:index, :new, :show]
   before_action :authenticate
 
   # GET /updates
@@ -73,6 +74,18 @@ class UpdatesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_update
       @update = Update.find(params[:id])
+    end
+    
+    def set_update
+      @update = Update.find(params[:id])
+    end
+    
+    def set_project
+	  if params[:project_id]
+        @project = Project.find(params[:project_id])
+      else
+        @project = Update.find(params[:id]).project
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

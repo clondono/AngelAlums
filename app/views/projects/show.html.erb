@@ -30,4 +30,6 @@ Tags:
 
 <%= link_to 'Donate', new_project_donation_path(@project) %>
 <%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Back', projects_path %> |
+<%= link_to 'Updates', project_updates_path(@project)%> |
+<%= link_to 'Create Update', new_project_update_path(@project)%>
