@@ -1,4 +1,5 @@
 Dummy::Application.routes.draw do
+<<<<<<< HEAD
   resources :projects
   resources :updates
 
@@ -42,18 +43,15 @@ Dummy::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
+=======
+  get "home/index"
+  devise_for :users
+  resources :projects do
+    resources :donations, shallow: true
+  end
+  resources :updates
+>>>>>>> 6837ecdbeb24e18243dc5924a1689274b321b3be
   
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
 
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+   root 'home#index'
 end

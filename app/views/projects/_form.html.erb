@@ -37,13 +37,15 @@
        <%=render "advisor_fields", :f => builder %>
       <%end%>
     </div>
+    <p><%= link_to_add_fields "Add more Advisors", f, :advisors %></p>
     <div class = "field">
       <%= f.fields_for :collaborations do |builder|%>
-       <%=render "collaborator_fields", :f => builder %>
+       <%=render "collaboration_fields", :f => builder %>
       <%end%>
     </div>
+    <p><%= link_to_add_fields "Add more Collaborators", f, :collaborations %></p>
     <div class = "field">
-      <%= f.fields_for :tags do |builder|%>
+      <%= f.fields_for :taggables do |builder|%>
        <%=render "tag_fields", :f => builder %>
       <%end%>
     </div>

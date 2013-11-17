@@ -22,10 +22,14 @@ Dummy::Application.configure do
   # Raise an error on page load if there are pending migrations
   config.active_record.migration_error = :page_load
 
+  config.secret_key_base = "cdab63868102d478561dfb67807d6e1e71814a342d8528bd4a874a2678a4fbeb35c2683f03b6c98c6cd9f48c8e3690d9745e049bfb399894be3c99f624ba3c27"
+
+
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
-  Paperclip.options[:command_path] = "/usr/bin/"
+  Paperclip.options[:command_path] = "/usr/bin/" #EJ
+  # Paperclip.options[:command_path] = "/usr/local/bin/convert" #Richard
 
 end
