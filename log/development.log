@@ -5212,3 +5212,1045 @@ Migrating to CreateInterests (20131116202441)
   [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131116202441"]]
   [1m[36m (164.1ms)[0m  [1mcommit transaction[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 16:10:24 -0500
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (151.7ms)
+Completed 200 OK in 175ms (Views: 167.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 16:10:25 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 16:10:25 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 16:10:25 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 16:10:25 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 16:10:25 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 16:10:25 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 16:10:25 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 16:10:25 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 16:10:25 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 16:10:25 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 16:10:25 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 16:11:27 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 8 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered partials/_navbar.html.erb (2.8ms)
+Completed 200 OK in 1141ms (Views: 1139.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 16:11:29 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 16:11:29 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 16:11:29 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 16:11:29 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 16:11:29 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 16:11:29 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 16:11:29 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 16:11:29 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 16:11:29 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 16:11:29 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 16:11:29 -0500
+  [1m[36mUser Load (5.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (7.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 56]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "projects" ("created_at", "goal", "owner_id", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sat, 16 Nov 2013 21:28:08 UTC +00:00], ["goal", 1000.0], ["owner_id", 8], ["title", "first one"], ["updated_at", Sat, 16 Nov 2013 21:28:08 UTC +00:00]]
+  [1m[36m (168.2ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 16:28:55 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (67.6ms)
+Completed 200 OK in 92ms (Views: 81.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 16:28:56 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 16:28:56 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 16:28:56 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 16:28:56 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 16:28:56 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 16:28:56 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 16:28:56 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 16:28:56 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 16:28:56 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 16:28:56 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 16:28:56 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 16:28:57 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 8 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered partials/_navbar.html.erb (3.9ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 16:28:59 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (3.0ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 16:28:59 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 16:28:59 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 16:28:59 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 16:28:59 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 16:28:59 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 16:28:59 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 16:28:59 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 16:28:59 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 16:28:59 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 16:28:59 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 16:28:59 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 16:29:27 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 8 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered partials/_navbar.html.erb (3.6ms)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-11-16 16:29:50 -0500
+
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.1ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (26.1ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (182.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-11-16 16:30:23 -0500
+
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.8ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (36.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 16:34:31 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.1ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 16:34:32 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 8 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered partials/_navbar.html.erb (2.4ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 16:34:32 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (2.7ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 16:34:33 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 8 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered partials/_navbar.html.erb (2.8ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 16:34:33 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 16:38:43 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 8 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered partials/_navbar.html.erb (4.5ms)
+Completed 200 OK in 376ms (Views: 374.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:44 -0500
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2013-11-16 16:38:49 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MrmtqnuEK5EkfMDcHb/7WtylLzxSfVw+IS/qXk6rUqI="}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 31ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 16:38:50 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered partials/_navbar.html.erb (52.6ms)
+Completed 200 OK in 81ms (Views: 79.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 16:38:50 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 16:38:50 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 16:38:50 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 16:38:50 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:50 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 16:38:50 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:50 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:50 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:50 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:50 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 16:38:50 -0500
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-11-16 16:38:52 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.2ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 30ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-11-16 16:40:21 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.3ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 1060ms (Views: 1055.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 16:40:23 -0500
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-11-16 16:42:46 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.7ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 1029ms (Views: 1027.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 16:42:47 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 16:42:48 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 16:44:59 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.8ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 1100ms (Views: 1094.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 16:45:00 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.0ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 44ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-16 16:45:21 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OKP19g3S+2rPSALRveY4q5lu9Xjo9WZx27xza5X7UDo=", "user"=>{"email"=>"clondono@mit.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "type"=>"Alumni"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'clondono@mit.edu' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sat, 16 Nov 2013 21:45:21 UTC +00:00], ["email", "clondono@mit.edu"], ["encrypted_password", "$2a$10$aEDaRbVoRwBrpBWD7QOAB.HgKHmdGtAuCqUXhwJdLA.g1HIlKdfSS"], ["type", "Alumni"], ["updated_at", Sat, 16 Nov 2013 21:45:21 UTC +00:00]]
+  [1m[36m (307.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `last_sign_in_ip`
+Binary data inserted for `string` type on column `current_sign_in_ip`
+  [1m[36mSQL (2.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."type" IN ('Alumni') AND "users"."id" = 9[0m  [["last_sign_in_at", Sat, 16 Nov 2013 21:45:21 UTC +00:00], ["current_sign_in_at", Sat, 16 Nov 2013 21:45:21 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Sat, 16 Nov 2013 21:45:21 UTC +00:00]]
+  [1m[35m (165.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 617ms (ActiveRecord: 476.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 16:45:21 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (5.2ms)
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 16:45:21 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 16:45:22 -0500
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mProject Load (1.1ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" INNER JOIN "donations" ON "projects"."id" = "donations"."project_id" WHERE "donations"."alum_id" = ?[0m  [["alum_id", 9]]
+  [1m[35mAlumni Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni')
+  [1m[36mAlumni Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') AND "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAlumni Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') AND "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" INNER JOIN "donations" ON "projects"."id" = "donations"."project_id" WHERE "donations"."alum_id" = ?[0m  [["alum_id", 9]]
+  [1m[35mAlumni Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') AND "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mDonation Load (0.7ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."alum_id" = ?[0m  [["alum_id", 9]]
+  [1m[35mAlumni Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') AND "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "donations" ("alum_id", "created_at", "project_id", "updated_at") VALUES (?, ?, ?, ?)  [["alum_id", 9], ["created_at", Sat, 16 Nov 2013 21:48:26 UTC +00:00], ["project_id", 1], ["updated_at", Sat, 16 Nov 2013 21:48:26 UTC +00:00]]
+  [1m[36m (166.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mAlumni Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') AND "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mDonation Load (0.4ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."alum_id" = ?[0m  [["alum_id", 9]]
+  [1m[35mAlumni Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') AND "users"."id" = ? LIMIT 1  [["id", 9]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from irb_binding at (irb):31)
+  [1m[36mDonation Load (0.8ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."alum_id" = ?[0m  [["alum_id", 9]]
+  [1m[35mAlumni Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') AND "users"."id" = ? LIMIT 1  [["id", 9]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from irb_binding at (irb):32)
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" INNER JOIN "donations" ON "projects"."id" = "donations"."project_id" WHERE "donations"."alum_id" = ?[0m  [["alum_id", 9]]
+  [1m[35mProject Load (1.1ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mProject Load (1.8ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from irb_binding at (irb):43)
+  [1m[36mDonation Load (0.6ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from irb_binding at (irb):45)
+  [1m[36mDonation Load (0.4ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mProject Load (0.9ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from irb_binding at (irb):53)
+  [1m[36mAlumni Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "donations" ON "users"."id" = "donations"."alum_id" WHERE "users"."type" IN ('Alumni') AND "donations"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mDonation Load (0.5ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mDonation Load (1.6ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAlumni Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 9]]
+  [1m[36mDonation Load (0.6ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? ORDER BY "projects"."id" ASC LIMIT 1  [["id", 1]]
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OKP19g3S+2rPSALRveY4q5lu9Xjo9WZx27xza5X7UDo="}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 125ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:01 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-16 16:59:03 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.3ms)
+  Rendered partials/_navbar.html.erb (2.8ms)
+Completed 200 OK in 47ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HqUC7eDbBYNVxZZFw4FT9VFPvuxCi23jUcvrooL/HZ8=", "user"=>{"email"=>"christianlondono91@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "type"=>"Student"}, "commit"=>"Sign up"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'christianlondono91@yahoo.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sat, 16 Nov 2013 21:59:15 UTC +00:00], ["email", "christianlondono91@yahoo.com"], ["encrypted_password", "$2a$10$QMh5z9RUw76GQ8VtkIHvJOBRfvPdMrAGlJcqLLEJadGrWmUrE5/N."], ["type", "Student"], ["updated_at", Sat, 16 Nov 2013 21:59:15 UTC +00:00]]
+  [1m[35m (174.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `last_sign_in_ip`
+Binary data inserted for `string` type on column `current_sign_in_ip`
+  [1m[35mSQL (3.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."type" IN ('Student') AND "users"."id" = 10  [["last_sign_in_at", Sat, 16 Nov 2013 21:59:15 UTC +00:00], ["current_sign_in_at", Sat, 16 Nov 2013 21:59:15 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Sat, 16 Nov 2013 21:59:15 UTC +00:00]]
+  [1m[36m (156.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 475ms (ActiveRecord: 336.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 10 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered partials/_navbar.html.erb (5.0ms)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:15 -0500
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:16 -0500
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:16 -0500
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:16 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:16 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:16 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:16 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:16 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 16:59:16 -0500
+  [1m[36mProject Load (1.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCollaboration Load (0.6ms)[0m  [1mSELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mProject Load (1.4ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "collaborations" ("created_at", "project_id", "updated_at") VALUES (?, ?, ?)  [["created_at", Sat, 16 Nov 2013 22:01:44 UTC +00:00], ["project_id", 1], ["updated_at", Sat, 16 Nov 2013 22:01:44 UTC +00:00]]
+  [1m[36m (164.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "collaborations" ("created_at", "project_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Sat, 16 Nov 2013 22:03:08 UTC +00:00], ["project_id", 1], ["updated_at", Sat, 16 Nov 2013 22:03:08 UTC +00:00], ["user_id", 10]]
+  [1m[36m (168.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from irb_binding at (irb):63)
+  [1m[36mCollaboration Load (0.7ms)[0m  [1mSELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from irb_binding at (irb):67)
+  [1m[36mStudent Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "collaborations" ON "users"."id" = "collaborations"."user_id" WHERE "users"."type" IN ('Student') AND "collaborations"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mProject Load (1.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCollaboration Load (1.0ms)[0m  [1mSELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = ? AND "collaborations"."id" = ? LIMIT 1[0m  [["project_id", 1], ["id", 2]]
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCollaboration Load (0.4ms)[0m  [1mSELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = ? AND "collaborations"."id" = ? LIMIT 1[0m  [["project_id", 1], ["id", 2]]
+  [1m[35mStudent Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 10]]
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCollaboration Load (0.5ms)[0m  SELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = ? AND "collaborations"."id" = ? LIMIT 1  [["project_id", 1], ["id", 2]]
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? ORDER BY "projects"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCollaboration Load (0.4ms)[0m  [1mSELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = ? AND "collaborations"."id" = ? LIMIT 1[0m  [["project_id", 1], ["id", 2]]
+  [1m[35mStudent Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 10]]
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCollaboration Load (0.4ms)[0m  SELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = ? AND "collaborations"."id" = ? LIMIT 1  [["project_id", 1], ["id", 2]]
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? ORDER BY "projects"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Student')
+  [1m[36mStudent Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mStudent Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mStudent Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from irb_binding at (irb):76)
+  [1m[35mCollaboration Load (0.6ms)[0m  SELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."user_id" = ?  [["user_id", 10]]
+  [1m[36mStudent Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mStudent Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mStudent Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from irb_binding at (irb):82)
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" INNER JOIN "collaborations" ON "projects"."id" = "collaborations"."project_id" WHERE "collaborations"."user_id" = ?  [["user_id", 10]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "tags" ("created_at", "title", "updated_at") VALUES (?, ?, ?)  [["created_at", Sat, 16 Nov 2013 22:08:36 UTC +00:00], ["title", "thumper"], ["updated_at", Sat, 16 Nov 2013 22:08:36 UTC +00:00]]
+  [1m[36m (144.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mAlumni Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mAlumni Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mAlumni Load (1.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mAlumni Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mAlumni Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mInterest Load (1.1ms)[0m  SELECT "interests".* FROM "interests"
+  [1m[36mAlumni Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mAlumni Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mInterest Load (5.8ms)[0m  [1mSELECT "interests".* FROM "interests" WHERE "interests"."user_id" = ?[0m  [["user_id", 9]]
+  [1m[35mAlumni Load (1.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.9ms)[0m  INSERT INTO "interests" ("created_at", "tag_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Sat, 16 Nov 2013 22:12:19 UTC +00:00], ["tag_id", 1], ["updated_at", Sat, 16 Nov 2013 22:12:19 UTC +00:00], ["user_id", 9]]
+  [1m[36m (165.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mAlumni Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "interests" ON "tags"."id" = "interests"."tag_id" WHERE "interests"."user_id" = ?[0m  [["user_id", 9]]
+  [1m[35mAlumni Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Alumni') ORDER BY "users"."id" ASC LIMIT 1
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from irb_binding at (irb):15)
+  [1m[36mTag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "interests" ON "tags"."id" = "interests"."tag_id" WHERE "interests"."user_id" = ?[0m  [["user_id", 9]]

@@ -1,9 +1,17 @@
 class Project < ActiveRecord::Base
 	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
 	has_many :collaborations
-    has_many :advisors
-    has_many :taggables
+	has_many :collaborators, class_name: 'Student', through: :collaborations, source: :student
+
+  has_many :advisors
+  
+  has_many :taggables
  	has_many :tags, through: :taggables
+ 	
+ 	has_many :donations
+ 	has_many :donors, class_name: 'Alumni', through: :donations, source: :alumni
+	
+	belongs_to :owner, class_name: 'Student'
 	
 	def youtube_embed
 	  if self.video[/youtu\.be\/([^\?]*)/]
