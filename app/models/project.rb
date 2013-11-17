@@ -3,6 +3,7 @@ class Project < ActiveRecord::Base
 	has_many :collaborations, :dependent => :destroy
     has_many :advisors, :dependent => :destroy
     has_many :taggables, :dependent => :destroy
+    has_many :projects, :dependent => :destroy
  	has_many :tags, through: :taggables
  	accepts_nested_attributes_for :advisors, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
  	accepts_nested_attributes_for :taggables, :reject_if => lambda { |a| a[:tag_id].blank? }, :allow_destroy => true
