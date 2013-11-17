@@ -5,7 +5,7 @@
 
 ready = ->
 	$(".tag-select").select2({placeholder: "Select at least one Tag"})
-	$('.carousel').carousel()
+	$('#carousel-example-generic').carousel()
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

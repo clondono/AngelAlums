@@ -1,5 +1,6 @@
 <h1>Listing projects</h1>
-
+<%= link_to 'New Project', new_project_path, :class => 'btn inlineb'  %>
+<br/>
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -15,16 +16,12 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <% @projects.each do |proj, index|%>
-      <%if index == 0%>
-      <div class="item active">
-      <%else%>
-      <div class="item">
-      <%end%>
-        <%= image_tag proj.image.url(:thumb)%>
-        <div class="carousel-caption">
-          <%= proj.title%>
-        </div>
+    <div class="item">
+    <%= image_tag proj.image.url(:thumb)%>
+      <div class="carousel-caption">
+        <%= proj.title%>
       </div>
+    </div>
     <%end%>
   </div>
 
@@ -36,7 +33,7 @@
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
 </div>
-<!-- 
+
 <table>
   <thead>
     <tr>
@@ -88,6 +85,5 @@
   </tbody>
 </table>
 
-<br> -->
+<br> 
 
-<%= link_to 'New Project', new_project_path %>
