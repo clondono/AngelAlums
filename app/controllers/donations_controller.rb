@@ -1,11 +1,11 @@
 class DonationsController < ApplicationController
 	def new
+		@project = Project.find(params[:project_id])
 	end
 
 	def create
 	  # Amount in cents
 	  @amount = 1000
-
 	  customer = Stripe::Customer.create(
 	    :email => 'example@stripe.com',
 	    :card  => params[:stripeToken]
