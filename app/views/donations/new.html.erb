@@ -1,12 +1,8 @@
 <%= form_tag project_donations_path(@project) do %>
-  <article>
-    <label class="amount">
-      <span>Amount: $10.00</span>
-    </label>
-  </article>
+	<%= number_field_tag(:donation_amount, 20, min:1) %>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key= "pk_test_eZfnT3GTTvsfV42aAbSMPxC3"
-          data-description="Project Donation"
-          data-amount="1000"></script>
+	<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+	      data-key="pk_test_eZfnT3GTTvsfV42aAbSMPxC3"
+	      data-description="Project Donation"
+	      data-amount=""></script>
 <% end %>

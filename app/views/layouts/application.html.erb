@@ -10,7 +10,8 @@
             var token = $("meta[name='csrf-token']").attr("content");
             xhr.setRequestHeader("X-CSRF-Token", token);
         });
-    </script>
+        </script>
+  <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
 </head>
 <body>
   <!-- Navigation Bar -->
