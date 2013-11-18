@@ -64,10 +64,12 @@
 			</div>
 		<%end%>
 	</div>
-	<%= link_to 'Edit', edit_project_path(@project), :class => 'btn' %> 
 	<%= link_to 'Back', projects_path, :class => 'btn' %> 
 	<%= link_to 'Updates', project_updates_path(@project), :class => 'btn'%> 
-	<%= link_to 'Create Update', new_project_update_path(@project), :class => 'btn'%>
+	<% if current_user.id == @project.student.id%>
+		<%= link_to 'Edit', edit_project_path(@project), :class => 'btn' %> 
+		<%= link_to 'Create Update', new_project_update_path(@project), :class => 'btn'%>
+	<%end%>
 </div>
 
 
