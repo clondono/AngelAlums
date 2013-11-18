@@ -1,21 +1,24 @@
+
 <div class="container">
     <div class = "row">
         <div class="page-header well">
-          <h1>Showing updates for <%= link_to @project.title, @project %></h1>
+          <h1>Showing updates for <u><%= link_to @project.title, @project %></u></h1>
           <% if @can_write %>
-            <p id="new_update"><%= link_to 'Add new update', new_project_update_path(@project) %></p>
+            <u><p id="new_update"><%= link_to 'Add new update', new_project_update_path(@project) %></p></u>
           <% end %>
         </div>
     </div>
 </div>
 
-<!-- render from newest to oldest -->
+
 <div class="container">
     <div class="row">
         <div class="col-md-12"> 
+          <!-- render partial views for each updates, from newest to oldest -->
           <% @updates.reverse.each do |update| %>
       			 <div class="update_entry">
   				      <%= render update %>
+                <!-- access control -->
                 <% if update.can_edit?(current_user.id) %>
                   <div class="form-actions">
                      <%= render "update_action_forms", :update => update, :project => @project %>
@@ -26,6 +29,8 @@
         </div>  
     </div>
 </div>
+
+
 
 
 <%
