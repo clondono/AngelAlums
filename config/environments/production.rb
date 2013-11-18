@@ -88,6 +88,9 @@ Dummy::Application.configure do
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
+  config.secret_key_base = "cdab63868102d478561dfb67807d6e1e71814a342d8528bd4a874a2678a4fbeb35c2683f03b6c98c6cd9f48c8e3690d9745e049bfb399894be3c99f624ba3c27"
+
+
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
