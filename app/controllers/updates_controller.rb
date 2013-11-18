@@ -92,9 +92,9 @@ class UpdatesController < ApplicationController
     def can_write?
       # if the current user is an owner or an collaborator of the project, he can create new updates
       if @project.access_level(current_user.id) != "none" 
-        return  true
+        @can_write = true
       else
-        return false
+        @can_write = false
       end
     end
 
