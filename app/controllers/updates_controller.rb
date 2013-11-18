@@ -1,6 +1,8 @@
 class UpdatesController < ApplicationController
   before_action :set_update, only: [:show, :edit, :update, :destroy]
-  before_action :set_project, only: [:index, :new, :show]
+  before_action :set_project, only: [:index, :new, :show, :destroy]
+  before_action :can_write?, only: [:index, :new]
+  before_action :can_edit?, only: [:index, :show, :edit, :destroy]
   before_action :authenticate
 
   # GET /updates
@@ -25,6 +27,10 @@ class UpdatesController < ApplicationController
 
   # GET /updates/new
   def new
+    if @can_write == false
+      redirect_to root_url
+      return
+    end
     @update = Update.new
   end
 
@@ -67,7 +73,7 @@ class UpdatesController < ApplicationController
   def destroy
     @update.destroy
     respond_to do |format|
-      format.html { redirect_to updates_url }
+      format.html { redirect_to project_updates_path(@project) }
       format.json { head :no_content }
     end
   end
@@ -77,10 +83,19 @@ class UpdatesController < ApplicationController
     def set_update
       @update = Update.find(params[:id])
     end
-    
-    def set_update
-      @update = Update.find(params[:id])
+
+    def can_write?
+      if current_user == @project.student
+        @can_write = true
+      else
+        @can_write = false
+      end
     end
+
+    def can_edit?
+      return true
+    end
+
     
     def set_project
 	  if params[:project_id]
