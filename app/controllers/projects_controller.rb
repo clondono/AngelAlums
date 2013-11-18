@@ -101,7 +101,7 @@ class ProjectsController < ApplicationController
     #check if current user is an owner
     def check_owner
       set_project
-      if @project.access_level(current_user) != "owner"
+      if @project.access_level(current_user.id) != "owner"
         redirect_to projects_url
       end
     end
