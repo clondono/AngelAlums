@@ -6,6 +6,8 @@ module ApplicationHelper
 	    end
 	    link_to_function(name, "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")", :class => 'btn' )
 	end
+
+  #list of all majors for major selections
   def majorList
     ["6-1: Elictrical Science and Engineering","6-2: Conputer Science and Electrical Engineering","6-3: Conputer Science and Engineering"]
   end
