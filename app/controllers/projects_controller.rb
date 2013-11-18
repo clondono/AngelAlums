@@ -18,6 +18,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+    #to allow forms to be built for multiple entries
     @project.taggables.build
     @project.advisors.build
     @project.collaborations.build
@@ -34,6 +35,7 @@ class ProjectsController < ApplicationController
     @project.owner_id = @current_user.id
     respond_to do |format|
       if @project.save
+        #add advisors, tags and collaborators
         @project.add_advisors(params[:project][:advisors_attributes])
         @project.add_tags(params[:project][:taggables_attributes])
         @project.add_collaborators(params[:project][:collaborations_attributes])
@@ -80,13 +82,13 @@ class ProjectsController < ApplicationController
     def project_params
       params[:project].permit(:title, :image, :video, :description, :goal)
     end
-
+    # check if current user is logged in
     def logged_in
       if current_user == nil
         redirect_to new_user_session_path
       end
     end
-
+    #check if current user is a collaborator or owner fo project
     def check_collab
       set_project
       if @project.access_level(current_user.id) != "owner" && @project.access_level(current_user.id) != "collaborator"
@@ -94,6 +96,7 @@ class ProjectsController < ApplicationController
       end
 
     end
+    #check if current user is an owner
     def check_owner
       set_project
       if @project.access_level(current_user) != "owner"
