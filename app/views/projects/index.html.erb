@@ -6,6 +6,11 @@
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
+    <% if @projects.length == 0%>
+    <div class="item active">
+      <%= image_tag "nothing.jpg"%>
+    </div>
+    <%end%>
     <% @projects.each_with_index do |proj, index|%>
     <div class="item <%= 'active' if index == 0%>">
     <%= image_tag proj.image.url%>
