@@ -9,7 +9,6 @@
 	          <hr>
 	          <p><%= glyph(:time) %> Posted on <%= update.updated_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %></p>
 	          <hr>
-	          <img src="<%= update.image.url %>" class="img-responsive">
 	          <% if update.has_image? %>
 	          	<img src = "<%= update.image.url%>" class = "img-responsive">
 	          <% end %>

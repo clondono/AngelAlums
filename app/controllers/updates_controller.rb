@@ -1,12 +1,15 @@
+# Primary author: Dongyoung Kim
+
 class UpdatesController < ApplicationController
+  # On Access Control: A owner or a collaborator on a project can create an update
+  # A creator of an update can edit or delete his update.
+
   before_action :set_update, only: [:show, :edit, :update, :destroy]
   before_action :set_project, only: [:index, :new, :show, :destroy]
   before_action :can_write?, only: [:index, :new]
-  #before_action :can_edit?, only: [:index, :show, :edit, :destroy]
   before_action :authenticate
 
-  # GET /updates
-  # GET /updates.json
+  # GET /project/:project_id/updates
   def index
     @updates = Update.all
     
@@ -19,11 +22,10 @@ class UpdatesController < ApplicationController
   end
 
   # GET /updates/1
-  # GET /updates/1.json
   def show
   end
 
-  # GET /updates/new
+  # GET /project/:project_id/updates/new
   def new
     if @can_write == false
       redirect_to root_url
@@ -34,6 +36,10 @@ class UpdatesController < ApplicationController
 
   # GET /updates/1/edit
   def edit
+    if @update.can_edit?(current_user.id) == false
+      redirect_to root_url
+      return
+    end
   end
 
   # POST /updates
@@ -84,10 +90,11 @@ class UpdatesController < ApplicationController
     end
 
     def can_write?
-      if current_user == @project.student
-        @can_write = true
+      # if the current user is an owner or an collaborator of the project, he can create new updates
+      if @project.access_level(current_user.id) != "none" 
+        return  true
       else
-        @can_write = false
+        return false
       end
     end
 
