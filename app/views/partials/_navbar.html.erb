@@ -14,8 +14,9 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><%= link_to('Home',root_path )%> </li>
-                    <li><%= link_to "Profile", current_user.becomes(User) %></li>
-                    <li><%= link_to('Account Settings',edit_user_registration_path, method: :get )%> </li>
+                    <li><%= link_to "Profile",current_user.becomes(User)%></li>
+                    <li><%= link_to('Account Settings',edit_user_registration_path(profile: "true"), method: :get )%> </li>
+                    <li><%= link_to('Security Settings',edit_user_registration_path, method: :get )%> </li>
                     <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  </li>
                 </ul>
                 </li>
