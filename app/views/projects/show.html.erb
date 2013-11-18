@@ -24,11 +24,12 @@
 		<h4>Number of Donors: <%= @project.donations.length%></h4>
 		<h4>Total: $<%= @project.total_donation %>.0</h4>
 		<div class="progress progress-striped">
-		  <div class="bar" style="width: 20%;"><%= @project.total_donation %></div>
+		  <div class="bar" style="width: <%= (@project.total_donation / @project.goal)*100%>%;">$<%= @project.total_donation %></div>
 		</div>
 		<h6>Raised of $<%= @project.goal%></h6>
-		<!--This will direct to Donation page -->
-	    <%= link_to 'Donate', new_project_donation_path(@project), class: "btn btn-primary" %> 
+		<%if current_user.type != "Student" && @project.access_level(current_user.id) == "owner"%>
+	    	<%= link_to 'Donate', new_project_donation_path(@project), class: "btn btn-primary" %> 
+	    <%end%>
 	</div>
 	<div class="proj-tags inlineb">
 		Tags: <br/>
@@ -65,11 +66,18 @@
 			</div>
 		<%end%>
 	</div>
-	<%= link_to 'Back', projects_path, :class => 'btn' %> 
-	<%= link_to 'Updates', project_updates_path(@project), :class => 'btn'%> 
-	<% if current_user.id == @project.student.id%>
-		<%= link_to 'Edit', edit_project_path(@project), :class => 'btn' %> 
-		<%= link_to 'Create Update', new_project_update_path(@project), :class => 'btn'%>
+	<%= link_to 'Back', projects_path, :class => 'btn btn-primary' %> 
+	<%= link_to 'Updates', project_updates_path(@project), :class => 'btn btn-primary'%> 
+	<% if @project.access_level(current_user.id) == "owner" || @project.access_level(current_user.id) == "collaborator"%>
+		<%= link_to 'Edit', edit_project_path(@project), :class => 'btn btn-primary' %> 
+		<%= link_to 'Create Update', new_project_update_path(@project), :class => 'btn btn-primary'%>
+		<%if @project.access_level(current_user.id) == "owner"%>
+			<%= link_to 'Destroy', project_path(@project), 
+				:method => 'delete', 
+				:class => 'btn btn-danger', 
+				:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) } 
+				%>
+		<%end%>
 	<%end%>
 </div>
 

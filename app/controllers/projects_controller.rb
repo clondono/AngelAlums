@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :logged_in
+  before_action :check_collab, only: [:edit, :update]
+  before_action :check_owner, only: [:destroy]
 
   # GET /projects
   # GET /projects.json
@@ -82,6 +84,20 @@ class ProjectsController < ApplicationController
     def logged_in
       if current_user == nil
         redirect_to new_user_session_path
+      end
+    end
+
+    def check_collab
+      set_project
+      if @project.access_level(current_user.id) != "owner" && @project.access_level(current_user.id) != "collaborator"
+        redirect_to projects_url
+      end
+
+    end
+    def check_owner
+      set_project
+      if @project.access_level(current_user) != "owner"
+        redirect_to projects_url
       end
 
     end

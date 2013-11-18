@@ -33,6 +33,10 @@ class Project < ActiveRecord::Base
       end
     end
 
+    def total_donation
+        donations.sum('amount')
+    end
+
     def add_advisors(advisors)
         if advisors != nil
             advisors.values.each do |advisor_params|
@@ -77,7 +81,6 @@ class Project < ActiveRecord::Base
             return "none"
         end
     end
-
     def total_donation
         donations.sum('amount')
     end
