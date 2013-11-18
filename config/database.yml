@@ -24,6 +24,7 @@ development:
   password: vivajuntos
   host: localhost
 
+
 # development:
 #   adapter: sqlite3
 #   database: db/development.sqlite3

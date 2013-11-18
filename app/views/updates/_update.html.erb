@@ -5,7 +5,7 @@
 
         	  <hr>
 	          <h1><%= link_to update.title, update %></h1>
-	          <p class="lead">by <%= update.student %></a></p>
+	          <p class="lead">by <%= update.student.first_name + " " + update.student.last_name %></a></p>
 	          <hr>
 	          <p><%= glyph(:time) %> Posted on <%= update.updated_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %></p>
 	          <hr>
