@@ -40,6 +40,7 @@ class UpdatesController < ApplicationController
   # POST /updates.json
   def create
     @update = Update.new(update_params)
+    @update.creator_id = current_user.id
     @update.project_id = params[:project_id]
     respond_to do |format|
       if @update.save
