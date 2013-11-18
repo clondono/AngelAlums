@@ -89,7 +89,7 @@ class ProjectsController < ApplicationController
 
     def check_collab
       set_project
-      if @project.access_level(current_user) != "owner" && @project.access_level(current_user) != "collaborator"
+      if @project.access_level(current_user.id) != "owner" && @project.access_level(current_user.id) != "collaborator"
         redirect_to projects_url
       end
 
