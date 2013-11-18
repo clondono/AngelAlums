@@ -43,7 +43,6 @@ class UpdatesController < ApplicationController
   end
 
   # POST /updates
-  # POST /updates.json
   def create
     @update = Update.new(update_params)
     @update.creator_id = current_user.id
@@ -60,7 +59,6 @@ class UpdatesController < ApplicationController
   end
 
   # PATCH/PUT /updates/1
-  # PATCH/PUT /updates/1.json
   def update
     respond_to do |format|
       if @update.update(update_params)
@@ -74,7 +72,6 @@ class UpdatesController < ApplicationController
   end
 
   # DELETE /updates/1
-  # DELETE /updates/1.json
   def destroy
     @update.destroy
     respond_to do |format|
