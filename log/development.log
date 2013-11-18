@@ -76241,3 +76241,3441 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:16:38
 
 
 Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:16:38 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnsToUser (20131117221808)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "users" ADD COLUMN "grad_year" integer[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD COLUMN "major" integer
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20131117221808"]]
+  [1m[35m (12.2ms)[0m  COMMIT
+Migrating to AddNameToUsers (20131117235524)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD COLUMN "first_name" character varying(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD COLUMN "last_name" character varying(255)[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131117235524"]]
+  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5011.3ms)[0m  [1mDROP DATABASE IF EXISTS "6170final"[0m
+PG::ObjectInUse: ERROR:  database "6170final" is being accessed by other users
+DETAIL:  There are 1 other session(s) using the database.
+: DROP DATABASE IF EXISTS "6170final"
+  [1m[35m (0.6ms)[0m  CREATE DATABASE "6170final" ENCODING = 'unicode'
+PG::DuplicateDatabase: ERROR:  database "6170final" already exists
+: CREATE DATABASE "6170final" ENCODING = 'unicode'
+  [1m[36m (55.3ms)[0m  [1mDROP TABLE "advisors"[0m
+  [1m[35m (185.7ms)[0m  CREATE TABLE "advisors" ("id" serial primary key, "project_id" integer, "name" character varying(255), "email" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (11.7ms)[0m  [1mDROP TABLE "collaborations"[0m
+  [1m[35m (106.8ms)[0m  CREATE TABLE "collaborations" ("id" serial primary key, "project_id" integer, "name" character varying(255), "email" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (11.1ms)[0m  [1mDROP TABLE "donations"[0m
+  [1m[35m (63.7ms)[0m  CREATE TABLE "donations" ("id" serial primary key, "project_id" integer, "alum_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (11.2ms)[0m  [1mDROP TABLE "interests"[0m
+  [1m[35m (63.5ms)[0m  CREATE TABLE "interests" ("id" serial primary key, "user_id" integer, "tag_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (12.0ms)[0m  [1mDROP TABLE "projects"[0m
+  [1m[35m (106.9ms)[0m  CREATE TABLE "projects" ("id" serial primary key, "title" character varying(255), "image_file_name" character varying(255), "image_content_type" character varying(255), "image_file_size" integer, "image_updated_at" timestamp, "video" character varying(255), "description" text, "goal" float, "created_at" timestamp, "updated_at" timestamp, "owner_id" integer) 
+  [1m[36m (11.2ms)[0m  [1mDROP TABLE "taggables"[0m
+  [1m[35m (75.7ms)[0m  CREATE TABLE "taggables" ("id" serial primary key, "project_id" integer, "tag_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (13.1ms)[0m  [1mDROP TABLE "tags"[0m
+  [1m[35m (106.4ms)[0m  CREATE TABLE "tags" ("id" serial primary key, "title" character varying(255), "description" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (13.1ms)[0m  [1mDROP TABLE "updates"[0m
+  [1m[35m (94.7ms)[0m  CREATE TABLE "updates" ("id" serial primary key, "project_id" integer, "user_id" integer, "title" character varying(255), "content" text, "created_at" timestamp, "updated_at" timestamp, "image_file_name" character varying(255), "image_content_type" character varying(255), "image_file_size" integer, "image_updated_at" timestamp, "creator_id" integer) 
+  [1m[36m (14.3ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (143.5ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp, "type" character varying(255), "grad_year" integer, "major" integer, "first_name" character varying(255), "last_name" character varying(255)) 
+  [1m[36m (48.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (54.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+  [1m[36m (0.8ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-17 21:22:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 28ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-11-17 21:22:42 -0500
+Processing by ProjectsController#index as HTML
+Redirected to http://localhost:3000/users/sign_in
+Filter chain halted as :logged_in rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-11-17 21:22:42 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (70.5ms)
+  Rendered partials/_navbar.html.erb (2.1ms)
+Completed 200 OK in 2885ms (Views: 2821.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+Processing by ProjectsController#index as HTML
+Redirected to http://localhost:3000/users/sign_in
+Filter chain halted as :logged_in rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.4ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 59ms (Views: 55.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:22:45 -0500
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:22:46 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-17 21:22:51 -0500
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.8ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 39ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-17 21:24:41 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (141.9ms)
+  Rendered partials/_navbar.html.erb (2.6ms)
+Completed 200 OK in 451ms (Views: 410.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:24:41 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:24:41 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:24:41 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:24:41 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:24:41 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:24:41 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:24:41 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:24:41 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:41 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:24:42 -0500
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-17 21:25:01 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sWbHee6mYKr4qSwS+GVLIclQhxMW0pwpTLYHIoO7HDI=", "user"=>{"first_name"=>"Ebenezer", "last_name"=>"", "email"=>"ej@mit.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "type"=>"Student"}, "commit"=>"Sign up"}
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mUser Exists (1.9ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'ej@mit.edu' LIMIT 1[0m
+  [1m[35mSQL (39.1ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "first_name", "last_name", "type", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:25:01 EST -05:00], ["email", "ej@mit.edu"], ["encrypted_password", "$2a$10$Kgqof.cwaCtOF9.fZPTB6OVeRijy7qrBzIrY/4NjKj9pMF4In/mEW"], ["first_name", "Ebenezer"], ["last_name", ""], ["type", "Student"], ["updated_at", Sun, 17 Nov 2013 21:25:01 EST -05:00]]
+  [1m[36m (11.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (3.6ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."type" IN ('Student') AND "users"."id" = 1[0m  [["last_sign_in_at", Sun, 17 Nov 2013 21:25:01 EST -05:00], ["current_sign_in_at", Sun, 17 Nov 2013 21:25:01 EST -05:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Sun, 17 Nov 2013 21:25:01 EST -05:00]]
+  [1m[35m (31.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/edit?profile=true
+Completed 302 Found in 309ms (ActiveRecord: 88.5ms)
+
+
+Started GET "/users/edit?profile=true" for 127.0.0.1 at 2013-11-17 21:25:01 -0500
+Processing by RegistrationsController#edit as HTML
+  Parameters: {"profile"=>"true"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered devise/registrations/_profile.html.erb (7.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.8ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 95ms (Views: 36.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:25:01 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:25:01 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:25:01 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:02 -0500
+
+
+Started PUT "/users" for 127.0.0.1 at 2013-11-17 21:25:31 -0500
+Processing by RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sWbHee6mYKr4qSwS+GVLIclQhxMW0pwpTLYHIoO7HDI=", "user"=>{"major"=>"6-1: Elictrical Science and Engineering", "grad_year"=>"2015", "first_name"=>"Ebenezer", "last_name"=>"Sefah"}, "commit"=>"Update"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.4ms)[0m  [1mUPDATE "users" SET "last_name" = $1, "major" = $2, "grad_year" = $3, "updated_at" = $4 WHERE "users"."type" IN ('Student') AND "users"."id" = 1[0m  [["last_name", "Sefah"], ["major", 6], ["grad_year", 2015], ["updated_at", Sun, 17 Nov 2013 21:25:31 EST -05:00]]
+  [1m[35m (20.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 39ms (ActiveRecord: 24.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-11-17 21:25:47 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sWbHee6mYKr4qSwS+GVLIclQhxMW0pwpTLYHIoO7HDI=", "user"=>{"email"=>"easj.asante@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-17 21:25:47 -0500
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-11-17 21:25:47 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (11.0ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 124ms (Views: 88.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/left.png" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2013-11-17 21:25:48 -0500
+
+
+Started GET "/users/1" for 127.0.0.1 at 2013-11-17 21:26:35 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.4ms)
+Completed 200 OK in 25ms (Views: 20.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-17 21:26:46 -0500
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-11-17 21:26:46 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (4.2ms)
+  Rendered partials/_navbar.html.erb (3.0ms)
+Completed 200 OK in 27ms (Views: 23.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/left.png" for 127.0.0.1 at 2013-11-17 21:26:46 -0500
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2013-11-17 21:26:46 -0500
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sWbHee6mYKr4qSwS+GVLIclQhxMW0pwpTLYHIoO7HDI="}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 46ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+Processing by ProjectsController#index as HTML
+Redirected to http://localhost:3000/users/sign_in
+Filter chain halted as :logged_in rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.2ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:49 -0500
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-11-17 21:26:56 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G2hsJ56XDjikP4MwHKljL+yBPZpjCBISTiCmhYmB2ag=", "user"=>{"email"=>"easj.asante@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'easj.asante@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 7ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G2hsJ56XDjikP4MwHKljL+yBPZpjCBISTiCmhYmB2ag=", "user"=>{"email"=>"easj.asante@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.6ms)
+  Rendered partials/_navbar.html.erb (0.8ms)
+Completed 200 OK in 119ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:26:56 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:26:56 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:26:56 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:26:56 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:26:56 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:26:56 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:26:56 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:26:56 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:56 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:56 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:56 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:56 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:56 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:56 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:57 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:57 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:57 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:57 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:57 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:57 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:57 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:57 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:57 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:57 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:57 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:57 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:57 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:57 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:57 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:57 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:26:57 -0500
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-11-17 21:27:05 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G2hsJ56XDjikP4MwHKljL+yBPZpjCBISTiCmhYmB2ag=", "user"=>{"email"=>"ej@mit.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'ej@mit.edu' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."type" IN ('Student') AND "users"."id" = 1  [["current_sign_in_at", Sun, 17 Nov 2013 21:27:05 EST -05:00], ["sign_in_count", 2], ["updated_at", Sun, 17 Nov 2013 21:27:05 EST -05:00]]
+  [1m[36m (11.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 108ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-17 21:27:05 -0500
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-11-17 21:27:05 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (3.0ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 25ms (Views: 19.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:27:05 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:27:05 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:27:05 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:27:05 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:27:05 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:27:05 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:27:05 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:27:05 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/left.png" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2013-11-17 21:27:06 -0500
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2013-11-17 21:27:24 -0500
+Processing by ProjectsController#new as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered projects/_advisor_fields.html.erb (1.3ms)
+  Rendered projects/_advisor_fields.html.erb (0.6ms)
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from link_to_add_fields at /home/ebenezer/Desktop/6.170 Workspace/finalProj/app/helpers/application_helper.rb:7)
+  Rendered projects/_collaboration_fields.html.erb (1.3ms)
+  Rendered projects/_collaboration_fields.html.erb (0.7ms)
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from link_to_add_fields at /home/ebenezer/Desktop/6.170 Workspace/finalProj/app/helpers/application_helper.rb:7)
+  [1m[36mTag Load (0.7ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered projects/_tag_fields.html.erb (11.8ms)
+  Rendered projects/_form.html.erb (163.6ms)
+  Rendered projects/new.html.erb within layouts/application (165.9ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 232ms (Views: 183.4ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2013-11-17 21:27:39 -0500
+Processing by ProjectsController#new as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered projects/_advisor_fields.html.erb (0.6ms)
+  Rendered projects/_advisor_fields.html.erb (0.6ms)
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from link_to_add_fields at /home/ebenezer/Desktop/6.170 Workspace/finalProj/app/helpers/application_helper.rb:7)
+  Rendered projects/_collaboration_fields.html.erb (0.8ms)
+  Rendered projects/_collaboration_fields.html.erb (0.9ms)
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from link_to_add_fields at /home/ebenezer/Desktop/6.170 Workspace/finalProj/app/helpers/application_helper.rb:7)
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered projects/_tag_fields.html.erb (2.0ms)
+  Rendered projects/_form.html.erb (20.7ms)
+  Rendered projects/new.html.erb within layouts/application (22.2ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 45ms (Views: 38.0ms | ActiveRecord: 1.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddCreatorIdToUpdate (20131118012413)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "updates" DROP "creator_id"
+  [1m[36mSQL (1.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20131118012413'[0m
+  [1m[35m (32.1ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddNameToUsers (20131117235524)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "users" DROP "last_name"
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" DROP "first_name"[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20131117235524'
+  [1m[36m (58.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddColumnsToUser (20131117221808)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "users" DROP "major"
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" DROP "grad_year"[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20131117221808'
+  [1m[36m (17.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddTags (20131117075604)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (7.5ms)[0m  INSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:31:01 EST -05:00], ["description", "this project relates to health sector"], ["title", "Health"], ["updated_at", Sun, 17 Nov 2013 21:31:01 EST -05:00]]
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:31:01 EST -05:00], ["description", "this project relates to technology"], ["title", "Technology"], ["updated_at", Sun, 17 Nov 2013 21:31:01 EST -05:00]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:31:01 EST -05:00], ["description", "this is a social project"], ["title", "Social"], ["updated_at", Sun, 17 Nov 2013 21:31:01 EST -05:00]]
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:31:01 EST -05:00], ["description", "engineering project"], ["title", "Engineering"], ["updated_at", Sun, 17 Nov 2013 21:31:01 EST -05:00]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:31:01 EST -05:00], ["description", "this project relates to sports"], ["title", "Sports"], ["updated_at", Sun, 17 Nov 2013 21:31:01 EST -05:00]]
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:31:01 EST -05:00], ["description", "this project relates to arts"], ["title", "Arts"], ["updated_at", Sun, 17 Nov 2013 21:31:01 EST -05:00]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:31:01 EST -05:00], ["description", "music related project"], ["title", "Music"], ["updated_at", Sun, 17 Nov 2013 21:31:01 EST -05:00]]
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:31:01 EST -05:00], ["description", "this project relates to economics"], ["title", "Economics"], ["updated_at", Sun, 17 Nov 2013 21:31:01 EST -05:00]]
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:31:01 EST -05:00], ["description", "charity related project"], ["title", "Charity"], ["updated_at", Sun, 17 Nov 2013 21:31:01 EST -05:00]]
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:31:01 EST -05:00], ["description", "this project relates to political science"], ["title", "Political Science"], ["updated_at", Sun, 17 Nov 2013 21:31:01 EST -05:00]]
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20131117075604'
+  [1m[36m (14.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddAttachmentImageToUpdates (20131116204650)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: Method `drop_attached_file` in the migration has been deprecated and will be replaced by `remove_attachment`. (called from drop_attached_file at /home/ebenezer/.rvm/gems/ruby-2.0.0-p247/bundler/gems/paperclip-507709577e46/lib/paperclip/schema.rb:43)
+  [1m[35m (1.6ms)[0m  ALTER TABLE "updates" DROP "image_file_name"
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "updates" DROP "image_content_type"[0m
+  [1m[35m (2.4ms)[0m  ALTER TABLE "updates" DROP "image_file_size"
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "updates" DROP "image_updated_at"[0m
+  [1m[35mSQL (1.7ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20131116204650'
+  [1m[36m (8.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateInterests (20131116202441)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (3.1ms)[0m  DROP TABLE "interests"
+  [1m[36mSQL (1.6ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20131116202441'[0m
+  [1m[35m (11.5ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddOwnerIdToProjects (20131116200311)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "projects" DROP "owner_id"
+  [1m[36mSQL (1.7ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20131116200311'[0m
+  [1m[35m (6.9ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddTypeToUser (20131114225953)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "users" DROP "type"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20131114225953'[0m
+  [1m[35m (13.1ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddTypeToUser (20131114225953)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "users" ADD COLUMN "type" character varying(255)[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131114225953"]]
+  [1m[36m (16.2ms)[0m  [1mCOMMIT[0m
+Migrating to AddOwnerIdToProjects (20131116200311)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "projects" ADD COLUMN "owner_id" integer[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131116200311"]]
+  [1m[36m (12.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateInterests (20131116202441)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (96.5ms)[0m  [1mCREATE TABLE "interests" ("id" serial primary key, "user_id" integer, "tag_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131116202441"]]
+  [1m[36m (5.9ms)[0m  [1mCOMMIT[0m
+Migrating to AddAttachmentImageToUpdates (20131116204650)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "updates" ADD COLUMN "image_file_name" character varying(255)[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "updates" ADD COLUMN "image_content_type" character varying(255)
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "updates" ADD COLUMN "image_file_size" integer[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "updates" ADD COLUMN "image_updated_at" timestamp
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20131116204650"]]
+  [1m[35m (7.8ms)[0m  COMMIT
+Migrating to AddTags (20131117075604)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (7.2ms)[0m  INSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:31:29 EST -05:00], ["description", "this project relates to health sector"], ["title", "Health"], ["updated_at", Sun, 17 Nov 2013 21:31:29 EST -05:00]]
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:31:29 EST -05:00], ["description", "this project relates to technology"], ["title", "Technology"], ["updated_at", Sun, 17 Nov 2013 21:31:29 EST -05:00]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:31:29 EST -05:00], ["description", "this is a social project"], ["title", "Social"], ["updated_at", Sun, 17 Nov 2013 21:31:29 EST -05:00]]
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:31:29 EST -05:00], ["description", "engineering project"], ["title", "Engineering"], ["updated_at", Sun, 17 Nov 2013 21:31:29 EST -05:00]]
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:31:29 EST -05:00], ["description", "this project relates to sports"], ["title", "Sports"], ["updated_at", Sun, 17 Nov 2013 21:31:29 EST -05:00]]
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:31:29 EST -05:00], ["description", "this project relates to arts"], ["title", "Arts"], ["updated_at", Sun, 17 Nov 2013 21:31:29 EST -05:00]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:31:29 EST -05:00], ["description", "music related project"], ["title", "Music"], ["updated_at", Sun, 17 Nov 2013 21:31:29 EST -05:00]]
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:31:29 EST -05:00], ["description", "this project relates to economics"], ["title", "Economics"], ["updated_at", Sun, 17 Nov 2013 21:31:29 EST -05:00]]
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:31:29 EST -05:00], ["description", "charity related project"], ["title", "Charity"], ["updated_at", Sun, 17 Nov 2013 21:31:29 EST -05:00]]
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:31:29 EST -05:00], ["description", "this project relates to political science"], ["title", "Political Science"], ["updated_at", Sun, 17 Nov 2013 21:31:29 EST -05:00]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131117075604"]]
+  [1m[36m (6.6ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnsToUser (20131117221808)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "users" ADD COLUMN "grad_year" integer[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "users" ADD COLUMN "major" integer
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20131117221808"]]
+  [1m[35m (9.8ms)[0m  COMMIT
+Migrating to AddNameToUsers (20131117235524)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "users" ADD COLUMN "first_name" character varying(255)
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "users" ADD COLUMN "last_name" character varying(255)[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131117235524"]]
+  [1m[36m (11.2ms)[0m  [1mCOMMIT[0m
+Migrating to AddCreatorIdToUpdate (20131118012413)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "updates" ADD COLUMN "creator_id" integer[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131118012413"]]
+  [1m[36m (13.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (10.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (104.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateProjects (20131112074322)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (138.5ms)[0m  [1mCREATE TABLE "projects" ("id" serial primary key, "title" character varying(255), "image_file_name" character varying(255), "image_content_type" character varying(255), "image_file_size" integer, "image_updated_at" timestamp, "video" character varying(255), "description" text, "goal" float, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131112074322"]]
+  [1m[36m (10.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCollaborations (20131113071551)
+  [1m[35m (0.8ms)[0m  BEGIN
+  [1m[36m (148.1ms)[0m  [1mCREATE TABLE "collaborations" ("id" serial primary key, "project_id" integer, "name" character varying(255), "email" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131113071551"]]
+  [1m[36m (19.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAdvisors (20131113071646)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (161.5ms)[0m  [1mCREATE TABLE "advisors" ("id" serial primary key, "project_id" integer, "name" character varying(255), "email" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131113071646"]]
+  [1m[36m (74.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTags (20131113071657)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (174.4ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "title" character varying(255), "description" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131113071657"]]
+  [1m[36m (17.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTaggables (20131113071727)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (51.9ms)[0m  [1mCREATE TABLE "taggables" ("id" serial primary key, "project_id" integer, "tag_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131113071727"]]
+  [1m[36m (17.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateDonations (20131114002929)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (51.2ms)[0m  [1mCREATE TABLE "donations" ("id" serial primary key, "project_id" integer, "alum_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131114002929"]]
+  [1m[36m (16.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUpdates (20131114003419)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (139.3ms)[0m  [1mCREATE TABLE "updates" ("id" serial primary key, "project_id" integer, "user_id" integer, "title" character varying(255), "content" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131114003419"]]
+  [1m[36m (15.6ms)[0m  [1mCOMMIT[0m
+Migrating to DeviseCreateUsers (20131114215736)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (103.8ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (71.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (53.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131114215736"]]
+  [1m[36m (15.2ms)[0m  [1mCOMMIT[0m
+Migrating to AddTypeToUser (20131114225953)
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (1.4ms)[0m  [1mALTER TABLE "users" ADD COLUMN "type" character varying(255)[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131114225953"]]
+  [1m[36m (10.2ms)[0m  [1mCOMMIT[0m
+Migrating to AddOwnerIdToProjects (20131116200311)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "projects" ADD COLUMN "owner_id" integer[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131116200311"]]
+  [1m[36m (12.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateInterests (20131116202441)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (55.6ms)[0m  [1mCREATE TABLE "interests" ("id" serial primary key, "user_id" integer, "tag_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131116202441"]]
+  [1m[36m (13.7ms)[0m  [1mCOMMIT[0m
+Migrating to AddAttachmentImageToUpdates (20131116204650)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "updates" ADD COLUMN "image_file_name" character varying(255)[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "updates" ADD COLUMN "image_content_type" character varying(255)
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "updates" ADD COLUMN "image_file_size" integer[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "updates" ADD COLUMN "image_updated_at" timestamp
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20131116204650"]]
+  [1m[35m (8.7ms)[0m  COMMIT
+Migrating to AddTags (20131117075604)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (4.9ms)[0m  INSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:34:24 EST -05:00], ["description", "this project relates to health sector"], ["title", "Health"], ["updated_at", Sun, 17 Nov 2013 21:34:24 EST -05:00]]
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:34:24 EST -05:00], ["description", "this project relates to technology"], ["title", "Technology"], ["updated_at", Sun, 17 Nov 2013 21:34:24 EST -05:00]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:34:24 EST -05:00], ["description", "this is a social project"], ["title", "Social"], ["updated_at", Sun, 17 Nov 2013 21:34:24 EST -05:00]]
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:34:24 EST -05:00], ["description", "engineering project"], ["title", "Engineering"], ["updated_at", Sun, 17 Nov 2013 21:34:24 EST -05:00]]
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:34:24 EST -05:00], ["description", "this project relates to sports"], ["title", "Sports"], ["updated_at", Sun, 17 Nov 2013 21:34:24 EST -05:00]]
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:34:24 EST -05:00], ["description", "this project relates to arts"], ["title", "Arts"], ["updated_at", Sun, 17 Nov 2013 21:34:24 EST -05:00]]
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:34:24 EST -05:00], ["description", "music related project"], ["title", "Music"], ["updated_at", Sun, 17 Nov 2013 21:34:24 EST -05:00]]
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:34:24 EST -05:00], ["description", "this project relates to economics"], ["title", "Economics"], ["updated_at", Sun, 17 Nov 2013 21:34:24 EST -05:00]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:34:24 EST -05:00], ["description", "charity related project"], ["title", "Charity"], ["updated_at", Sun, 17 Nov 2013 21:34:24 EST -05:00]]
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "tags" ("created_at", "description", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:34:24 EST -05:00], ["description", "this project relates to political science"], ["title", "Political Science"], ["updated_at", Sun, 17 Nov 2013 21:34:24 EST -05:00]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131117075604"]]
+  [1m[36m (9.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnsToUser (20131117221808)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "users" ADD COLUMN "grad_year" integer[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "users" ADD COLUMN "major" integer
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20131117221808"]]
+  [1m[35m (11.1ms)[0m  COMMIT
+Migrating to AddNameToUsers (20131117235524)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "users" ADD COLUMN "first_name" character varying(255)
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "users" ADD COLUMN "last_name" character varying(255)[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131117235524"]]
+  [1m[36m (11.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddCreatorIdToUpdate (20131118012413)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "updates" ADD COLUMN "creator_id" integer[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131118012413"]]
+  [1m[36m (11.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-17 21:35:22 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 31ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-11-17 21:35:22 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/users/sign_in
+Filter chain halted as :logged_in rendered or redirected
+Completed 302 Found in 22ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-11-17 21:35:22 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (76.2ms)
+  Rendered partials/_navbar.html.erb (2.2ms)
+Completed 200 OK in 414ms (Views: 351.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:23 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-17 21:35:26 -0500
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.7ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 38ms (Views: 35.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"97+oSZlqgknDoRvfj47SGZ7O00Ry/jquVuE6t3Ec1es=", "user"=>{"first_name"=>"Ebenezer", "last_name"=>"Sefah", "email"=>"easj.asante@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "type"=>"Student"}, "commit"=>"Sign up"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'easj.asante@gmail.com' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.3ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 278ms (Views: 32.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:41 -0500
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"97+oSZlqgknDoRvfj47SGZ7O00Ry/jquVuE6t3Ec1es=", "user"=>{"first_name"=>"Ebenezer", "last_name"=>"Sefah", "email"=>"ej@mit.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "type"=>"Student"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'ej@mit.edu' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.3ms)
+  Rendered partials/_navbar.html.erb (2.4ms)
+Completed 200 OK in 141ms (Views: 38.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:53 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:53 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:53 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:53 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:53 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:53 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:53 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:53 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:53 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:35:53 -0500
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"97+oSZlqgknDoRvfj47SGZ7O00Ry/jquVuE6t3Ec1es=", "user"=>{"first_name"=>"Ebenezer", "last_name"=>"Sefah", "email"=>"ej@mit.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "type"=>"Student"}, "commit"=>"Sign up"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'ej@mit.edu' LIMIT 1
+  [1m[36mSQL (8.7ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "first_name", "last_name", "type", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:36:02 EST -05:00], ["email", "ej@mit.edu"], ["encrypted_password", "$2a$10$Lw2jn4PM/7FlBdWjz88IiuKnGV5RsjSr.HBHYfc15f/wiWD83mls2"], ["first_name", "Ebenezer"], ["last_name", "Sefah"], ["type", "Student"], ["updated_at", Sun, 17 Nov 2013 21:36:02 EST -05:00]]
+  [1m[35m (13.9ms)[0m  COMMIT
+  [1m[36m (3.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."type" IN ('Student') AND "users"."id" = 1  [["last_sign_in_at", Sun, 17 Nov 2013 21:36:02 EST -05:00], ["current_sign_in_at", Sun, 17 Nov 2013 21:36:02 EST -05:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Sun, 17 Nov 2013 21:36:02 EST -05:00]]
+  [1m[36m (3.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/edit?profile=true
+Completed 302 Found in 145ms (ActiveRecord: 32.4ms)
+
+
+Started GET "/users/edit?profile=true" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+Processing by RegistrationsController#edit as HTML
+  Parameters: {"profile"=>"true"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered devise/registrations/_profile.html.erb (7.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (10.8ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 41ms (Views: 35.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:03 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:03 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:03 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:03 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:03 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:03 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:03 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:03 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:03 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:03 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:03 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:03 -0500
+
+
+Started PUT "/users" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+Processing by RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"97+oSZlqgknDoRvfj47SGZ7O00Ry/jquVuE6t3Ec1es=", "user"=>{"major"=>"6-2: Conputer Science and Electrical Engineering", "grad_year"=>"2015", "first_name"=>"Ebenezer", "last_name"=>"Sefah"}, "commit"=>"Update"}
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (2.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "users" SET "major" = $1, "grad_year" = $2, "updated_at" = $3 WHERE "users"."type" IN ('Student') AND "users"."id" = 1  [["major", 6], ["grad_year", 2015], ["updated_at", Sun, 17 Nov 2013 21:36:16 EST -05:00]]
+  [1m[36m (23.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 43ms (ActiveRecord: 29.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (8.3ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 54ms (Views: 26.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:16 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:17 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:17 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:17 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:17 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:17 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:17 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:17 -0500
+
+
+Started GET "/assets/left.png" for 127.0.0.1 at 2013-11-17 21:36:17 -0500
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2013-11-17 21:36:17 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/users/sign_in
+Filter chain halted as :logged_in rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.7ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 80ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:26 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:27 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:27 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:27 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:27 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:27 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:27 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:27 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:27 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:27 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:27 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:27 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:27 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:27 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-17 21:36:29 -0500
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.7ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 47ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NIBTaninpzeWXvODGLT+/GNEHrLC9zVhjqOD5IBLBQQ=", "user"=>{"first_name"=>"Joyce", "last_name"=>"se", "email"=>"joyce@mit.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "type"=>"Student"}, "commit"=>"Sign up"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'joyce@mit.edu' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.5ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 127ms (Views: 36.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:43 -0500
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NIBTaninpzeWXvODGLT+/GNEHrLC9zVhjqOD5IBLBQQ=", "user"=>{"first_name"=>"Joyce", "last_name"=>"se", "email"=>"joyce@mit.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "type"=>"Student"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'joyce@mit.edu' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "first_name", "last_name", "type", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:36:59 EST -05:00], ["email", "joyce@mit.edu"], ["encrypted_password", "$2a$10$6A2si/qzV7t8aeU32FT3nu2gubJEaN/3VBzBttufVxk9LcCDpHauW"], ["first_name", "Joyce"], ["last_name", "se"], ["type", "Student"], ["updated_at", Sun, 17 Nov 2013 21:36:59 EST -05:00]]
+  [1m[36m (8.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."type" IN ('Student') AND "users"."id" = 2[0m  [["last_sign_in_at", Sun, 17 Nov 2013 21:36:59 EST -05:00], ["current_sign_in_at", Sun, 17 Nov 2013 21:36:59 EST -05:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Sun, 17 Nov 2013 21:36:59 EST -05:00]]
+  [1m[35m (6.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/edit?profile=true
+Completed 302 Found in 117ms (ActiveRecord: 17.5ms)
+
+
+Started GET "/users/edit?profile=true" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+Processing by RegistrationsController#edit as HTML
+  Parameters: {"profile"=>"true"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered devise/registrations/_profile.html.erb (7.3ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.7ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 42ms (Views: 38.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:36:59 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:00 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:00 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:00 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:00 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:00 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:00 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:00 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:00 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:00 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:00 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:00 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:00 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:00 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:00 -0500
+
+
+Started PUT "/users" for 127.0.0.1 at 2013-11-17 21:37:07 -0500
+Processing by RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NIBTaninpzeWXvODGLT+/GNEHrLC9zVhjqOD5IBLBQQ=", "user"=>{"major"=>"6-1: Elictrical Science and Engineering", "grad_year"=>"2015", "first_name"=>"Joyce", "last_name"=>"se"}, "commit"=>"Update"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.4ms)[0m  [1mUPDATE "users" SET "major" = $1, "grad_year" = $2, "updated_at" = $3 WHERE "users"."type" IN ('Student') AND "users"."id" = 2[0m  [["major", 6], ["grad_year", 2015], ["updated_at", Sun, 17 Nov 2013 21:37:07 EST -05:00]]
+  [1m[35m (39.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 59ms (ActiveRecord: 43.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-17 21:37:07 -0500
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-11-17 21:37:07 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (2.1ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:37:07 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:37:07 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:37:07 -0500
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:37:07 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:37:07 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:37:07 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:37:07 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:37:07 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:07 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:07 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/left.png" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2013-11-17 21:37:08 -0500
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2013-11-17 21:37:11 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered projects/_advisor_fields.html.erb (1.7ms)
+  Rendered projects/_advisor_fields.html.erb (0.7ms)
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from link_to_add_fields at /home/ebenezer/Desktop/6.170 Workspace/finalProj/app/helpers/application_helper.rb:7)
+  Rendered projects/_collaboration_fields.html.erb (2.1ms)
+  Rendered projects/_collaboration_fields.html.erb (1.0ms)
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from link_to_add_fields at /home/ebenezer/Desktop/6.170 Workspace/finalProj/app/helpers/application_helper.rb:7)
+  [1m[35mTag Load (0.8ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered projects/_tag_fields.html.erb (88.6ms)
+  Rendered projects/_form.html.erb (210.0ms)
+  Rendered projects/new.html.erb within layouts/application (211.9ms)
+  Rendered partials/_navbar.html.erb (2.1ms)
+Completed 200 OK in 329ms (Views: 227.2ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/assets/select2-spinner.gif" for 127.0.0.1 at 2013-11-17 21:38:27 -0500
+
+
+Started GET "/assets/select2.png" for 127.0.0.1 at 2013-11-17 21:38:31 -0500
+
+
+Started POST "/projects" for 127.0.0.1 at 2013-11-17 21:38:47 -0500
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"97+oSZlqgknDoRvfj47SGZ7O00Ry/jquVuE6t3Ec1es=", "project"=>{"title"=>"Test 1", "image"=>#<ActionDispatch::Http::UploadedFile:0x0000000382f160 @tempfile=#<Tempfile:/tmp/RackMultipart20131117-16861-bnp9gd>, @original_filename="download.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"project[image]\"; filename=\"download.jpg\"\r\nContent-Type: image/jpeg\r\n">, "video"=>"http://www.youtube.com/watch?v=FYEkvHvB0KU", "description"=>"klbdfkbfds\r\nLKHHDFKHF\r\nlkhbsdfkhb", "goal"=>"200", "advisors_attributes"=>{"1384742254563"=>{"name"=>"ad1", "email"=>"ad1"}, "0"=>{"name"=>"ad2", "email"=>"ad2"}}, "collaborations_attributes"=>{"1384742256284"=>{"name"=>"JOyce", "email"=>"joyce@mit.edu"}, "1384742320567"=>{"name"=>"", "email"=>""}, "0"=>{"name"=>"eJ", "email"=>"esefah@mit.edu"}}, "taggables_attributes"=>{"0"=>{"tag_id"=>["", "2", "6", "8"]}}}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Unpermitted parameters: advisors_attributes, collaborations_attributes, taggables_attributes
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/download20131117-16861-1beuz1p.jpg[0]'
+Command :: identify -format %m '/tmp/download20131117-16861-1beuz1p.jpg[0]'
+Command :: identify -format %m '/tmp/download20131117-16861-1beuz1p.jpg[0]'
+Command :: identify -format %m '/tmp/download20131117-16861-1beuz1p.jpg[0]'
+Command :: convert '/tmp/download20131117-16861-1beuz1p.jpg[0]' -auto-orient -resize "300x300>" '/tmp/download20131117-16861-1beuz1p20131117-16861-1smbxwz'
+Command :: file -b --mime '/tmp/download20131117-16861-1beuz1p20131117-16861-1smbxwz'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/download20131117-16861-1beuz1p.jpg[0]'
+Command :: identify -format %m '/tmp/download20131117-16861-1beuz1p.jpg[0]'
+Command :: identify -format %m '/tmp/download20131117-16861-1beuz1p.jpg[0]'
+Command :: identify -format %m '/tmp/download20131117-16861-1beuz1p.jpg[0]'
+Command :: convert '/tmp/download20131117-16861-1beuz1p.jpg[0]' -auto-orient -resize "100x100>" '/tmp/download20131117-16861-1beuz1p20131117-16861-1o7qji4'
+Command :: file -b --mime '/tmp/download20131117-16861-1beuz1p20131117-16861-1o7qji4'
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "goal", "image_content_type", "image_file_name", "image_file_size", "image_updated_at", "owner_id", "title", "updated_at", "video") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["description", "klbdfkbfds\r\nLKHHDFKHF\r\nlkhbsdfkhb"], ["goal", 200.0], ["image_content_type", "image/jpeg"], ["image_file_name", "download.jpg"], ["image_file_size", 6251], ["image_updated_at", Sun, 17 Nov 2013 21:38:47 EST -05:00], ["owner_id", 1], ["title", "Test 1"], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["video", "http://www.youtube.com/watch?v=FYEkvHvB0KU"]]
+  [1m[35m (85.8ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "advisors" ("created_at", "email", "name", "project_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["email", "ad1"], ["name", "ad1"], ["project_id", 1], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00]]
+  [1m[36m (28.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "advisors" ("created_at", "email", "name", "project_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["email", "ad2"], ["name", "ad2"], ["project_id", 1], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00]]
+  [1m[35m (18.3ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "taggables" ("created_at", "project_id", "tag_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["project_id", 1], ["tag_id", 2], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00]]
+  [1m[36m (7.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "taggables" ("created_at", "project_id", "tag_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["project_id", 1], ["tag_id", 6], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00]]
+  [1m[35m (5.6ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "taggables" ("created_at", "project_id", "tag_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["project_id", 1], ["tag_id", 8], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00]]
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'joyce@mit.edu' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "collaborations" ("created_at", "email", "name", "project_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["email", "joyce@mit.edu"], ["name", "JOyce"], ["project_id", 1], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["user_id", 2]]
+  [1m[36m (9.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = '' LIMIT 1
+  [1m[36m (2.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "collaborations" ("created_at", "email", "name", "project_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["email", ""], ["name", ""], ["project_id", 1], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'esefah@mit.edu' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "collaborations" ("created_at", "email", "name", "project_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["email", "esefah@mit.edu"], ["name", "eJ"], ["project_id", 1], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00]]
+  [1m[36m (12.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 577ms (ActiveRecord: 202.6ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2013-11-17 21:38:48 -0500
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"97+oSZlqgknDoRvfj47SGZ7O00Ry/jquVuE6t3Ec1es=", "project"=>{"title"=>"Test 1", "image"=>#<ActionDispatch::Http::UploadedFile:0x0000000398f1b8 @tempfile=#<Tempfile:/tmp/RackMultipart20131117-16861-5ghtq9>, @original_filename="download.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"project[image]\"; filename=\"download.jpg\"\r\nContent-Type: image/jpeg\r\n">, "video"=>"http://www.youtube.com/watch?v=FYEkvHvB0KU", "description"=>"klbdfkbfds\r\nLKHHDFKHF\r\nlkhbsdfkhb", "goal"=>"200", "advisors_attributes"=>{"1384742254563"=>{"name"=>"ad1", "email"=>"ad1"}, "0"=>{"name"=>"ad2", "email"=>"ad2"}}, "collaborations_attributes"=>{"1384742256284"=>{"name"=>"JOyce", "email"=>"joyce@mit.edu"}, "1384742320567"=>{"name"=>"", "email"=>""}, "0"=>{"name"=>"eJ", "email"=>"esefah@mit.edu"}}, "taggables_attributes"=>{"0"=>{"tag_id"=>["", "2", "6", "8"]}}}, "commit"=>"Create Project"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+Unpermitted parameters: advisors_attributes, collaborations_attributes, taggables_attributes
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/download20131117-16861-yfldgv.jpg[0]'
+Command :: identify -format %m '/tmp/download20131117-16861-yfldgv.jpg[0]'
+Command :: identify -format %m '/tmp/download20131117-16861-yfldgv.jpg[0]'
+Command :: identify -format %m '/tmp/download20131117-16861-yfldgv.jpg[0]'
+Command :: convert '/tmp/download20131117-16861-yfldgv.jpg[0]' -auto-orient -resize "300x300>" '/tmp/download20131117-16861-yfldgv20131117-16861-4t42qi'
+Command :: file -b --mime '/tmp/download20131117-16861-yfldgv20131117-16861-4t42qi'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/download20131117-16861-yfldgv.jpg[0]'
+Command :: identify -format %m '/tmp/download20131117-16861-yfldgv.jpg[0]'
+Command :: identify -format %m '/tmp/download20131117-16861-yfldgv.jpg[0]'
+Command :: identify -format %m '/tmp/download20131117-16861-yfldgv.jpg[0]'
+Command :: convert '/tmp/download20131117-16861-yfldgv.jpg[0]' -auto-orient -resize "100x100>" '/tmp/download20131117-16861-yfldgv20131117-16861-1ff0nsy'
+Command :: file -b --mime '/tmp/download20131117-16861-yfldgv20131117-16861-1ff0nsy'
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "projects" ("created_at", "description", "goal", "image_content_type", "image_file_name", "image_file_size", "image_updated_at", "owner_id", "title", "updated_at", "video") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["description", "klbdfkbfds\r\nLKHHDFKHF\r\nlkhbsdfkhb"], ["goal", 200.0], ["image_content_type", "image/jpeg"], ["image_file_name", "download.jpg"], ["image_file_size", 6251], ["image_updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["owner_id", 1], ["title", "Test 1"], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["video", "http://www.youtube.com/watch?v=FYEkvHvB0KU"]]
+  [1m[36m (16.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "advisors" ("created_at", "email", "name", "project_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["email", "ad1"], ["name", "ad1"], ["project_id", 2], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00]]
+  [1m[35m (5.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "advisors" ("created_at", "email", "name", "project_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["email", "ad2"], ["name", "ad2"], ["project_id", 2], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00]]
+  [1m[36m (6.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "taggables" ("created_at", "project_id", "tag_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["project_id", 2], ["tag_id", 2], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00]]
+  [1m[35m (3.0ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "taggables" ("created_at", "project_id", "tag_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["project_id", 2], ["tag_id", 6], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "taggables" ("created_at", "project_id", "tag_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["project_id", 2], ["tag_id", 8], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00]]
+  [1m[35m (4.5ms)[0m  COMMIT
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'joyce@mit.edu' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "collaborations" ("created_at", "email", "name", "project_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["email", "joyce@mit.edu"], ["name", "JOyce"], ["project_id", 2], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["user_id", 2]]
+  [1m[35m (8.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = '' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "collaborations" ("created_at", "email", "name", "project_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["email", ""], ["name", ""], ["project_id", 2], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00]]
+  [1m[35m (5.2ms)[0m  COMMIT
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'esefah@mit.edu' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "collaborations" ("created_at", "email", "name", "project_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Sun, 17 Nov 2013 21:38:48 EST -05:00], ["email", "esefah@mit.edu"], ["name", "eJ"], ["project_id", 2], ["updated_at", Sun, 17 Nov 2013 21:38:48 EST -05:00]]
+  [1m[35m (3.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/projects/2
+Completed 302 Found in 444ms (ActiveRecord: 76.5ms)
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2013-11-17 21:38:48 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStudent Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDonation Load (1.1ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1  [["project_id", 2]]
+  [1m[36mTag Load (1.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mAdvisor Load (0.9ms)[0m  SELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1  [["project_id", 2]]
+  [1m[36mCollaboration Load (1.0ms)[0m  [1mSELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1[0m  [["project_id", 2]]
+  Rendered projects/show.html.erb within layouts/application (47.4ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 75ms (Views: 60.5ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:38:49 -0500
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  [1m[35mStudent Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdvisor Load (0.5ms)[0m  SELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1  [["project_id", 1]]
+  [1m[36mCollaboration Load (0.5ms)[0m  [1mSELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1  [["project_id", 1]]
+  [1m[36mAdvisor Load (0.5ms)[0m  [1mSELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mCollaboration Load (0.5ms)[0m  SELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1  [["project_id", 2]]
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1[0m  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (33.2ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 54ms (Views: 45.8ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:06 -0500
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2013-11-17 21:39:07 -0500
+
+
+Started GET "/assets/left.png" for 127.0.0.1 at 2013-11-17 21:39:07 -0500
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2013-11-17 21:39:09 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mStudent Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[35mTag Load (2.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1  [["project_id", 1]]
+  [1m[36mAdvisor Load (0.5ms)[0m  [1mSELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[35mCollaboration Load (0.4ms)[0m  SELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (18.0ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 47ms (Views: 36.9ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStudent Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDonation Load (0.8ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1  [["project_id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[35mAdvisor Load (0.4ms)[0m  SELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1  [["project_id", 1]]
+  [1m[36mCollaboration Load (0.5ms)[0m  [1mSELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (16.4ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 45ms (Views: 36.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:39:32 -0500
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-11-17 21:39:46 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (5.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mProject Load (5.1ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  [1m[35mStudent Load (2.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdvisor Load (2.1ms)[0m  SELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1  [["project_id", 1]]
+  [1m[36mCollaboration Load (0.5ms)[0m  [1mSELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1  [["project_id", 1]]
+  [1m[36mAdvisor Load (0.5ms)[0m  [1mSELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mCollaboration Load (0.5ms)[0m  SELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1  [["project_id", 2]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1[0m  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (48.8ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+Completed 200 OK in 86ms (Views: 65.3ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2013-11-17 21:39:47 -0500
+
+
+Started GET "/assets/left.png" for 127.0.0.1 at 2013-11-17 21:39:47 -0500
+
+
+Started GET "/projects/2/edit" for 127.0.0.1 at 2013-11-17 21:40:26 -0500
+Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mAdvisor Load (0.5ms)[0m  SELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1  [["project_id", 2]]
+  Rendered projects/_advisor_fields.html.erb (0.8ms)
+  Rendered projects/_advisor_fields.html.erb (2.1ms)
+  Rendered projects/_advisor_fields.html.erb (1.0ms)
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from link_to_add_fields at /home/ebenezer/Desktop/6.170 Workspace/finalProj/app/helpers/application_helper.rb:7)
+  [1m[36mCollaboration Load (0.6ms)[0m  [1mSELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1[0m  [["project_id", 2]]
+  Rendered projects/_collaboration_fields.html.erb (0.8ms)
+  Rendered projects/_collaboration_fields.html.erb (0.7ms)
+  Rendered projects/_collaboration_fields.html.erb (0.8ms)
+  Rendered projects/_collaboration_fields.html.erb (0.9ms)
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from link_to_add_fields at /home/ebenezer/Desktop/6.170 Workspace/finalProj/app/helpers/application_helper.rb:7)
+  [1m[35mTaggable Load (0.8ms)[0m  SELECT "taggables".* FROM "taggables" WHERE "taggables"."project_id" = $1  [["project_id", 2]]
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered projects/_tag_fields.html.erb (4.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered projects/_tag_fields.html.erb (2.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered projects/_tag_fields.html.erb (1.9ms)
+  Rendered projects/_form.html.erb (79.9ms)
+  Rendered projects/edit.html.erb within layouts/application (83.0ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 128ms (Views: 117.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/projects/2/edit" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mProject Load (0.9ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mAdvisor Load (0.6ms)[0m  SELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1  [["project_id", 2]]
+  Rendered projects/_advisor_fields.html.erb (1.8ms)
+  Rendered projects/_advisor_fields.html.erb (0.9ms)
+  Rendered projects/_advisor_fields.html.erb (0.9ms)
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from link_to_add_fields at /home/ebenezer/Desktop/6.170 Workspace/finalProj/app/helpers/application_helper.rb:7)
+  [1m[36mCollaboration Load (0.6ms)[0m  [1mSELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1[0m  [["project_id", 2]]
+  Rendered projects/_collaboration_fields.html.erb (1.9ms)
+  Rendered projects/_collaboration_fields.html.erb (0.9ms)
+  Rendered projects/_collaboration_fields.html.erb (0.9ms)
+  Rendered projects/_collaboration_fields.html.erb (1.2ms)
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from link_to_add_fields at /home/ebenezer/Desktop/6.170 Workspace/finalProj/app/helpers/application_helper.rb:7)
+  [1m[35mTaggable Load (0.6ms)[0m  SELECT "taggables".* FROM "taggables" WHERE "taggables"."project_id" = $1  [["project_id", 2]]
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered projects/_tag_fields.html.erb (4.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered projects/_tag_fields.html.erb (2.9ms)
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered projects/_tag_fields.html.erb (2.5ms)
+  Rendered projects/_form.html.erb (58.0ms)
+  Rendered projects/edit.html.erb within layouts/application (61.5ms)
+  Rendered partials/_navbar.html.erb (1.9ms)
+Completed 200 OK in 162ms (Views: 152.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:40:51 -0500
+
+
+Started GET "/projects/2/updates" for 127.0.0.1 at 2013-11-17 21:41:34 -0500
+Processing by UpdatesController#index as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mStudent Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUpdate Load (0.9ms)[0m  [1mSELECT "updates".* FROM "updates"[0m
+  Rendered updates/index.html.erb within layouts/application (5.2ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 38ms (Views: 22.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/projects/2/updates/new" for 127.0.0.1 at 2013-11-17 21:41:38 -0500
+Processing by UpdatesController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mStudent Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  Rendered updates/_form.html.erb (40.2ms)
+  Rendered updates/new.html.erb within layouts/application (42.0ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 141ms (Views: 126.6ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/projects/2/updates" for 127.0.0.1 at 2013-11-17 21:41:52 -0500
+Processing by UpdatesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"97+oSZlqgknDoRvfj47SGZ7O00Ry/jquVuE6t3Ec1es=", "update"=>{"title"=>"up", "content"=>"lkgsdf\r\naskdflaksdf", "image"=>#<ActionDispatch::Http::UploadedFile:0x000000031c75e8 @tempfile=#<Tempfile:/tmp/RackMultipart20131117-16861-mhdkqs>, @original_filename="Context diagram.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"update[image]\"; filename=\"Context diagram.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Update", "project_id"=>"2"}
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/Context diagram20131117-16861-yfpdpy.jpg[0]'
+Command :: identify -format %m '/tmp/Context diagram20131117-16861-yfpdpy.jpg[0]'
+Command :: identify -format %m '/tmp/Context diagram20131117-16861-yfpdpy.jpg[0]'
+Command :: identify -format %m '/tmp/Context diagram20131117-16861-yfpdpy.jpg[0]'
+Command :: convert '/tmp/Context diagram20131117-16861-yfpdpy.jpg[0]' -auto-orient -resize "300x300>" '/tmp/Context diagram20131117-16861-yfpdpy20131117-16861-ecbsal'
+Command :: file -b --mime '/tmp/Context diagram20131117-16861-yfpdpy20131117-16861-ecbsal'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/Context diagram20131117-16861-yfpdpy.jpg[0]'
+Command :: identify -format %m '/tmp/Context diagram20131117-16861-yfpdpy.jpg[0]'
+Command :: identify -format %m '/tmp/Context diagram20131117-16861-yfpdpy.jpg[0]'
+Command :: identify -format %m '/tmp/Context diagram20131117-16861-yfpdpy.jpg[0]'
+Command :: convert '/tmp/Context diagram20131117-16861-yfpdpy.jpg[0]' -auto-orient -resize "100x100>" '/tmp/Context diagram20131117-16861-yfpdpy20131117-16861-vbz6um'
+Command :: file -b --mime '/tmp/Context diagram20131117-16861-yfpdpy20131117-16861-vbz6um'
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "updates" ("content", "created_at", "image_content_type", "image_file_name", "image_file_size", "image_updated_at", "project_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["content", "lkgsdf\r\naskdflaksdf"], ["created_at", Sun, 17 Nov 2013 21:41:53 EST -05:00], ["image_content_type", "image/jpeg"], ["image_file_name", "Context_diagram.jpg"], ["image_file_size", 52316], ["image_updated_at", Sun, 17 Nov 2013 21:41:52 EST -05:00], ["project_id", 2], ["title", "up"], ["updated_at", Sun, 17 Nov 2013 21:41:53 EST -05:00]]
+  [1m[35m (13.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/updates/1
+Completed 302 Found in 810ms (ActiveRecord: 15.0ms)
+
+
+Started GET "/updates/1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+Processing by UpdatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUpdate Load (1.0ms)[0m  [1mSELECT "updates".* FROM "updates" WHERE "updates"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT "updates".* FROM "updates" WHERE "updates"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mProject Load (0.9ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 ORDER BY "projects"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered updates/_update.html.erb (2.9ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered updates/show.html.erb within layouts/application (11.9ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 43ms (Views: 30.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/assets/glyphicons-halflings.png" for 127.0.0.1 at 2013-11-17 21:41:53 -0500
+
+
+Started GET "/projects/2/updates" for 127.0.0.1 at 2013-11-17 21:42:05 -0500
+Processing by UpdatesController#index as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mStudent Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUpdate Load (0.5ms)[0m  [1mSELECT "updates".* FROM "updates"[0m
+  Rendered updates/_update.html.erb (2.8ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered updates/index.html.erb within layouts/application (8.5ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 35ms (Views: 25.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2013-11-17 21:42:22 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStudent Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDonation Load (0.4ms)[0m  SELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1  [["project_id", 2]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mAdvisor Load (0.4ms)[0m  SELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1  [["project_id", 2]]
+  [1m[36mCollaboration Load (0.4ms)[0m  [1mSELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1[0m  [["project_id", 2]]
+  Rendered projects/show.html.erb within layouts/application (14.1ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 37ms (Views: 29.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mStudent Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1  [["project_id", 2]]
+  [1m[36mAdvisor Load (0.5ms)[0m  [1mSELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mCollaboration Load (0.8ms)[0m  SELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1  [["project_id", 2]]
+  Rendered projects/show.html.erb within layouts/application (14.9ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 39ms (Views: 30.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:43:05 -0500
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2013-11-17 21:44:39 -0500
+Processing by RegistrationsController#edit as HTML
+  Parameters: {"authenticity_token"=>"97+oSZlqgknDoRvfj47SGZ7O00Ry/jquVuE6t3Ec1es="}
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered devise/registrations/_security.html.erb (8.6ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.5ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 43ms (Views: 37.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/donations.css?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/override_bootstrap.css?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/donations.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-17 21:44:40 -0500
+
+
+Started GET "/users/1" for 127.0.0.1 at 2013-11-17 21:44:47 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered partials/_navbar.html.erb (4.0ms)
+Completed 200 OK in 27ms (Views: 21.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-17 21:44:50 -0500
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2013-11-17 21:44:50 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  [1m[35mStudent Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdvisor Load (0.5ms)[0m  SELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1  [["project_id", 1]]
+  [1m[36mCollaboration Load (0.4ms)[0m  [1mSELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[35mTag Load (0.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1  [["project_id", 1]]
+  [1m[36mAdvisor Load (0.4ms)[0m  [1mSELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mCollaboration Load (0.4ms)[0m  SELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1  [["project_id", 2]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1[0m  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (28.7ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 51ms (Views: 43.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/left.png" for 127.0.0.1 at 2013-11-17 21:44:50 -0500
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2013-11-17 21:44:50 -0500
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2013-11-17 21:45:21 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mStudent Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Student') AND "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."project_id" = $1  [["project_id", 2]]
+  [1m[36mAdvisor Load (0.4ms)[0m  [1mSELECT "advisors".* FROM "advisors" WHERE "advisors"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mCollaboration Load (0.4ms)[0m  SELECT "collaborations".* FROM "collaborations" WHERE "collaborations"."project_id" = $1  [["project_id", 2]]
+  Rendered projects/show.html.erb within layouts/application (14.3ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 39ms (Views: 31.4ms | ActiveRecord: 3.8ms)
