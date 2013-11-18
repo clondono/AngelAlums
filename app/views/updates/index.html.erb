@@ -1,28 +1,42 @@
-<%- model_class = Update -%>
-<div class="page-header">
-  <h1>index page</h1>
+<div class="container">
+    <div class = "row">
+        <div class="page-header well">
+          <h1>Showing updates for <%= link_to @project.title, @project %></h1>
+          <% if @can_write %>
+            <p id="new_update"><%= link_to 'Add new update', new_project_update_path(@project) %></p>
+          <% end %>
+        </div>
+    </div>
 </div>
 
 <!-- render from newest to oldest -->
 <div class="container">
     <div class="row">
         <div class="col-md-12"> 
-        
-			<% @updates.reverse.each do |update| %>
-			
-			<div class="update_entry">
-				<%= render update %>
-			</div>
-			<% end %>
+          <% @updates.reverse.each do |update| %>
+      			 <div class="update_entry">
+  				      <%= render update %>
+                <% if update.can_edit?(current_user.id) %>
+                  <div class="form-actions">
+                     <%= render "update_action_forms", :update => update, :project => @project %>
+                  </div>
+                <% end %>
+  			     </div>
+          <% end %>
         </div>  
     </div>
 </div>
 
+
+<%
+=begin %>
 <div class="form-actions">
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_project_update_path,
             :class => 'btn btn-primary' %>
 </div>
+<%
+=end %>
             
 <%
 =begin %>

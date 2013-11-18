@@ -6,7 +6,6 @@
 
 # Ignore 
 /config/database.yml
-Gemfile
 # Ignore bundler config.
 /.bundle
 *.swp

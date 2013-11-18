@@ -18,9 +18,16 @@
     </div>
   </div>
   
+  <!-- I've been getting errors if I set before_action(set_project) for edit, so I created this hack -->
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
+    <% if params[:project_id] %>
+      <% project = Project.find(params[:project_id]) %>
+    <% else %>
+      <% project = Project.find(@update.project_id) %>
+    <% end %>
+    
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                project_updates_path(@project), :class => 'btn' %>
+                project_updates_path(project), :class => 'btn' %>
   </div>
 <% end %>

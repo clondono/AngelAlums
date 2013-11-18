@@ -6,8 +6,8 @@ twitter bootstrap gem with less enabled
 paperclip
 
 Todo:
-authenticate with users (with Christian)
-make partial views to a project (with EJ)
+authenticate backend
 make video input
+
 
 
