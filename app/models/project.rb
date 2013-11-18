@@ -67,6 +67,17 @@ class Project < ActiveRecord::Base
         end
     end
 
+    def access_level(user_id)
+        colab = self.collaborations.where(:user_id => user_id)
+        if user_id == self.student.id
+            return "owner"
+        elsif colab.length != 0
+            return "collaborator"
+        else 
+            return "none"
+        end
+    end
+
     def total_donation
         donations.sum('amount')
     end

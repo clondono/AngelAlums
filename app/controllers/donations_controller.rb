@@ -6,6 +6,8 @@ class DonationsController < ApplicationController
 	before_action :set_donation, only: [:show, :edit, :update, :destroy]  	
 	#Set the current project
 	before_action :set_project
+	#Check if the user is alum
+	before_action :check_alum
 
 	def new
 	  @donation = Donation.new
@@ -65,6 +67,13 @@ class DonationsController < ApplicationController
 	    def logged_in
 	      if current_user == nil
 	        redirect_to new_user_session_path
+	      end
+	    end
+
+	    #Check whether current user is alumni and if not, redirect to project page
+	    def check_alum
+	      if current_user.type != "Alumni"
+	      	redirect_to project_path(@project)
 	      end
 	    end
 end

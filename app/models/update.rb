@@ -15,6 +15,15 @@ class Update < ActiveRecord::Base
 		return student
 	end
 
+	def has_image?
+		if image_file_name != nil
+			return true
+		else
+			return false
+		end
+	end
+	
+
 	def can_edit?(current_user_id)
 		if User.find(current_user_id) == creator
 			return true

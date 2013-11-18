@@ -2,13 +2,13 @@
   <div class="control-group">
     <%= f.label :title, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :title, :class => 'text_field', :placeholder=>'title', :required=>:true %>
+      <%= f.text_field :title, :class => 'text_field update_input_field', :placeholder=>'title', :required=>:true %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :content, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_area :content, :rows=>5, :cols =>20, :placeholder =>'content', :required=>:true %>
+      <%= f.text_area :content, :rows=>10, :cols =>20, :placeholder =>'content', :class => 'update_input_field', :required=>:true %>
     </div>
   </div>
   <div class="control-group">
@@ -20,7 +20,7 @@
   
   <!-- I've been getting errors if I set before_action(set_project) for edit, so I created this hack -->
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= f.submit 'Submit changes', :class => 'btn btn-primary' %>
     <% if params[:project_id] %>
       <% project = Project.find(params[:project_id]) %>
     <% else %>

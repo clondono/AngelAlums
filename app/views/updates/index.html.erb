@@ -1,9 +1,9 @@
 <div class="container">
     <div class = "row">
         <div class="page-header well">
-          <h1>Showing updates for <%= link_to @project.title, @project %></h1>
+          <h1>Showing updates for <u><%= link_to @project.title, @project %></u></h1>
           <% if @can_write %>
-            <p id="new_update"><%= link_to 'Add new update', new_project_update_path(@project) %></p>
+            <u><p id="new_update"><%= link_to 'Add new update', new_project_update_path(@project) %></p></u>
           <% end %>
         </div>
     </div>
