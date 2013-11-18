@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   before_filter :update_sanitized_params, if: :devise_controller?
 
   def update_sanitized_params
-    devise_parameter_sanitizer.for(:sign_up).push(:type)
+    devise_parameter_sanitizer.for(:sign_up).push(:first_name, :last_name,:type)
+    devise_parameter_sanitizer.for(:account_update).push(:first_name, :last_name, :major, :grad_year)
+
   end
 end
