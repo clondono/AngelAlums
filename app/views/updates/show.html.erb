@@ -1,7 +1,5 @@
 <%- model_class = Update -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
+
 
 
 <div class="container">
@@ -10,7 +8,7 @@
 			     <%= render :partial=>@update %> 
 
           <div class = "form-actions">
-            <%= link_to t('.back', :default => t("helpers.links.back")),
+            <%= link_to 'List',
               project_updates_path(@project), :class => 'btn'  %>
             <% if @update.can_edit?(current_user.id) %>
               <%= render 'update_action_forms', :update => @update, :project => @project %>

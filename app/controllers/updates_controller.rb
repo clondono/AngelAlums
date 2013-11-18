@@ -1,12 +1,15 @@
+# Primary author: Dongyoung Kim
+
 class UpdatesController < ApplicationController
+  # On Access Control: A owner or a collaborator on a project can create an update
+  # A creator of an update can edit or delete his update.
+
   before_action :set_update, only: [:show, :edit, :update, :destroy]
   before_action :set_project, only: [:index, :new, :show, :destroy]
   before_action :can_write?, only: [:index, :new]
-  #before_action :can_edit?, only: [:index, :show, :edit, :destroy]
   before_action :authenticate
 
-  # GET /updates
-  # GET /updates.json
+  # GET /project/:project_id/updates
   def index
     @updates = Update.all
     
@@ -19,11 +22,10 @@ class UpdatesController < ApplicationController
   end
 
   # GET /updates/1
-  # GET /updates/1.json
   def show
   end
 
-  # GET /updates/new
+  # GET /project/:project_id/updates/new
   def new
     if @can_write == false
       redirect_to root_url
@@ -34,12 +36,16 @@ class UpdatesController < ApplicationController
 
   # GET /updates/1/edit
   def edit
+    if @update.can_edit?(current_user.id) == false
+      redirect_to root_url
+      return
+    end
   end
 
   # POST /updates
-  # POST /updates.json
   def create
     @update = Update.new(update_params)
+    @update.creator_id = current_user.id
     @update.project_id = params[:project_id]
     respond_to do |format|
       if @update.save
@@ -53,7 +59,6 @@ class UpdatesController < ApplicationController
   end
 
   # PATCH/PUT /updates/1
-  # PATCH/PUT /updates/1.json
   def update
     respond_to do |format|
       if @update.update(update_params)
@@ -67,7 +72,6 @@ class UpdatesController < ApplicationController
   end
 
   # DELETE /updates/1
-  # DELETE /updates/1.json
   def destroy
     @update.destroy
     respond_to do |format|
@@ -83,7 +87,8 @@ class UpdatesController < ApplicationController
     end
 
     def can_write?
-      if current_user == @project.student
+      # if the current user is an owner or an collaborator of the project, he can create new updates
+      if @project.access_level(current_user.id) != "none" 
         @can_write = true
       else
         @can_write = false

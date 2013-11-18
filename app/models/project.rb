@@ -81,4 +81,7 @@ class Project < ActiveRecord::Base
             return "none"
         end
     end
+    def total_donation
+        donations.sum('amount')
+    end
 end
