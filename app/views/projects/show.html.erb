@@ -27,7 +27,7 @@
 		  <div class="bar" style="width: <%= (@project.total_donation / @project.goal)*100%>%;">$<%= @project.total_donation %></div>
 		</div>
 		<h6>Raised of $<%= @project.goal%></h6>
-		<%if current_user.type != "Student" && @project.access_level(current_user.id) == "owner"%>
+		<%if current_user.type == "Alumni" %>
 	    	<%= link_to 'Donate', new_project_donation_path(@project), class: "btn btn-primary" %> 
 	    <%end%>
 	</div>
