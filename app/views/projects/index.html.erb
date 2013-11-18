@@ -1,5 +1,7 @@
 <h1>Listing projects</h1>
-<%= link_to 'New Project', new_project_path, :class => 'btn inlineb btn-primary'  %>
+<% if current_user.type == "Student"%>
+  <%= link_to 'New Project', new_project_path, :class => 'btn inlineb btn-primary'  %>
+<%end%>
 <br/>
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Wrapper for slides -->
