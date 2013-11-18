@@ -10,16 +10,18 @@
   <div><%= f.label :major %><br />
   <%= f.select :major, options_for_select(majorList)%></div>
 
-
   <div><%= f.label :grad_year %><br />
   <%= f.text_field :grad_year%></div>
 
 
+  <div><%= f.label :avatar %><br />
+  <%= f.file_field :avatar %></div>
+
   <div><%= f.label :first_name %><br />
-  <%= f.text_field :first_name, :autofocus => true %></div>
+  <%= f.text_field :first_name %></div>
 
   <div><%= f.label :last_name %><br />
-  <%= f.text_field :last_name, :autofocus => true %></div>
+  <%= f.text_field :last_name%></div>
   
   <div><%= f.submit "Update" %></div>
 
