@@ -16,9 +16,11 @@
           <% @updates.reverse.each do |update| %>
       			 <div class="update_entry">
   				      <%= render update %>
-                <div class="form-actions">
-                   <%= render "update_action_forms", :update => update, :project => @project %>
-                </div>
+                <% if update.can_edit?(current_user.id) %>
+                  <div class="form-actions">
+                     <%= render "update_action_forms", :update => update, :project => @project %>
+                  </div>
+                <% end %>
   			     </div>
           <% end %>
         </div>  

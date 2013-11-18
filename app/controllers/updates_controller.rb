@@ -2,7 +2,7 @@ class UpdatesController < ApplicationController
   before_action :set_update, only: [:show, :edit, :update, :destroy]
   before_action :set_project, only: [:index, :new, :show, :destroy]
   before_action :can_write?, only: [:index, :new]
-  before_action :can_edit?, only: [:index, :show, :edit, :destroy]
+  #before_action :can_edit?, only: [:index, :show, :edit, :destroy]
   before_action :authenticate
 
   # GET /updates
@@ -90,10 +90,6 @@ class UpdatesController < ApplicationController
       else
         @can_write = false
       end
-    end
-
-    def can_edit?
-      return true
     end
 
     
