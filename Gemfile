@@ -9,8 +9,8 @@ gem "less-rails"
 gem 'rails', '4.0.0'
 
 group :development, :test do
-     gem 'sqlite3'
-    #gem 'pg'
+    # gem 'sqlite3'
+    gem 'pg'
 end
 group :production do
     gem 'pg'
