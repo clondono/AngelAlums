@@ -1,6 +1,8 @@
 class DonationsController < ApplicationController
+	before_action :set_project
+
 	def new
-		@project = Project.find(params[:project_id])
+		@donation = Donation.new		
 	end
 
 	def create
@@ -22,6 +24,14 @@ class DonationsController < ApplicationController
 
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
-	  redirect_to donation_path
+	  redirect_to project_path(@project)
 	end
+
+	private
+		def set_project
+	      @project = Project.find(params[:project_id])
+	      # source: http://guides.rubyonrails.org/action_controller_overview.html#rescue
+	      rescue ActiveRecord::RecordNotFound
+	      redirect_to projects_path, notice: 'Cannot find specified project'
+	    end
 end
