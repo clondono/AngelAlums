@@ -1,3 +1,4 @@
+
 <div class="container">
     <div class = "row">
         <div class="page-header well">
@@ -9,10 +10,11 @@
     </div>
 </div>
 
-<!-- render from newest to oldest -->
+
 <div class="container">
     <div class="row">
         <div class="col-md-12"> 
+          <!-- render partial views for each updates, from newest to oldest -->
           <% @updates.reverse.each do |update| %>
       			 <div class="update_entry">
   				      <%= render update %>
