@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131117221808) do
+ActiveRecord::Schema.define(version: 20131117235524) do
 
   create_table "advisors", force: true do |t|
     t.integer  "project_id"
@@ -88,6 +88,8 @@ ActiveRecord::Schema.define(version: 20131117221808) do
     t.string   "type"
     t.integer  "grad_year"
     t.integer  "major"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

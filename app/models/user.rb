@@ -3,8 +3,6 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-end
-
 #method called in order to see if an email belongs to a 
 #certain user. If such a user exists they will be returned
 #if not a new user with be created and that will be returned
@@ -15,4 +13,7 @@ def check_Collaborator(email)
     @user.send_reset_password_instructions
   end
   @user
+end
+
+
 end
