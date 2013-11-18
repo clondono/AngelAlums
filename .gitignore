@@ -4,32 +4,23 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-<<<<<<< HEAD
 # Ignore 
-*~
 /config/database.yml
 Gemfile
-
-# Ignore bundler config.
-/.bundle
-=======
 # Ignore bundler config.
 /.bundle
 *.swp
->>>>>>> 6837ecdbeb24e18243dc5924a1689274b321b3be
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-<<<<<<< HEAD
 /log/*.log
 /tmp
 
 # Ignore uploaded images
 /public/system/projects/images/
-=======
 *.rbc
 *.sassc
 .sass-cache
@@ -53,4 +44,5 @@ pickle-email-*.html
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
->>>>>>> 6837ecdbeb24e18243dc5924a1689274b321b3be
+/log/*.log
+/tmp
