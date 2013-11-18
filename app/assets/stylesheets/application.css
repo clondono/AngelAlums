@@ -11,6 +11,8 @@
  *= require select2
  *= require_tree .
  */
+
+ 
 #logo {
   float: left;
   margin-right: 10px;

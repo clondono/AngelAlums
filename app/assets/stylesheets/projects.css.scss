@@ -123,12 +123,33 @@
 }
 
 .carousel-inner{
-	height: 600px;
-	img{
-		width: 100%;
-		height: 100%;
-	}
-	.carousel-caption{
-		height: 30px;
+	height: 500px;
+	.item{
+		height: inherit;
+		img{
+			width: 100%;
+			height: 70%;
+		}
+		.carousel-caption{
+			height: 25%;
+			background-color: #b8b400;
+			text-align: center;
+			.proj-title{
+				width: 300px;
+				h2{
+					margin-bottom: 0px;
+				}
+			}
+			.funds{
+				margin-top: 10px;
+				.progress{
+					width: 300px;
+					margin-bottom: 4px;
+					margin-left: 320px;
+				}
+			}
+			.btn{
+			}
+		}
 	}
 }

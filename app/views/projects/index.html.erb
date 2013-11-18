@@ -2,6 +2,28 @@
 <%= link_to 'New Project', new_project_path, :class => 'btn inlineb'  %>
 <br/>
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <% @projects.each_with_index do |proj, index|%>
+    <div class="item <%= 'active' if index == 0%>">
+    <%= image_tag proj.image.url%>
+      <div class="carousel-caption inlineb">
+        <div class="proj-title inlineb">
+          <h2><%= proj.title%></h2>
+          By <%= proj.student.email%>
+        </div>
+        <div class = "funds">
+          Funds Raised:
+          <div class="progress progress-striped">
+            <div class="bar" style="width: 20%;">??</div>
+          </div>
+        </div>
+        <%= link_to 'View', proj , :class => 'btn'%>
+      </div>
+    </div>
+    <%end%>
+  </div>
+
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <% @projects.length.times do |i|%>
@@ -13,27 +35,17 @@
     <%end%>
   </ol>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <% @projects.each do |proj, index|%>
-    <div class="item">
-    <%= image_tag proj.image.url(:thumb)%>
-      <div class="carousel-caption">
-        <%= proj.title%>
-      </div>
-    </div>
-    <%end%>
-  </div>
-
   <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
+  <a class="left carousel-control " href="#carousel-example-generic" data-slide="prev">
+    <%= image_tag "left.png"%>
   </a>
   <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
+    <%= image_tag "right.png"%>
   </a>
 </div>
 
+
+<!-- 
 <table>
   <thead>
     <tr>
@@ -86,4 +98,4 @@
 </table>
 
 <br> 
-
+ -->
