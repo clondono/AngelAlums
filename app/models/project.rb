@@ -28,7 +28,7 @@ class Project < ActiveRecord::Base
         youtube_id = $5
       end
       if youtube_id
-        return "http://www.youtube.com/embed/"+youtube_id 
+        return "http://www.youtube.com/embed/"+youtube_id+"?wmode=transparent" 
       else
         return ""
       end

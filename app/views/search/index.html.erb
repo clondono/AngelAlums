@@ -9,6 +9,9 @@
 </div>
 
 <div class= "results-all inlineb">
+	<%if @projects.length == 0%>
+		<h2>No Projects found. Try different Tags</h2>
+	<%end%>
 	<% @projects.each do |project|%>
 	<div class="result inlineb">
 		<div class="result-video inlineb">

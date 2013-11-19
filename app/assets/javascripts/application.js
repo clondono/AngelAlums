@@ -23,10 +23,3 @@ function add_fields(link, association, content) {
   var regexp = new RegExp("new_" + association, "g")
   $(link).parent().before(content.replace(regexp, new_id));
 }
-
-$(document).ready(function (){
-	$('iframe').each(function(){
-		var url = $(this).attr("src");
-		$(this).attr("src",url+"?wmode=transparent");
-	});
-});
