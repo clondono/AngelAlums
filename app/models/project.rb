@@ -82,4 +82,8 @@ class Project < ActiveRecord::Base
             return "none"
         end
     end
+
+    def self.search(tag_ids)
+        Project.joins(:tags).where(:tags => {:id => tag_ids})
+    end
 end

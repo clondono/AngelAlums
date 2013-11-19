@@ -4,7 +4,7 @@
     <div class="container">
         <%= link_to "AngelAlums", root_path, id: "logo" %>
         <nav>
-        <ul class="nav navbar-nav pull-right">
+        <ul class="nav navbar-nav pull-right inlineb">
 
             <% if user_signed_in? %>
 
@@ -26,8 +26,17 @@
                 <li><%= link_to "Login", new_user_session_path %></li>
                 <li><%= link_to "Sign up", new_user_registration_path %></li>
             <% end %>
-
         </ul>
+        <div class="pull-right">
+            <form class="navbar-form" role="search" action="/search" method="get">
+                <div class="input-group inlineb">
+                    <%= select("search", "tag_id", Tag.all.collect {|p| [ p.title, p.id ] }, { include_blank: true }, {:multiple => true, :class => "search-select form-control inlineb"}) %>
+                    <div class="input-group-btn inlineb">
+                        <button class="btn btn-default" type="submit"><i class="icon-search inlineb"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
         </nav>
     </div>
 </div>

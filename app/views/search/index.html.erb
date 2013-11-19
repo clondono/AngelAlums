@@ -1,0 +1,42 @@
+<h1>Search Results for:</h1>
+<%@tags.each do |tag|%>
+	<div class="proj-tag inlineb">
+		<%=tag.title%>
+	</div>
+<%end%>
+<div class="search-info">
+	<b>Click on Project Name to go to the Project Page. (<%=@projects.length%> results found)</b>
+</div>
+
+<div class= "results-all inlineb">
+	<% @projects.each do |project|%>
+	<div class="result inlineb">
+		<div class="result-video inlineb">
+			<iframe src="<%= strip_tags(project.youtube_embed)%>" frameborder="0" allowfullscreen class = "inlineb"></iframe>
+		</div>
+		<div class="result-right inlineb">
+			<div class = "search-link inlineb">
+				<h2><%= link_to ""+ project.title, project %></h2>
+			</div>
+			<div class = "search-image inlineb">
+				<%= image_tag project.image.url, :class => "inlineb"%>
+			</div>
+			<div class="progress progress-striped inlineb">
+				Amount raised: $<%= project.total_donation %>
+		      <div class="bar inlineb" style="width: <%= (project.total_donation / project.goal)*100%>%;">
+		      </div>
+		    </div> 
+		    <div class="search-tags inlineb">
+		    	<div>
+		    		Tags:
+		    	</div>
+		    	<%project.tags.each do |tag|%>
+					<div class="proj-tag inlineb">
+						<%=tag.title%>
+					</div>
+				<%end%>
+		    </div>
+		</div>
+	</div>
+	<%end%>
+</div>
