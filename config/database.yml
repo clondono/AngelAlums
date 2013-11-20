@@ -10,19 +10,19 @@
 #   username: juntosuser
 #   password: vivajuntos
 #   host: localhost
-# development:
-#   adapter: sqlite3
-#   database: db/development.sqlite3
-#   pool: 5
-#   timeout: 5000
-
 development:
-  adapter: postgresql
-  encoding: unicode
-  database: 6170final
-  username: juntosuser
-  password: vivajuntos
-  host: localhost
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
+# development:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: 6170final
+#   username: juntosuser
+#   password: vivajuntos
+#   host: localhost
 
 
 # development:
