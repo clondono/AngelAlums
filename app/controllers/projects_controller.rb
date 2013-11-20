@@ -3,6 +3,8 @@ class ProjectsController < ApplicationController
   before_action :logged_in
   before_action :check_collab, only: [:edit, :update]
   before_action :check_owner, only: [:destroy]
+  before_action :can_create, only: [:new, :create]
+
 
   # GET /projects
   # GET /projects.json
@@ -99,9 +101,14 @@ class ProjectsController < ApplicationController
     #check if current user is an owner
     def check_owner
       set_project
-      if @project.access_level(current_user) != "owner"
+      if @project.access_level(current_user.id) != "owner"
         redirect_to projects_url
       end
+    end
 
+    def can_create
+      if current_user.type != "Student"
+        redirect_to projects_url
+      end
     end
 end

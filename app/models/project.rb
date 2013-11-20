@@ -28,7 +28,7 @@ class Project < ActiveRecord::Base
         youtube_id = $5
       end
       if youtube_id
-        return "http://www.youtube.com/embed/"+youtube_id 
+        return "http://www.youtube.com/embed/"+youtube_id+"?wmode=transparent" 
       else
         return ""
       end
@@ -81,5 +81,9 @@ class Project < ActiveRecord::Base
         else 
             return "none"
         end
+    end
+
+    def self.search(tag_ids)
+        Project.joins(:tags).where(:tags => {:id => tag_ids})
     end
 end
