@@ -2,19 +2,19 @@
 <header class="navbar navbar-fixed-top">
 <div class="navbar-inner">
     <div class="container">
-        <%= link_to "AngelAlums", root_path, id: "logo" %>
+        
         <nav>
         <ul class="nav navbar-nav pull-right inlineb">
 
             <% if user_signed_in? %>
-
+                <li><%= link_to('Home',root_path )%> </li>
+                <li><%= link_to "Profile",current_user.becomes(User)%></li>
+                    
                 <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.first_name%> <%= current_user.last_name%>
-                    <b class="caret"></b>
+                    <b class="caret" style="color:#ffffff"></b>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><%= link_to('Home',root_path )%> </li>
-                    <li><%= link_to "Profile",current_user.becomes(User)%></li>
                     <li><%= link_to('Account Settings',edit_user_registration_path(profile: "true"), method: :get )%> </li>
                     <li><%= link_to('Security Settings',edit_user_registration_path, method: :get )%> </li>
                     <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  </li>
@@ -27,8 +27,8 @@
                 <li><%= link_to "Sign up", new_user_registration_path %></li>
             <% end %>
         </ul>
-        <div class="pull-right">
-            <form class="navbar-form" role="search" action="/search" method="get">
+        <div class="pull-left">
+            <form class="navbar-form navbar-search" role="search" action="/search" method="get">
                 <div class="input-group inlineb">
                     <%= select("search", "tag_id", Tag.all.collect {|p| [ p.title, p.id ] }, { include_blank: true }, {:multiple => true, :class => "search-select form-control inlineb"}) %>
                     <div class="input-group-btn inlineb">
@@ -37,6 +37,7 @@
                 </div>
             </form>
         </div>
+        <%= link_to "AngelAlums", root_path, id: "logo"%>
         </nav>
     </div>
 </div>
