@@ -4,7 +4,7 @@
 	<div class = "proj-image inlineb">
 		<%= image_tag @project.image.url%>
 	</div>
-	<div class="rightinfo inlineb">
+	<div class="rightinfo inlineb blurb">
 		<div class="proj-title inlineb Headings">
 			<h2><%= @project.title%></h2>
 		</div>
@@ -19,8 +19,8 @@
 <div class= "proj-video inlineb">
 	<iframe src="<%= strip_tags(@project.youtube_embed)%>" frameborder="0" allowfullscreen></iframe>
 </div>
-<div class = "proj-donations inlineb">
-	<div class="stats">
+<div class = "proj-donations inlineb blurb">
+	<div class="stats"`
 		<h4>Number of Donors: <%= @project.donations.length%></h4>
 		<h4>Total: $<%= @project.total_donation %>.0</h4>
 		<div class="progress progress-striped">
@@ -40,7 +40,7 @@
 		<%end%>
 	</div>
 </div>
-<div class ="proj-display">
+<div class ="proj-display blurb">
 	<div class="proj-title inlineb wide-width fake-hr">
 		<b>Title:</b><%= @project.title%>
 	</div>

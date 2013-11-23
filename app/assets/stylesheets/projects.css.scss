@@ -16,6 +16,8 @@
 	.rightinfo{
 		margin-left: 10%;
 		width: 50%;
+		border: 1px solid transparent;
+		border-radius: 20px;
 		text-align: center;
 		.proj-title{
 			width: inherit;
@@ -44,7 +46,7 @@
 	margin-left: 30px;
 	padding: 20px;
 	padding-top: 30px;
-	border: 1px solid #0BA2D9;
+	border: 1px solid transparent;
 	border-radius: 20px;
 	vertical-align: top;
 	width: 400px;
@@ -80,8 +82,8 @@
 .proj-display{
 	margin-top: 20px;
 	margin-bottom: 20px;
-	border: 1px solid black;
-	border-radius: 5px;
+	border: 1px solid transparent;
+	border-radius: 20px;
 	padding: 20px;
 	text-align: center;
 	.proj-advisors{
