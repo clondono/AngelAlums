@@ -29,6 +29,8 @@
 #logo:hover {
   background-color: transparent; 
   text-decoration: none;
+  color: #6DF2CE;
+  text-shadow: none;
 }
 #new_update {
   margin: 15px 0px 0px 0px;
@@ -47,8 +49,8 @@
   text-align: center;
 }
 
-.profileHeading {
-  color: #51B599;
+.Headings {
+    color: #0BA2D9;
 }
 
 @font-face {

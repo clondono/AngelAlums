@@ -7,7 +7,7 @@
           </td>
         </tr>
       </table>
-      <div class="profileHeading" style="margin-top:10px;font-size:25px;font-family:georgia;border-bottom:3px solid #eee;letter-spacing:-1px">      about
+      <div class="Headings" style="margin-top:10px;font-size:25px;font-family:georgia;border-bottom:3px solid #eee;letter-spacing:-1px">      about
       </div>
       <div class="blurb" style="background:#eee;padding:10px;border-radius:10px;">
         <b>Name:</b> <%=@user.first_name%> <%=@user.last_name%><br>
@@ -18,7 +18,7 @@
     </div>
 
     <div id="main" style="margin-left:330px;">
-      <div id="header" class ="profileHeading" style="padding-top:20px">
+      <div id="header" class ="Headings" style="padding-top:20px">
         <div id="name" style="font-size:59px;font-family:georgia;letter-spacing:-3px;">
           <i style="color:#aaa">{</i>
           <%=@user.first_name%> <%=@user.last_name%>
@@ -27,7 +27,7 @@
           <!-- sub title -->
         </div>
       </div>
-      <div class="profileHeading" style="font-size:25px;font-family:georgia;border-bottom:3px solid #eee;letter-spacing:-1px">
+      <div class="Headings" style="font-size:25px;font-family:georgia;border-bottom:3px solid #eee;letter-spacing:-1px">
         <% if @user.type == "Student" %>   
 
           Projects
@@ -54,7 +54,7 @@
       </div>  
 
       <% if @user.type == "Student" %>   
-        <div class="profileHeading" style="font-size:25px;font-family:georgia;border-bottom:3px solid #eee;letter-spacing:-1px">
+        <div class="Headings" style="font-size:25px;font-family:georgia;border-bottom:3px solid #eee;letter-spacing:-1px">
           Collaborating Projects
 
         </div>

@@ -4,7 +4,7 @@
 .dropdown-submenu:hover > a,
 .dropdown-submenu:focus > a {
   text-decoration: none;
-  color: #6DF2CE;
+  color: #0BA2D9;
 
   background-color: #247466;
   background-image: none; 
@@ -44,8 +44,8 @@
 
 .navbar .nav li.dropdown > a:hover .caret,
 .navbar .nav li.dropdown > a:focus .caret {
-  border-top-color: #fff;
-  border-bottom-color: #fff;
+  border-top-color: #6DF2CE;
+  border-bottom-color: #6DF2CE;
 }
 .dropdown-menu > li > a {
   color:#ffffff;
@@ -54,11 +54,11 @@
 .navbar .nav li.dropdown.active > .dropdown-toggle,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
   background-color: #247466;
-  color: #fff;
+  color: #0BA2D9;
 }
 .navbar .nav li.dropdown.open > .dropdown-toggle .caret,
 .navbar .nav li.dropdown.active > .dropdown-toggle .caret,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
-  border-top-color: #ffffff;
-  border-bottom-color: #ffffff;
+  border-top-color: #0BA2D9;
+  border-bottom-color: #0BA2D9;
 }
