@@ -16,11 +16,13 @@
 	.rightinfo{
 		margin-left: 10%;
 		width: 50%;
+		border: 1px solid transparent;
+		border-radius: 20px;
 		text-align: center;
 		.proj-title{
 			width: inherit;
 			h2{
-				color: #4c4aa9;
+				color: #0BA2D9;
 			    font-family: 'Karla', sans-serif;   
 			}
 		}
@@ -44,7 +46,7 @@
 	margin-left: 30px;
 	padding: 20px;
 	padding-top: 30px;
-	border: 1px solid #4c4aa9;
+	border: 1px solid transparent;
 	border-radius: 20px;
 	vertical-align: top;
 	width: 400px;
@@ -80,8 +82,8 @@
 .proj-display{
 	margin-top: 20px;
 	margin-bottom: 20px;
-	border: 1px solid black;
-	border-radius: 5px;
+	border: 1px solid transparent;
+	border-radius: 20px;
 	padding: 20px;
 	text-align: center;
 	.proj-advisors{
@@ -132,7 +134,7 @@
 		}
 		.carousel-caption{
 			height: 25%;
-			background-color: #b8b400;
+			background-color: #EEEEEE;
 			text-align: center;
 			.proj-title{
 				width: 300px;
