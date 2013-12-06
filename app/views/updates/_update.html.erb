@@ -3,17 +3,41 @@
 
 
 
-        	  <hr>
-	          <h1><%= link_to update.title, update %></h1>
-	          <p class="lead">by <%= update.student.first_name + " " + update.student.last_name %></a></p>
-	          <hr>
-	          <p><%= glyph(:time) %> Posted on <%= update.updated_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %></p>
-	          <hr>
-	          <% if update.has_image? %>
-	          	<img src = "<%= update.image.url%>" class = "img-responsive">
-	          <% end %>
-	          <p><%= simple_format update.content %>
-			  </p>
-	         
+<hr>
+<h1><%= link_to update.title, update %></h1>
+<p class="lead">by <%= update.student.first_name + " " + update.student.last_name %></a></p>
+<hr>
+<p><%= glyph(:time) %> Posted on <%= update.updated_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %></p>
+<hr>
+<% if update.has_image? %>
+	<img src = "<%= update.image.url%>" class = "img-responsive">
+<% end %>
+<p><%= simple_format update.content %>
+</p>
+<hr>
 
+<!-- new comment section -->
+<div class="well">
+	<h4>Leave a Comment:</h4>
+	<%= form_for [update, Comment.new] do |f| %>
+		<p><%= f.text_area :body, :rows=>3, :class=>"commentbox" %></p>
+		<p><%= f.submit 'Submit', :class=>'btn btn-primary' %></p>
+
+	<% end %>
+
+
+</div>
+
+<hr>
+
+<!-- the comments -->
+<% update.comments.each do |c| %>
+
+	<h3><%= c.creator.first_name + " " + c.creator.last_name %> <small> commented <%= time_ago_in_words(c.created_at.in_time_zone(
+	'America/New_York')) %> ago</small></h3>
+	<p>
+		<%= c.body %>
+	</p>
+
+<% end %>
 

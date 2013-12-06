@@ -12,6 +12,7 @@ class UpdatesController < ApplicationController
   # GET /project/:project_id/updates
   def index
     @updates = Update.all
+    @comment = Comment.new
     
     respond_to do |format|
       format.html # index.html.erb
