@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :logged_in
   before_action :check_collab, only: [:edit, :update]
+  before_action :prep_params, only: [:create, :update]
   before_action :check_owner, only: [:destroy]
   before_action :can_create, only: [:new, :create]
 
@@ -37,10 +38,6 @@ class ProjectsController < ApplicationController
     @project.owner_id = @current_user.id
     respond_to do |format|
       if @project.save
-        #add advisors, tags and collaborators
-        @project.add_advisors(params[:project][:advisors_attributes])
-        @project.add_tags(params[:project][:taggables_attributes])
-        @project.add_collaborators(params[:project][:collaborations_attributes])
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render action: 'show', status: :created, location: @project }
       else
@@ -82,7 +79,7 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params[:project].permit(:title, :image, :video, :description, :goal)
+      params[:project].permit(:title, :image, :video, :description, :goal, advisors_attributes:[:id, :name , :email], collaborations_attributes: [:id, :name, :email], taggables_attributes:[:id,:tag_id])
     end
     # check if current user is logged in
     def logged_in
@@ -110,5 +107,16 @@ class ProjectsController < ApplicationController
       if current_user.type != "Student"
         redirect_to projects_url
       end
+    end
+
+    def prep_params
+      tagids = []
+      params[:project][:taggables_attributes].values[0][:tag_id].reject!(&:blank?).each do |id|
+        tagids.push({:tag_id => id})
+      end
+      params[:project][:advisors_attributes] = params[:project][:advisors_attributes].values
+      params[:project][:taggables_attributes] = tagids
+      params[:project][:collaborations_attributes] = params[:project][:collaborations_attributes].values
+
     end
 end
