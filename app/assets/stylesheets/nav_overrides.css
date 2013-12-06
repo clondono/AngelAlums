@@ -10,11 +10,13 @@
   background-image: none; 
   filter: none; }
 
+
 .dropdown-menu, .dropdown-submenu {
   background-image: none; 
   background-color: #19A67F;
   color: #fff;
 }
+/*link in bar*/
 .navbar .nav > li > a {
   float: none;
   padding: 10px 15px 10px;
@@ -22,13 +24,15 @@
   text-decoration: none;
   text-shadow: none;
 }
+
+/*hover link in bar*/
 .navbar .nav > li > a:hover {
   text-decoration: none;
   color: #6DF2CE;
   text-shadow: none;
 }
 
-
+/*Bar */
 .navbar-inner, .nav, .navbar{
   background-color: #19A67F; 
   background-image: none;
@@ -61,4 +65,9 @@
 .navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
   border-top-color: #0BA2D9;
   border-bottom-color: #0BA2D9;
+}
+
+.search {
+  color:#0BA2D9;
+
 }
