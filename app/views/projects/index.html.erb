@@ -1,4 +1,4 @@
-<h1>Listing projects</h1>
+<h1 class ="Headings">Listing projects</h1>
 <% if current_user.type == "Student"%>
   <%= link_to 'New Project', new_project_path, :class => 'btn inlineb btn-primary'  %>
 <%end%>
@@ -14,9 +14,9 @@
     <% @projects.each_with_index do |proj, index|%>
     <div class="item <%= 'active' if index == 0%>">
     <%= image_tag proj.image.url%>
-      <div class="carousel-caption inlineb">
+      <div class="carousel-caption inlineb blurb">
         <div class="proj-title inlineb">
-          <h2><%= proj.title%></h2>
+          <h2 class= "Headings"><%= proj.title%></h2>
           By <%= proj.student.email%>
         </div>
         <div class = "funds">
@@ -43,11 +43,11 @@
   </ol>
 
   <!-- Controls -->
-  <a class="left carousel-control " href="#carousel-example-generic" data-slide="prev">
-    <%= image_tag "left.png"%>
+  <a class="left carousel-control carousel-btn" href="#carousel-example-generic" data-slide="prev">
+    <span class = "fa fa-angle-left carousel-btn-left"></span>
   </a>
-  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-    <%= image_tag "right.png"%>
+  <a class="right carousel-control carousel-btn" href="#carousel-example-generic" data-slide="next">
+    <span class = "fa fa-angle-right carousel-btn-right"></span>
   </a>
 </div>
 
