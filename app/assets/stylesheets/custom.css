@@ -4,6 +4,11 @@
 
 }
 
+.p_margin_bottom_25 {
+	margin-bottom : 25px;
+}
+
 .commentbox {
 	width: 100%;
+	resize: vertical;
 }

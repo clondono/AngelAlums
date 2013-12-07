@@ -7,7 +7,7 @@ Dummy::Application.routes.draw do
   resources :projects do
     resources :donations, shallow: true
     resources :updates, shallow: true do
-    	resources :comments, :only => [:create]
+    	resources :comments, :only => [:create, :destroy]
     end
   end
 

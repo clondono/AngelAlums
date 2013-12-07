@@ -8,6 +8,16 @@ class CommentsController < ApplicationController
 		redirect_to @update
 	end
 
+	def destroy
+		@comment = Comment.find(params[:id])
+		@update = Update.find(@comment.update_id)
+	    @comment.destroy
+    	respond_to do |format|
+    		format.html { redirect_to @update }
+     		format.json { head :no_content }
+     	end
+    end
+
 	private
 
 	def comment_params

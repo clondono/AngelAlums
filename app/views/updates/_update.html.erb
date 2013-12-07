@@ -6,15 +6,13 @@
 <hr>
 <h1><%= link_to update.title, update %></h1>
 <p class="lead">by <%= update.student.first_name + " " + update.student.last_name %></a></p>
-<hr>
-<p><%= glyph(:time) %> Posted on <%= update.updated_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %></p>
-<hr>
+<p class="p_margin_bottom_25"><%= glyph(:time) %> Posted on <%= update.updated_at.in_time_zone('America/New_York').to_formatted_s(:long_ordinal) %></p>
 <% if update.has_image? %>
 	<img src = "<%= update.image.url%>" class = "img-responsive">
 <% end %>
-<p><%= simple_format update.content %>
-</p>
-<hr>
+
+<%= simple_format(update.content, :class=>"p_margin_bottom_25") %>
+
 
 <!-- new comment section -->
 <div class="well">
@@ -28,16 +26,25 @@
 
 </div>
 
-<hr>
-
 <!-- the comments -->
 <% update.comments.each do |c| %>
+	
+	<% delete_string = '' %>
+	<% if current_user.id == c.creator.id %>
+		<% delete_string = '(delete)' %>
+	<% end %>
 
-	<h3><%= c.creator.first_name + " " + c.creator.last_name %> <small> commented <%= time_ago_in_words(c.created_at.in_time_zone(
-	'America/New_York')) %> ago</small></h3>
+	<p><strong><%= c.creator.first_name + " " + c.creator.last_name %></strong> <small> commented <%= time_ago_in_words(c.created_at.in_time_zone(
+	'America/New_York')) %> ago 
+	<%= link_to delete_string, comment_path(c), 
+				:method => 'delete', 
+				:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) } %>
+	</small></p>
 	<p>
 		<%= c.body %>
 	</p>
 
 <% end %>
+
+<hr>
 
