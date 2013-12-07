@@ -6,6 +6,7 @@ class Update < ActiveRecord::Base
 	validates :content, presence: true
 	belongs_to :project
 	belongs_to :student, foreign_key: "creator_id"
+	has_many :comments
 
 	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" } 
 

@@ -6,7 +6,10 @@ Dummy::Application.routes.draw do
   resources :search
   resources :projects do
     resources :donations, shallow: true
-    resources :updates, shallow: true
+    resources :updates, shallow: true do
+    	resources :comments, :only => [:create, :destroy]
+    end
   end
+
    root 'home#index'
 end
