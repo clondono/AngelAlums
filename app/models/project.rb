@@ -1,6 +1,8 @@
 class Project < ActiveRecord::Base
     belongs_to :student, foreign_key: "owner_id"
-    has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+    has_attached_file :image, 
+        :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
+        :default_url => "/images/:style/missing.png"
     has_many :collaborations, dependent: :destroy
     has_many :collaborators, class_name: 'Student', through: :collaborations, source: :student
 
