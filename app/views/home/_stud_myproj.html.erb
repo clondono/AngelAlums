@@ -1,17 +1,13 @@
-<h1 class ="Headings">Listing projects</h1>
-<% if current_user.type == "Student"%>
-  <%= link_to 'New Project', new_project_path, :class => 'btn inlineb btn-primary'  %>
-<%end%>
-<br/>
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<h1>y projs</h1>
+<div id="carousel-mine" class="carousel carousel-main slide" data-ride="carousel">
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-    <% if @projects.length == 0%>
+    <% if @my_projects.length == 0%>
     <div class="item active">
       <%= image_tag "nothing.jpg"%>
     </div>
     <%end%>
-    <% @projects.each_with_index do |proj, index|%>
+    <% @my_projects.each_with_index do |proj, index|%>
     <div class="item <%= 'active' if index == 0%>">
     <%= image_tag proj.image.url%>
       <div class="carousel-caption inlineb blurb">
@@ -33,20 +29,20 @@
 
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <% @projects.length.times do |i|%>
+    <% @my_projects.length.times do |i|%>
       <%if i == 0%>
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-mine" data-slide-to="0" class="active"></li>
       <%else%>
-        <li data-target="#carousel-example-generic" data-slide-to="<%= i%>"></li>
+        <li data-target="#carousel-mine" data-slide-to="<%= i%>"></li>
       <%end%>
     <%end%>
   </ol>
 
   <!-- Controls -->
-  <a class="left carousel-control carousel-btn" href="#carousel-example-generic" data-slide="prev">
+  <a class="left carousel-control carousel-btn" href="#carousel-mine" data-slide="prev">
     <span class = "fa fa-angle-left carousel-btn-left"></span>
   </a>
-  <a class="right carousel-control carousel-btn" href="#carousel-example-generic" data-slide="next">
+  <a class="right carousel-control carousel-btn" href="#carousel-mine" data-slide="next">
     <span class = "fa fa-angle-right carousel-btn-right"></span>
   </a>
 </div>

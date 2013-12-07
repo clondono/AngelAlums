@@ -1,26 +1,19 @@
-<h1>Student Dashboard</h1>
-<div>
-	<ul class="pagination">
-		<% @projects.each_with_index do |proj, index|%>
-	    <li class="item">
-	    	<a href="#">
-			    <%= image_tag proj.image.url%>
-			      <div class="inlineb">
-			        <div class="proj-title inlineb">
-			          <h2><%= proj.title%></h2>
-			          By <%= proj.student.email%>
-			        </div>
-			        <div class = "funds">
-			          Funds Raised:
-			          <div class="progress progress-striped">
-			            <div class="bar" style="width: <%= (proj.total_donation / proj.goal)*100%>%;">$<%= proj.total_donation %></div>
-			          </div>
-			        </div>
-			        <%= link_to 'View', proj , :class => 'btn btn-primary'%>
-			      </div>
-			</a>
-	    </li>
-	    <%end%>
+<h1 class ="Headings"><%= current_user.first_name%>'s Dashboard</h1>
+<%= link_to 'New Project', new_project_path, :class => 'btn inlineb btn-primary'  %>
+<br/>
+<%= render "stud_main"%>
+<%= render "stud_myproj"%>
+<%= render "stud_sharedproj"%>
+<%= render "all_projects"%>
 
-	</ul>
+<!-- <div id="container">
+  <div class="box">
+    <p>content</p>
+  </div>
+  ...
 </div>
+
+contains the content to be loaded when scrolled
+<nav id="page-nav">
+  <a href="pages/2.html"></a>
+</nav> -->
