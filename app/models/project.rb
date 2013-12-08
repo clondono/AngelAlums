@@ -19,6 +19,7 @@ class Project < ActiveRecord::Base
     accepts_nested_attributes_for :advisors, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
     accepts_nested_attributes_for :taggables, :reject_if => lambda { |a| a[:tag_id].blank? }, :allow_destroy => true
     accepts_nested_attributes_for :collaborations, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
+    accepts_nested_attributes_for :tags, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true
 
     #format link to allow it to be embbed
     def youtube_embed
@@ -53,5 +54,16 @@ class Project < ActiveRecord::Base
 
     def self.search(tag_ids)
         Project.joins(:tags).where(:tags => {:id => tag_ids})
+    end
+
+    def addCollab
+        self.collaborations.each do | collab|
+            user = User.find_by_email(collab.email)
+            if user
+                collab.user_id = user.id
+                collab.save
+            end
+        end
+        
     end
 end

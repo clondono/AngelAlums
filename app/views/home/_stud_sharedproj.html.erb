@@ -1,4 +1,4 @@
-<h4>MY Collaborations</h4>
+<h3 class= "Headings">My Collaborations</h3>
 <div id="carousel-collab" class="carousel carousel-collab slide" data-ride="carousel">
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
@@ -7,13 +7,15 @@
       <%= image_tag "nothing.jpg"%>
     </div>
     <%end%>
+    <%count = 0%>
     <% @collab_projects.each_slice(3) do |threeproj|%>
-    <div class="item">
-      <div class="row">
+    <div class="item <%= 'active' if count == 0 %>">
+      <% count= count+1%>
+      <div class="row inlineb">
         <% threeproj.each do | proj|%>
-          <div>
+          <div class= "row-elements inlineb">
             <%= image_tag proj.image.url%>
-            <div class="carousel-caption inlineb blurb">
+            <div class="caption inlineb blurb">
               <div class="proj-title inlineb">
                 <h2 class= "Headings"><%= proj.title%></h2>
                 By <%= proj.student.email%>

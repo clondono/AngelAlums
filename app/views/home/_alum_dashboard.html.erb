@@ -1,1 +1,6 @@
-<h1>Alumni Dashboard</h1>
+<h1 class ="Headings"><%= current_user.first_name%>'s Dashboard</h1>
+<%= link_to 'New Project', new_project_path, :class => 'btn inlineb btn-primary'  %>
+<br/>
+
+<%= render "alum_donatedproj"%>
+<%= render "all_projects"%>

@@ -60,9 +60,14 @@
       <%= link_to_add_fields "Add more Collaborators", f, :collaborations %>
       </div>
       <h3>Add Tags<h3>
-      <%= f.fields_for :taggables do |builder|%>
-      <%=render "tag_fields", :f => builder %>
-      <%end%>
+      <div>
+        <%= f.fields_for :taggables do |builder|%>
+        <%=render "taggable_fields", :f => builder %>
+        <%end%>
+      </div>
+      <div>
+        <%= link_to_add_fields "Create more Tags", f, :tags %>
+      </div>
     </div>
     
     <%= f.submit %>

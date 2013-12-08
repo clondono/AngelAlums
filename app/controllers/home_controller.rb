@@ -11,8 +11,6 @@ class HomeController < ApplicationController
     else
       @donated_projects = current_user.projects
     end
-    
-
   end
 
 

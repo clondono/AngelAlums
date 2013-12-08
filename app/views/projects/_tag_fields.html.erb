@@ -1,1 +1,13 @@
-<%= f.collection_select :tag_id, Tag.all, :id, :title, {}, {:multiple => true, :class => "tag-select"}%>
+<h4>Tag Info:</h4>
+<div class ="control-group">
+  <%=f.label :title, "Title", :class => 'control-label'%>
+  <div class="controls">
+	<%=f.text_field :title , :class => 'text_field',  :required=>:true, :placeholder =>'title'%>
+  </div>
+</div>
+<div class ="control-group">
+  <%=f.label :description, "Description", :class => 'control-label'%>
+  <div class="controls">
+  	<%=f.text_field :description , :class => 'text_field', :placeholder =>'description'%>  
+  </div>
+</div>
