@@ -9,8 +9,12 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
+    #Project.find_by(highlighted: true)
     @projects = Project.all
+    @highlighted_projects = Project.where(:highlighted => true)
   end
+
+
 
   # GET /projects/1
   # GET /projects/1.json
@@ -35,6 +39,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.owner_id = @current_user.id
+    @project.highlighted = false
     respond_to do |format|
       if @project.save
         #add advisors, tags and collaborators
@@ -79,6 +84,8 @@ class ProjectsController < ApplicationController
     def set_project
       @project = Project.find(params[:id])
     end
+
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
