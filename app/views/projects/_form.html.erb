@@ -69,6 +69,7 @@
         <%= link_to_add_fields "Create more Tags", f, :tags %>
       </div>
     </div>
+    <%= link_to "Connect with Stripe", "https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_35NUqVlukn0Di9kewqJ88T217P4VZgMO&scope=read_write&state=1234", :class => "btn btn-info stripe-connect" %>
     
     <%= f.submit %>
   </div>
