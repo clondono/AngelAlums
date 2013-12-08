@@ -11,12 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require bootstrap
-//= require turbolinks
 //= require select2
-//= require_tree .
+//= require_tree
+//= require turbolinks
 
 function add_fields(link, association, content) {
   var new_id = new Date().getTime();
