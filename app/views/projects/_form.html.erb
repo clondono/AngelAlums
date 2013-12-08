@@ -61,9 +61,7 @@
       </div>
       <h3>Add Tags<h3>
       <div>
-        <%= f.fields_for :taggables do |builder|%>
-        <%=render "taggable_fields", :f => builder %>
-        <%end%>
+        <%=render "taggable_fields", :f => f %>
       </div>
       <div>
         <%= link_to_add_fields "Create more Tags", f, :tags %>

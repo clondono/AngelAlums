@@ -24,14 +24,14 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
-    #to allow forms to be built for multiple entries
-    @project.taggables.build
     @project.advisors.build
     @project.collaborations.build
+    @old_tags = []
   end
 
   # GET /projects/1/edit
   def edit
+    @old_tags = @project.tags
   end
 
   # POST /projects
@@ -65,6 +65,7 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
+    @project.taggables.destroy_all
     respond_to do |format|
       if @project.update(project_params)
         @project.addCollab
@@ -97,7 +98,7 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params[:project].permit(:title, :image, :video, :description, :goal, advisors_attributes:[:id, :name , :email], collaborations_attributes: [:id, :name, :email], taggables_attributes:[:id,:tag_id], tags_attributes:[:title,:description])
+      params[:project].permit(:title, :image, :video, :description, :goal, :taggables ,advisors_attributes:[:id, :name , :email], collaborations_attributes: [:id, :name, :email], taggables_attributes:[:id,:tag_id],tags_attributes:[:title,:description])
     end
     # check if current user is logged in
     def logged_in
@@ -129,12 +130,11 @@ class ProjectsController < ApplicationController
 
     def prep_params
       tagids = []
-      params[:project][:taggables_attributes].values[0][:tag_id].reject!(&:blank?).each do |id|
+      params[:taggables].each do |id|
         tagids.push({:tag_id => id})
       end
       params[:project][:advisors_attributes] = params[:project][:advisors_attributes].values
       params[:project][:taggables_attributes] = tagids
       params[:project][:collaborations_attributes] = params[:project][:collaborations_attributes].values
-
     end
 end
