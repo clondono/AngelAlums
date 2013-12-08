@@ -4,7 +4,12 @@
 
 ready = ->
 	$(".tag-select").select2({placeholder: "Select at least one Tag"})
-	$('#carousel-example-generic').carousel({interval: 2000})
+	$('#carousel-main').carousel({interval: 2000})
+	$('#carousel-mine').carousel({interval: 2000})
+	$('#carousel-collab').carousel({interval: 2000})
+	$('#carousel-donate').carousel({interval: 2000})
+	
+	
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

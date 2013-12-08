@@ -1,5 +1,5 @@
-<h1>y projs</h1>
-<div id="carousel-mine" class="carousel carousel-main slide" data-ride="carousel">
+<h4>My Projects</h4>
+<div id="carousel-mine" class="carousel carousel-mine slide" data-ride="carousel">
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <% if @my_projects.length == 0%>
@@ -7,21 +7,27 @@
       <%= image_tag "nothing.jpg"%>
     </div>
     <%end%>
-    <% @my_projects.each_with_index do |proj, index|%>
-    <div class="item <%= 'active' if index == 0%>">
-    <%= image_tag proj.image.url%>
-      <div class="carousel-caption inlineb blurb">
-        <div class="proj-title inlineb">
-          <h2 class= "Headings"><%= proj.title%></h2>
-          By <%= proj.student.email%>
-        </div>
-        <div class = "funds">
-          Funds Raised:
-          <div class="progress progress-striped">
-            <div class="bar" style="width: <%= (proj.total_donation / proj.goal)*100%>%;">$<%= proj.total_donation %></div>
+    <% @my_projects.each_slice(3) do |threeproj|%>
+    <div class="item">
+      <div class="row">
+        <% threeproj.each do | proj|%>
+          <div>
+            <%= image_tag proj.image.url%>
+            <div class="carousel-caption inlineb blurb">
+              <div class="proj-title inlineb">
+                <h2 class= "Headings"><%= proj.title%></h2>
+                By <%= proj.student.email%>
+              </div>
+              <div class = "funds">
+                Funds Raised:
+                <div class="progress progress-striped">
+                  <div class="bar" style="width: <%= (proj.total_donation / proj.goal)*100%>%;">$<%= proj.total_donation %></div>
+                </div>
+              </div>
+              <%= link_to 'View', proj , :class => 'btn btn-primary'%>
+            </div>
           </div>
-        </div>
-        <%= link_to 'View', proj , :class => 'btn btn-primary'%>
+        <%end%>
       </div>
     </div>
     <%end%>

@@ -1,1 +1,54 @@
-<h1>shared projs</h1>
+<h4>MY Collaborations</h4>
+<div id="carousel-collab" class="carousel carousel-collab slide" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <% if @collab_projects.length == 0%>
+    <div class="item active">
+      <%= image_tag "nothing.jpg"%>
+    </div>
+    <%end%>
+    <% @collab_projects.each_slice(3) do |threeproj|%>
+    <div class="item">
+      <div class="row">
+        <% threeproj.each do | proj|%>
+          <div>
+            <%= image_tag proj.image.url%>
+            <div class="carousel-caption inlineb blurb">
+              <div class="proj-title inlineb">
+                <h2 class= "Headings"><%= proj.title%></h2>
+                By <%= proj.student.email%>
+              </div>
+              <div class = "funds">
+                Funds Raised:
+                <div class="progress progress-striped">
+                  <div class="bar" style="width: <%= (proj.total_donation / proj.goal)*100%>%;">$<%= proj.total_donation %></div>
+                </div>
+              </div>
+              <%= link_to 'View', proj , :class => 'btn btn-primary'%>
+            </div>
+          </div>
+        <%end%>
+      </div>
+    </div>
+    <%end%>
+  </div>
+
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% @collab_projects.length.times do |i|%>
+      <%if i == 0%>
+        <li data-target="#carousel-collab" data-slide-to="0" class="active"></li>
+      <%else%>
+        <li data-target="#carousel-collab" data-slide-to="<%= i%>"></li>
+      <%end%>
+    <%end%>
+  </ol>
+
+  <!-- Controls -->
+  <a class="left carousel-control carousel-btn" href="#carousel-collab" data-slide="prev">
+    <span class = "fa fa-angle-left carousel-btn-left"></span>
+  </a>
+  <a class="right carousel-control carousel-btn" href="#carousel-collab" data-slide="next">
+    <span class = "fa fa-angle-right carousel-btn-right"></span>
+  </a>
+</div>
