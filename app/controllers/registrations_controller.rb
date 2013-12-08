@@ -2,7 +2,8 @@ class RegistrationsController < Devise::RegistrationsController
 
   #overwrite default path for after signing up
   def after_sign_up_path_for(resource)
-    edit_user_registration_path({profile: "true"})
+    user_steps_path
+   # edit_user_registration_path({profile: "true"})
   end
 
   #overwrite devise update function to only require password on email and password updates

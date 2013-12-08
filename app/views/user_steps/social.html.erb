@@ -1,0 +1,15 @@
+<%= form_for @user, url: wizard_path do |f| %>
+
+  <div style="float:right"><%= link_to('skip',root_path )%> </div>
+
+
+
+  <div><%= f.label :facebook %><br />
+  <%= f.text_field :facebook%></div>
+
+  <div><%= f.label :hangout %><br />
+  <%= f.text_field :hangout%></div>
+  
+  <div><%= f.submit "Continue" %></div>
+
+<% end %>

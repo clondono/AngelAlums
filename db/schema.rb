@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131118044423) do
+ActiveRecord::Schema.define(version: 20131206194127) do
 
   create_table "advisors", force: true do |t|
     t.integer  "project_id"
@@ -109,6 +109,8 @@ ActiveRecord::Schema.define(version: 20131118044423) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "facebook"
+    t.string   "hangout"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

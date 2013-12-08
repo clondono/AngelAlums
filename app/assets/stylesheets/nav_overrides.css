@@ -39,6 +39,8 @@
   background-repeat: no-repeat;
   filter: none;
   color: #ffffff;
+  border-color:transparent;
+
 }
 
 .navbar .nav li.dropdown > .dropdown-toggle .caret {

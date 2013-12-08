@@ -1,0 +1,41 @@
+.form {
+  text-align: right;
+  margin-right: 30%;
+  margin-left: 35%;
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  padding: 50px;
+  display:inline-block;
+}
+
+.form-label, label {
+  display:inline-block;
+  margin-right:5px;
+}
+
+.form-title {
+  text-align:center; 
+  margin-bottom:30px;
+}
+
+.form-btn {
+  width: 100%
+}
+
+.form-signIn {
+  margin-top: 12%;
+
+}
+.form-signUp {
+  margin-top: 5%;
+
+}
+.form-forgot {
+  margin-top: 12%;
+
+}
+.form-reset {
+  margin-top: 12%;
+
+}

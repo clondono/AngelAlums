@@ -3,6 +3,7 @@ Dummy::Application.routes.draw do
   get "home/index"
   devise_for :users, :controllers => { registrations: "registrations" }
   resources :users
+  resources :user_steps
   resources :search
   resources :projects do
     resources :donations, shallow: true
