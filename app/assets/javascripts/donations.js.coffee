@@ -25,6 +25,6 @@ stripeResponseHandler = (status, response) ->
     
     # Insert the token into the form so it gets submitted to the server
     $form.append $("<input type=\"hidden\" name=\"stripeToken\" />").val(token)
-    
+
     # and submit
     $form.get(0).submit()
