@@ -26,7 +26,7 @@ class DonationsController < ApplicationController
 
 	  #Create a customer with the token created in the Stripe system
 	  customer = Stripe::Customer.create(
-	    :email => 'example@stripe.com',
+	    :email => current_user.email,
 	    :card  => params[:stripeToken]
 	  )
 
