@@ -1,0 +1,56 @@
+
+<!--
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    $("#asdf").click(function() {
+      alert("170");
+    })
+  })
+</script>
+-->
+
+<script type="text/javascript" charset="utf-8">
+
+$(document).on("click", ".toggle-field", function() {
+  var id = $(this).attr("id");
+  
+  $.ajax({
+    url:'/admin_post', //Defined in your routes file
+      data:(
+        'highlight_id=' + id
+      ),
+      type: 'POST'
+  })
+
+});
+
+
+</script>
+
+<div class="container">
+	<h4>Click and toggle 'True / False' to put them into the highlighted carousel in the main page </h4>
+	<br>
+	<table class="table table-striped">
+		<thead>
+        <tr>
+          <th width="10%">Index</th>
+          <th width="60%">Name</th>
+          <th width="20%">Donation</th>
+          <th width="10%">Highlighted?</th>
+        </tr>
+        </thead>
+        <tbody>
+        	<% @projects.each_with_index do |proj, index| %>
+          <% id_name = proj.id.to_s %>
+        		<tr>
+        			<td><%= proj.id %></td>
+        			<td><%= link_to proj.title, proj %></td>
+        			<td><%= proj.total_donation %></td>
+        			<td><%= link_to proj.highlighted.to_s, admin_path, remote: true, :class=>'toggle-field', :id => id_name %></td>
+        		</tr>
+
+        	<% end %>
+        </tbody>
+	</table>
+
+</div>

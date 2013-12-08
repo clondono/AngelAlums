@@ -12,4 +12,12 @@ Dummy::Application.routes.draw do
   end
 
    root 'home#index'
+
+  # Set up a routing for the destroy_all method
+  #match "notes" => 'notes#destroy_all', :via => [:delete]
+
+  # Create connections
+  match 'admin', to: 'admin#admin', as: 'admin', :via => [:get]
+  match 'admin_post', to: 'admin#admin_post', as: 'admin_post', :via => [:post]
+
 end
