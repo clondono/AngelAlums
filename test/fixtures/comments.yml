@@ -1,13 +1,20 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  body: MyText
+    # t.string   "name"
+    # t.text     "body"
+    # t.integer  "update_id"
+    # t.integer  "creator_id"
+    # t.datetime "created_at"
+    # t.datetime "updated_at"
+
+comment_a:
+  name: "first comment"
+  body: "How was vietnam?"
   update_id: 1
   creator_id: 1
 
-two:
-  name: MyString
-  body: MyText
+comment_b:
+  name: "second comment"
+  body: "It was great!"
   update_id: 1
-  creator_id: 1
+  creator_id: 2

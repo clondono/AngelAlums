@@ -4,8 +4,30 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
+
+    # t.string   "title"
+    # t.string   "image_file_name"
+    # t.string   "image_content_type"
+    # t.integer  "image_file_size"
+    # t.datetime "image_updated_at"
+    # t.string   "video"
+    # t.text     "description"
+    # t.float    "goal"
+    # t.datetime "created_at"
+    # t.datetime "updated_at"
+    # t.integer  "owner_id"
+    # t.boolean  "highlighted"
+
+
+Project_vietnam:
+ id: 1
+ title: "Building houses in vietnam"
+ description: "We are building eco-friendly houses in Vietnam over the summer"
+ goal: 500000.0
+
 #
-two: {}
-#  column: value
+Project_webgame:
+ id: 2
+ title: "Developing webgames"
+ description: "We are building webgames based on our experience in 6.170"
+ goal: 200000.0
