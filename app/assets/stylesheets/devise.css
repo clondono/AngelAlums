@@ -21,6 +21,8 @@ body {
     width: 600px;
     margin-left: -300px;
 }
+
+
 .control-group1 {
 	position: fixed;
 	top: 40%;
@@ -48,11 +50,12 @@ body {
 
 
 .logo {
-	width: 243px;
+	width: 100%;
+	/*margin-left:-122px;*/
 	height: 55px;
 	position: fixed;
 	top: 18%;
-	margin-left: 42%;
+	/*left: 50%;*/
 	color: white;
 	letter-spacing: -1px;
 	display: block;
@@ -62,12 +65,13 @@ body {
 }
 
 .subheading {
+	width: 100%;
 	line-height: 1.2;
 	position: fixed;
-	left: 33%;
+	/*left: 50%;
+	margin-left: 0;*/
 	top: 29%;
-	margin: 8px 0 18px -250px;
-	width: 500px;
+	/*margin: 8px 0 18px -250px;*/
 	font-size: 20px;
 	white-space: nowrap;
 	color: #fff;
