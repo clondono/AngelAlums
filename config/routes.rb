@@ -11,5 +11,5 @@ Dummy::Application.routes.draw do
     end
   end
 
-   root 'home#index'
+  root 'home#index'
 end
