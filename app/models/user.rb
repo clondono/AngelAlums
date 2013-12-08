@@ -18,5 +18,9 @@ def check_Collaborator(email)
   @user
 end
 
+#return the name of a user by concatenating the first name and the last name
+def name
+  return self.first_name + " " + self.last_name
+end
 
 end

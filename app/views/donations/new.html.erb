@@ -1,4 +1,12 @@
-<center><h2><%= link_to @project.title, project_path(@project), {style: "TEXT-DECORATION: NONE"} %></h2></center>
+<center>
+  <div class = "project-title">
+    <h2><%= link_to @project.title, project_path(@project), {style: "TEXT-DECORATION: NONE"} %></h2>
+  </div>
+  <div class = "project-creator">
+    by <%= @project.student.name %>
+  </div> 
+</center>
+<hr>
 <%= form_for [@project, @donation], html: {class: "form-horizontal"} do |f| %>
   <span class="error_messages">
   </span>
