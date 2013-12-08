@@ -41,6 +41,16 @@ class ProjectsController < ApplicationController
     @project.owner_id = @current_user.id
     @project.addCollab
     @project.highlighted = false
+
+    token = params[:stripeToken]
+
+    recipient = Stripe::Recipient.create(
+      :name => "John Doe",
+      :type => "individual",
+      :email => "payee@example.com",
+      :bank_account => token
+    )
+
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
