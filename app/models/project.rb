@@ -58,12 +58,10 @@ class Project < ActiveRecord::Base
 
     def addCollab
         self.collaborations.each do | collab|
-            user = User.find_by_email(collab.email)
-            if user
-                collab.user_id = user.id
-                collab.save
-            end
+            user = User.check_Collaborator(collab.email)
+            collab.user_id = user.id
+            collab.save
         end
-        
     end
+
 end
