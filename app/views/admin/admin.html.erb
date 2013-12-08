@@ -1,32 +1,3 @@
-
-<!--
-<script type="text/javascript" charset="utf-8">
-  $(function() {
-    $("#asdf").click(function() {
-      alert("170");
-    })
-  })
-</script>
--->
-
-<script type="text/javascript" charset="utf-8">
-
-$(document).on("click", ".toggle-field", function() {
-  var id = $(this).attr("id");
-  
-  $.ajax({
-    url:'/admin_post', //Defined in your routes file
-      data:(
-        'highlight_id=' + id
-      ),
-      type: 'POST'
-  })
-
-});
-
-
-</script>
-
 <div class="container">
 	<h4>Click and toggle 'True / False' to put them into the highlighted carousel in the main page </h4>
 	<br>
