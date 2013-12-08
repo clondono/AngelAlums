@@ -37,7 +37,7 @@
 
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <% @my_projects.length.times do |i|%>
+    <% ((@my_projects.length / 3).ceil).times do |i|%>
       <%if i == 0%>
         <li data-target="#carousel-mine" data-slide-to="0" class="active"></li>
       <%else%>

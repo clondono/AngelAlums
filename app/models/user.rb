@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 #method called in order to see if an email belongs to a 
 #certain user. If such a user exists they will be returned
 #if not a new user with be created and that will be returned
-def check_Collaborator(email)
+def self.check_Collaborator(email)
   @user = User.find_by_email(email)
   if @user == nil
     @user = User.create(email: email, type: "Student", password: Devise.friendly_token[0,20])

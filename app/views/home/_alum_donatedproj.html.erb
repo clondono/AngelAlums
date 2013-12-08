@@ -37,7 +37,7 @@
 
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <% @donated_projects.length.times do |i|%>
+    <% ((@donated_projects.length / 3).ceil).times do |i|%>
       <%if i == 0%>
         <li data-target="#carousel-donate" data-slide-to="0" class="active"></li>
       <%else%>

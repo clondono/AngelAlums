@@ -1,1 +1,4 @@
-<%= f.collection_select :tag_id, Tag.all, :id, :title, {}, {:multiple => true, :class => "tag-select"}%>
+<%=select_tag 'taggables[]', options_for_select(
+Tag.all.map {|s| [s.title, s.id]}, 
+@old_tags.map {|j| j.id}
+), {:multiple => true, :class => "tag-select"}%>
