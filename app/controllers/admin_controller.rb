@@ -12,6 +12,7 @@ class AdminController < ApplicationController
 	end
 
 	# POST /admin_post
+	# followed the example in http://stackoverflow.com/questions/15422497/how-to-use-javascript-variables-in-ruby
 	def admin_post
 		highlight_id = params[:highlight_id]
 		@project = Project.find_by(id: highlight_id)

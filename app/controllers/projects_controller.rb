@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
   def index
     #Project.find_by(highlighted: true)
     @projects = Project.all
+    @highlighted_projects = Project.where(:highlighted => true)
   end
 
 
