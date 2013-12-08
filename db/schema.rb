@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131206203259) do
+ActiveRecord::Schema.define(version: 20131208000513) do
 
   create_table "advisors", force: true do |t|
     t.integer  "project_id"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20131206203259) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "owner_id"
+    t.boolean  "highlighted"
   end
 
   create_table "taggables", force: true do |t|

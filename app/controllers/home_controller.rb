@@ -1,9 +1,9 @@
 class HomeController < ApplicationController
   before_action :logged_in
-
   #dashboard for future work ( not mvp)
 
   def index
+    @highlighted_projects = Project.where(:highlighted => true)
     @all_projects = Project.all
     if current_user.type == "Student"
       @my_projects = current_user.projects

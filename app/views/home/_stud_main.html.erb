@@ -1,12 +1,12 @@
 <div id="carousel-main" class="carousel carousel-main slide" data-ride="carousel">
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-    <% if @all_projects.length == 0%>
+    <% if @highlighted_projects.length == 0%>
     <div class="item active">
       <%= image_tag "nothing.jpg"%>
     </div>
     <%end%>
-    <% @all_projects.each_with_index do |proj, index|%>
+    <% @highlighted_projects.each_with_index do |proj, index|%>
     <div class="item <%= 'active' if index == 0%>">
     <%= image_tag proj.image.url%>
       <div class="carousel-caption inlineb blurb">
@@ -29,7 +29,7 @@
 
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <% @all_projects.length.times do |i|%>
+    <% @highlighted_projects.length.times do |i|%>
       <%if i == 0%>
         <li data-target="#carousel-main" data-slide-to="0" class="active"></li>
       <%else%>

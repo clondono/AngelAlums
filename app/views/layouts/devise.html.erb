@@ -14,15 +14,6 @@
         </script>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <%= render 'partials/navbar' %>
-  <div class="container">
-  <!-- Notes to be displayed on sucess/failure events -->
-  <div class="center">
-      <% flash.each do |key, value| %>
-          <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
-  </div>
 <%= yield %>
 </body>
 </html>

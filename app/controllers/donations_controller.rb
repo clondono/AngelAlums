@@ -22,6 +22,8 @@ class DonationsController < ApplicationController
       @donation.save
       @project.donations << @donation
       
+      token = params[:stripeToken]
+
 	  #Create a customer with the token created in the Stripe system
 	  customer = Stripe::Customer.create(
 	    :email => 'example@stripe.com',
@@ -36,12 +38,12 @@ class DonationsController < ApplicationController
 	    :currency    => 'usd'
 	  )
 
-	flash[:notice] = "Thanks, you paid $10.00!"
-	redirect_to project_path(@project)
-
-	rescue Stripe::CardError => e
-	  flash[:error] = e.message
+	  flash[:notice] = "Thanks, you paid $10.00!"
 	  redirect_to project_path(@project)
+
+	  rescue Stripe::CardError => e
+	    flash[:error] = e.message
+	    redirect_to project_path(@project)
 	end
 
 	private
