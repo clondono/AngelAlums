@@ -150,7 +150,6 @@
 				background-color: #EEEEEE;
 				text-align: center;
 				.proj-title{
-					width: 300px;
 					h2{
 						margin: 0px;
 					}
@@ -167,9 +166,11 @@
 	}
 }
 .progress{
+	width: 300px;
 	display: inline-block;
-	background-color: #a8df1a;
-	background-image: none; 
+	.bar{
+		color: #645470;
+	}
 }
 
 .carousel-mine, .carousel-collab, .carousel-donate {
