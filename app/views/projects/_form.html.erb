@@ -67,7 +67,19 @@
         <%= link_to_add_fields "Create more Tags", f, :tags %>
       </div>
     </div>
-    
+
+    <div class = "bankaccount-form">
+      <span class="account_error_messages">
+      </span>
+      <div class = "control-group">
+        <%= label_tag :routing_number, nil, class: "control-label" %>
+        <%= text_field_tag :routing_number, nil, name: nil, placeholder: "Routing Number", size: 10 %>
+      </div>
+      <div class = "control-group">
+        <%= label_tag :account_number, nil, class: "control-label" %>
+        <%= text_field_tag :account_number, nil, name: nil, placeholder: "Account Number", size: 15 %>
+      </div>
+    </div>    
     <%= f.submit %>
   </div>
 <% end %>

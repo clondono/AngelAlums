@@ -1,4 +1,4 @@
-<h1 class = "logo"> AngelAlums </h1>
+  <h1 class = "logo"> AngelAlums </h1>
 <h2 class = "subheading"> 
 	Connect Alums and Students through Creative Projects
 	<br>
@@ -26,8 +26,14 @@
   	<%= f.submit "Sign in", class: "btn btn-primary btn-large btn-block signin-button" %>
   	</div>
   </div>
+  <div class = "control-group4">
+    <div class = "controls">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
 <% end %>
 </div>
+
 <div class = "stats">
 	<div class = "stats_projects">
 		<div class = "number">250</div>
@@ -42,4 +48,4 @@
 		<div class = "description">alums</div>
 	</div>
 </div>
-<!--<%= render "devise/shared/links" %>-->
+
