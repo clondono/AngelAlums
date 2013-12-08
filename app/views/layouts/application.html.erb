@@ -2,8 +2,9 @@
 <html>
 <head>
   <title>AngelAlums</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all" %>  
+  <%= javascript_include_tag "https://js.stripe.com/v2/"%>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
         <!--used in order to pass user authentication in AJAX  calls-->
         <script> $(document).ajaxSend(function(e, xhr, options) {
@@ -11,7 +12,6 @@
             xhr.setRequestHeader("X-CSRF-Token", token);
         });
         </script>
-  <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
 </head>
 <body>
   <!-- Navigation Bar -->
