@@ -45,9 +45,9 @@ class ProjectsController < ApplicationController
     token = params[:stripeToken]
 
     recipient = Stripe::Recipient.create(
-      :name => "John Doe",
+      :name => @current_user.name,
       :type => "individual",
-      :email => "payee@example.com",
+      :email => @current_user.email,
       :bank_account => token
     )
 

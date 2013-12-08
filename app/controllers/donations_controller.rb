@@ -16,7 +16,7 @@ class DonationsController < ApplicationController
 	def create
 	  @donation = Donation.new
       # We will donate $10 for MVP, but will be able to change amount for the final
-      @donation.amount = 10
+      @donation.amount = params[:donation_amount]
       @donation.project_id = @project.id
       @donation.alum_id = current_user.id
       @donation.save
@@ -26,7 +26,7 @@ class DonationsController < ApplicationController
 
 	  #Create a customer with the token created in the Stripe system
 	  customer = Stripe::Customer.create(
-	    :email => 'example@stripe.com',
+	    :email => current_user.email,
 	    :card  => params[:stripeToken]
 	  )
 
@@ -34,7 +34,7 @@ class DonationsController < ApplicationController
 	  charge = Stripe::Charge.create(
 	    :customer    => customer.id,
 	    :amount      => @donation.amount * 100,
-	    :description => 'AngelAlums Customer',
+	    :description => @project.title,
 	    :currency    => 'usd'
 	  )
 
