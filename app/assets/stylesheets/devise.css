@@ -1,13 +1,9 @@
-html {
+html {	
     background: url('mit_dome_night.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
-}
-
-body {
-  padding-top: 0px;
 }
 
 .signin-form {
@@ -53,28 +49,16 @@ body {
 
 
 .logo {
-	width: 100%;
-	/*margin-left:-122px;*/
 	height: 55px;
-	position: fixed;
-	top: 18%;
-	/*left: 50%;*/
 	color: white;
 	letter-spacing: -1px;
 	display: block;
-	/*font: normal 14px/1.4 "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;*/
 	font-size: 40px;
 	text-align: center;
 }
 
 .subheading {
-	width: 100%;
 	line-height: 1.2;
-	position: fixed;
-	/*left: 50%;
-	margin-left: 0;*/
-	top: 29%;
-	/*margin: 8px 0 18px -250px;*/
 	font-size: 20px;
 	white-space: nowrap;
 	color: #fff;

@@ -23,4 +23,7 @@ def name
   return self.first_name + " " + self.last_name
 end
 
+  def send_update(project)
+    send_devise_notification(:project_update, {project_title: project.title, project_id:project.id})
+  end
 end
