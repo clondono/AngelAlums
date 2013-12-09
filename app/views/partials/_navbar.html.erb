@@ -5,7 +5,7 @@
         
         <nav>
         <ul class="nav navbar-nav pull-right inlineb">
-
+            
             <% if user_signed_in? %>
                 <li><%= link_to('Home',root_path )%> </li>
                 <li><%= link_to "Profile",current_user.becomes(User)%></li>

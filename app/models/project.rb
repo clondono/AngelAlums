@@ -86,4 +86,11 @@ class Project < ActiveRecord::Base
     def self.search(tag_ids)
         Project.joins(:tags).where(:tags => {:id => tag_ids})
     end
+
+  def email_update
+    self.donors.each do |donor|
+        donor.send_update(self)
+    end
+  end
+
 end
