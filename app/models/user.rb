@@ -18,9 +18,14 @@ def self.check_Collaborator(email)
   @user
 end
 
-#return the name of a user by concatenating the first name and the last name
+#return the name of a user by concatenating the first name and the last name if they both exist
+#return email otherwise
 def name
-  return self.first_name + " " + self.last_name
+  if self.first_name? && self.last_name?
+    self.first_name + " " + self.last_name
+  else
+    self.email
+  end
 end
 
   def send_update(project)
