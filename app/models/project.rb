@@ -57,11 +57,11 @@ class Project < ActiveRecord::Base
     end
 
     def addCollab
-        self.collaborations.each do | collab|
-            user = User.check_Collaborator(collab.email)
-            collab.user_id = user.id
-            collab.save
-        end
+        # self.collaborations.each do | collab|
+        #     user = User.check_Collaborator(collab.email)
+        #     collab.user_id = user.id
+        #     collab.save
+        # end
     end
 
     #return the number of donators for a project
