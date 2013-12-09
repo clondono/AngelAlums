@@ -9,7 +9,7 @@ class HomeController < ApplicationController
       @my_projects = current_user.projects
       @collab_projects = current_user.shared_projects
     else
-      @donated_projects = current_user.projects
+      @donated_projects = current_user.projects.uniq_by(&:id)
     end
   end
 
