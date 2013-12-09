@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
-  before_action :logged_in
-  #dashboard for future work ( not mvp)
+  before_action :logged_in 
 
   def index
     @highlighted_projects = Project.where(:highlighted => true)
@@ -12,8 +11,6 @@ class HomeController < ApplicationController
       @donated_projects = current_user.projects.uniq_by(&:id)
     end
   end
-
-
 
   private
   def logged_in
