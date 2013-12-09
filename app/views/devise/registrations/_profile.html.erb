@@ -7,20 +7,20 @@
   <div style="float:right"><%= link_to('skip',root_path )%> </div>
 
 
-  <div><%= f.label :major %><br />
+  <div><%= f.label :major %>
   <%= f.select :major, options_for_select(majorList)%></div>
 
-  <div><%= f.label :grad_year %><br />
+  <div><%= f.label :grad_year %>
   <%= f.text_field :grad_year%></div>
 
 
-  <div><%= f.label :avatar %><br />
+  <div><%= f.label :avatar %>
   <%= f.file_field :avatar %></div>
 
-  <div><%= f.label :first_name %><br />
+  <div><%= f.label :first_name %>
   <%= f.text_field :first_name %></div>
 
-  <div><%= f.label :last_name %><br />
+  <div><%= f.label :last_name %>
   <%= f.text_field :last_name%></div>
   
   <div><%= f.submit "Update" %></div>

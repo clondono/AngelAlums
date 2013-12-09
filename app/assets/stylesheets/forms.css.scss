@@ -1,0 +1,46 @@
+.form {
+  text-align: right;
+  margin-right: 25%;
+  margin-left: 40%;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  padding: 40px;
+  display:inline-block;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.form-label, label {
+  display:inline-block;
+  margin-right:5px;
+}
+
+.form-title {
+  text-align:center; 
+  margin-bottom:30px;
+  color:white;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  }
+
+.form-btn {
+  width: 100%
+}
+
+.form-signIn {
+  margin-top: 5%;
+
+}
+.form-signUp {
+  margin-top: 5%;
+
+}
+.form-forgot {
+  margin-top: 12%;
+
+}
+.form-reset {
+  margin-top: 12%;
+
+}

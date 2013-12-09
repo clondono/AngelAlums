@@ -18,10 +18,25 @@ Dummy::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
+
+  config.action_mailer.delivery_method = :smtp
+ 
+  config.action_mailer.smtp_settings = {
+    enable_starttls_auto: true,
+    address: 'smtp.gmail.com',
+    port: 587,
+    authentication: 'plain',
+    user_name: 'angelalums.inc@gmail.com',
+    password: 'alumniangels',
+    enable_starttls_auto: true
+  }
+
+
+  config.action_mailer.perform_deliveries = true
 
   # Raise an error on page load if there are pending migrations
   config.active_record.migration_error = :page_load
@@ -35,5 +50,6 @@ Dummy::Application.configure do
   config.assets.debug = true
   Paperclip.options[:command_path] = "/usr/bin/" #EJ
   # Paperclip.options[:command_path] = "/usr/local/bin/convert" #Richard
+config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
 end

@@ -4,35 +4,25 @@
 	<br>
 	Define and Support MIT Innovation
 </h2>
-<div class = "signin-form">
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: "form-horizontal"}) do |f| %>
-  <div class = "control-group1">
-  	<div class = "controls">
-  	<%= f.email_field :email, autofocus: true, placeholder: "Email address", class: "input-large" %>
-  	</div>
-  </div>
-  <div class = "control-group2">
-  	<div class = "controls">
-  	<%= f.password_field :password, placeholder: "Password", class: "input-large" %>
-  	</div>
-  </div>
-  <div class = "control-group3">
-  	<div class = "controls">
-  	<% if devise_mapping.rememberable? -%>
-    	<%= f.label :remember_me, class: "checkbox" do %>
-    	<%= f.check_box :remember_me %>Remember me
-    	<% end %>
-  	<% end -%>
-  	<%= f.submit "Sign in", class: "btn btn-primary btn-large btn-block signin-button" %>
-  	</div>
-  </div>
-  <div class = "control-group4">
-    <div class = "controls">
+
+<div class="form-signIn">
+
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    
+    <div class="form">
+      <div>
+        <%= f.email_field :email, autofocus: true, placeholder: "Email address", class: "input-large" %>
+      </div>
+      <div>      
+        <%= f.password_field :password, placeholder: "Password", class: "input-large" %>
+      </div> 
+
+      <div><%= f.submit "Sign In", class:"btn inlineb btn-primary form-btn" %></div>
       <%= render "devise/shared/links" %>
     </div>
-  </div>
-<% end %>
+  <% end %>
 </div>
+
 
 <div class = "homepage-stats">
 	<div class = "stats_projects">
@@ -49,3 +39,4 @@
 	</div>
 </div>
 
+>>>>>>> master

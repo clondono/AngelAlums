@@ -14,12 +14,15 @@
  *= require font-awesome
  *= require select2
  *= require_tree .
+ *= forms
  */
 
  
 #logo {
   float: left;
   margin-right: 10px;
+  margin-left: 20%;
+
   font-size: 1.7em;
   color: #fff;
   letter-spacing: -1px;
@@ -38,7 +41,8 @@
 }
 
 
-body {
+ body {
+ /*background-color: #c7f7ea;*/
   padding-top: 60px;
 }
 
@@ -56,5 +60,5 @@ body {
 
 @font-face {
     font-family: 'angelToes';
-    src: url('/assets/fonts/angeltoes.tff') format('truetype');
+    src: url('/assets/fonts/angeltoes.ttf') format('truetype');
 }
