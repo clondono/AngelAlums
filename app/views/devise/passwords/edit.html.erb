@@ -12,6 +12,8 @@
       <%= f.password_field :password_confirmation %></div>
 
       <div><%= f.submit "Change my password",  class:"btn inlineb btn-primary" %></div>
+      <%= render "devise/shared/links" %>
+
     </div>
   <% end %>
 </div>

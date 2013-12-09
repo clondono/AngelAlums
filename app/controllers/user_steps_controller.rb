@@ -1,6 +1,6 @@
 class UserStepsController < ApplicationController
   include Wicked::Wizard
-  steps :personal, :social
+  steps :personal, :contact
   def show
     @user = current_user
     render_wizard
