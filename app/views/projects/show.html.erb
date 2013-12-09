@@ -64,7 +64,7 @@
 			</div>
 		<%end%>
 	</div>
-	<%= link_to 'Back', projects_path, :class => 'btn btn-primary' %> 
+	<%= link_to 'Back', root_path, :class => 'btn btn-primary' %> 
 	<%= link_to 'Updates', project_updates_path(@project), :class => 'btn btn-primary'%> 
 	<% if @project.access_level(current_user.id) == "owner" || @project.access_level(current_user.id) == "collaborator"%>
 		<%= link_to 'Edit', edit_project_path(@project), :class => 'btn btn-primary' %> 
