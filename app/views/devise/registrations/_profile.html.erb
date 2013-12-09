@@ -1,28 +1,31 @@
-<h2>Profile info </h2>
+<h2 class = "form-title">Profile info </h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
 
-  <div style="float:right"><%= link_to('skip',root_path )%> </div>
+  <div><%= f.label :first_name, class: "form-label" %>
+  <%= f.text_field :first_name %></div>
 
+  <div><%= f.label :last_name, class: "form-label" %>
+  <%= f.text_field :last_name%></div>
 
-  <div><%= f.label :major %>
+  <div><%= f.label :major, class: "form-label"%>
   <%= f.select :major, options_for_select(majorList)%></div>
 
-  <div><%= f.label :grad_year %>
+  <div><%= f.label :grad_year, class: "form-label" %>
   <%= f.text_field :grad_year%></div>
 
 
-  <div><%= f.label :avatar %>
-  <%= f.file_field :avatar %></div>
+  <div style="margin-bottom:5px"><%= f.label :avatar%>
+  <%= f.file_field :avatar, style: "width:220px" %></div>
 
-  <div><%= f.label :first_name %>
-  <%= f.text_field :first_name %></div>
+  <div><%= f.label "facebook url" %>
+  <%= f.text_field :facebook%></div>
 
-  <div><%= f.label :last_name %>
-  <%= f.text_field :last_name%></div>
-  
-  <div><%= f.submit "Update" %></div>
+  <div><%= f.label "google email" %>
+  <%= f.text_field :hangout%></div>
+      
+  <div style="margin-bottom:10px"><%= f.submit "Update", class:"btn inlineb btn-primary" %></div>
 
 <% end %>

@@ -1,6 +1,9 @@
-<% if params[:profile] ==  "true" %>
-  <%= render("profile") %>
-<% else %>
-    <%= render("security") %>
-<% end %>
-<%= link_to "Back", :back %>
+<div class="form-signUp">
+    <div class="form">
+      <% if params[:profile] ==  "true" %>
+        <%= render("profile") %>
+      <% else %>
+          <%= render("security") %>
+      <% end %>
+    </div>
+</div>
