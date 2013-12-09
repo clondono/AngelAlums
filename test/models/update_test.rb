@@ -29,6 +29,13 @@ class UpdateTest < ActiveSupport::TestCase
   end
 
   test "update-comment-user association" do
-    
+    @gekko = users(:gekko)
+    @update = @gekko.updates.create(:title => "title", :content=>"text ")
+    @update.save
+
+    @comment = @update.comments.create(:body => "a comment");
+    @comment.creator_id = @gekko.id
+
+    assert (@update.creator == @comment.creator), "test 1 in comment-update-user association test failed"
   end
 end
