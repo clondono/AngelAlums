@@ -1,5 +1,4 @@
-body {
-    display: block;
+html {	
     background: url('mit_dome_night.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
   	-moz-background-size: cover;
