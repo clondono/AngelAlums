@@ -1,11 +1,3 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-    # t.string   "name"
-    # t.text     "body"
-    # t.integer  "update_id"
-    # t.integer  "creator_id"
-    # t.datetime "created_at"
-    # t.datetime "updated_at"
 
 comment_a:
   name: "first comment"

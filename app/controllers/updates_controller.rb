@@ -11,7 +11,7 @@ class UpdatesController < ApplicationController
 
   # GET /project/:project_id/updates
   def index
-    @updates = Update.all
+    @updates = Update.where(project_id: params[:project_id] )
     @comment = Comment.new
     
     respond_to do |format|
