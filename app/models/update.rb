@@ -12,7 +12,7 @@ class Update < ActiveRecord::Base
 
 
 	def creator
-		return student
+		User.find_by(:id=>creator_id)
 	end
 
 	def has_image?

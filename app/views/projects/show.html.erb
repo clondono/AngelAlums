@@ -11,14 +11,14 @@
 		<div class="proj-owner inlineb">
 			By <%= link_to @project.student.name, user_path(@project.student)%>
 		</div>
-	</div>	
+	</div>
 </div>
 
 <div class= "proj-video inlineb">
 	<iframe src="<%= strip_tags(@project.youtube_embed)%>" frameborder="0" allowfullscreen></iframe>
 </div>
 <div class = "proj-donations inlineb blurb">
-	<div class="stats inlineb"`
+	<div class="stats inlineb">
 		<h4>Number of Donors: <%= @project.donations.length%></h4>
 		<h4>Total: $<%= @project.total_donation %>.0</h4>
 		<div class="progress progress-striped">
@@ -64,7 +64,7 @@
 			</div>
 		<%end%>
 	</div>
-	<%= link_to 'Back', projects_path, :class => 'btn btn-primary' %> 
+	<%= link_to 'Back', root_path, :class => 'btn btn-primary' %> 
 	<%= link_to 'Updates', project_updates_path(@project), :class => 'btn btn-primary'%> 
 	<% if @project.access_level(current_user.id) == "owner" || @project.access_level(current_user.id) == "collaborator"%>
 		<%= link_to 'Edit', edit_project_path(@project), :class => 'btn btn-primary' %> 
