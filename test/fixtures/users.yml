@@ -26,9 +26,16 @@ gekko:
  email: "gekko@mit.edu"
  first_name: "Gordon"
  last_name: "Gekko"
+ type: "Student"
 
 budfox:
  id: 2
  email: "budfox@mit.edu"
  first_name: "Bud"
  last_name: "Fox"
+
+tony:
+ email: "t@mit.edu"
+ first_name: "Tony"
+ last_name: "Stark"
+ type: "Alumni"

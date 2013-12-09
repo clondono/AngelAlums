@@ -20,14 +20,19 @@
 
 
 Project_vietnam:
- id: 1
  title: "Building houses in vietnam"
  description: "We are building eco-friendly houses in Vietnam over the summer"
  goal: 500000.0
 
 #
 Project_webgame:
- id: 2
  title: "Developing webgames"
  description: "We are building webgames based on our experience in 6.170"
  goal: 200000.0
+
+afri:
+ title: "Developing schools"
+ description: "better schools"
+ goal: 200.0
+ highlighted: FALSE
+ video: "http://www.youtube.com/watch?v=2tcmFsgNpH8"
