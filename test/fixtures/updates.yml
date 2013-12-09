@@ -19,6 +19,6 @@ update_a:
 
 update_b:
  project_id: 1
- user_id: 2
+ creator_id: 2
  title: MyString
  content: MyText
