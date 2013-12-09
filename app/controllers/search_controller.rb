@@ -13,6 +13,7 @@ class SearchController < ApplicationController
   end
 
   private
+  #redirects to sign up page is user is not logged in
   def logged_in
     if current_user == nil
       redirect_to new_user_session_path, alert: "You are not logged in"

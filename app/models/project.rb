@@ -21,7 +21,8 @@ class Project < ActiveRecord::Base
     accepts_nested_attributes_for :collaborations, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
     accepts_nested_attributes_for :tags, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true
 
-    #format link to allow it to be embbed
+    #This formats the youtube link given by the user and returns
+    #string of the link that enables embedding
     def youtube_embed
       if self.video[/youtu\.be\/([^\?]*)/]
         youtube_id = $1
@@ -40,7 +41,7 @@ class Project < ActiveRecord::Base
     def total_donation
         donations.sum('amount')
     end
-    #return whether the user is a owner, collaborator or none of the project
+    #return whether the user with the given id is a owner, collaborator or none of the project
     def access_level(user_id)
         colab = self.collaborations.where(:user_id => user_id)
         if user_id == self.student.id
@@ -52,16 +53,23 @@ class Project < ActiveRecord::Base
         end
     end
 
+    #this returns all projects that have the tags whose
+    #ids is specified in the params array
     def self.search(tag_ids)
         Project.joins(:tags).where(:tags => {:id => tag_ids})
     end
 
+    #emails updates of a project to the donors
     def email_update
     self.donors.each do |donor|
         donor.send_update(self)
     end
     end
 
+    #This goes through the iformation given about collaborators and
+    #links them to the project by setting the user_id or if the
+    #the person is not in the system "User.check_Collaborator" creates a default account
+    #for them
     def addCollab
         self.collaborations.each do | collab|
             user = User.check_Collaborator(collab.email)

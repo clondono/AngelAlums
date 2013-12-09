@@ -122,12 +122,16 @@ class ProjectsController < ApplicationController
       end
     end
 
+    #redirects to the main project page is the user is not a student
+    #thus cannot create a project
     def can_create
       if current_user.type != "Student"
         redirect_to projects_url
       end
     end
 
+    #This is a helper function that reformats the nested attributes
+    #params being given in the right format
     def prep_params
       tagids = []
       params[:taggables].each do |id|

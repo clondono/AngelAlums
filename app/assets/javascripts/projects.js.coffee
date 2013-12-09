@@ -4,10 +4,10 @@
 
 ready = ->
 	$(".tag-select").select2({placeholder: "Select at least one Tag"})
-	$('#carousel-main').carousel({interval: 2000})
-	$('#carousel-mine').carousel({interval: 2000})
-	$('#carousel-collab').carousel({interval: 2000})
-	$('#carousel-donate').carousel({interval: 2000})
+	$('#carousel-main').carousel({interval: 6000})
+	$('#carousel-mine').carousel({interval: 6000})
+	$('#carousel-collab').carousel({interval: 6000})
+	$('#carousel-donate').carousel({interval: 6000})
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
