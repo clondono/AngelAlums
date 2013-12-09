@@ -50,14 +50,16 @@
         <%= f.fields_for :advisors do |builder|%>
          <%=render "advisor_fields", :f => builder %>
         <%end%>
-        <%= link_to_add_fields "Add more Advisors", f, :advisors %>
+        <%= link_to_add_fields "More Advisors", f, :advisors %>
+        <%= link_to_remove_fields "Remove fields", f %>
       </div>
       <h3>Add Collaborations</h3>
       <div>
         <%= f.fields_for :collaborations do |builder|%>
          <%=render "collaboration_fields", :f => builder %>
         <%end%>        
-      <%= link_to_add_fields "Add more Collaborators", f, :collaborations %>
+      <%= link_to_add_fields "More Collaborators", f, :collaborations %>
+      <%= link_to_remove_fields "Remove fields", f %>
       </div>
       <h3>Add Tags<h3>
       <div>
@@ -65,6 +67,7 @@
       </div>
       <div>
         <%= link_to_add_fields "Create more Tags", f, :tags %>
+
       </div>
     </div>
 

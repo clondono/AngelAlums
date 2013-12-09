@@ -36,7 +36,7 @@
       </div>
       <div class="user-blurb3">
         <table class="table">
-          <% @user.projects.each do |project| %>
+          <% @user.projects.uniq_by(&:id).each do |project| %>
               <tr>
                   <td>
                       <%= link_to ""+ project.title, project %>

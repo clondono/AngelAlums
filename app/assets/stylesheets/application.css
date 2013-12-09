@@ -41,7 +41,7 @@
 
 body {
   background-color: #c7f7ea;
-  padding-top: 60px;
+  padding-top: 60px !important;
 }
 
 html{
