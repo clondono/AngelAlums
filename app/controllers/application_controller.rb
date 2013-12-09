@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   #render layout "devise" on the homepage while rendering layout "application" for other pages
   def layout_by_resource
-    if devise_controller? && resource_name == :user && action_name == 'new'
+    if devise_controller? && resource_name == :user && (action_name == 'new' || action_name == 'create')
       "devise"
     else
       "application"

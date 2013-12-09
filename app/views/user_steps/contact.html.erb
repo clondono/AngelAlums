@@ -1,0 +1,19 @@
+<div class="form-signUp">
+  <div class="form">
+    <h2 class="form-title">Contact Info</h2>
+    <%= form_for @user, url: wizard_path do |f| %>
+
+      <div><%= f.label "facebook url" %>
+      <%= f.text_field :facebook%></div>
+
+      <div><%= f.label "google email" %>
+      <%= f.text_field :hangout%></div>
+      
+      <div>
+        <div style="margin-bottom:10px"><%= f.submit "Continue", class:"btn inlineb btn-primary" %></div>  
+       <%= link_to "skip", root_path, class:"btn inlineb btn-danger"%>
+      </div>
+
+    <% end %>
+  </div>
+</div>
