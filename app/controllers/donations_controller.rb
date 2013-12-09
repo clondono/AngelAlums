@@ -9,6 +9,8 @@ class DonationsController < ApplicationController
 	#Check if the user is alum
 	before_action :check_alum
 
+	before_filter :set_recipient
+
 	def new
 	  @donation = Donation.new
 	end
@@ -38,7 +40,14 @@ class DonationsController < ApplicationController
 	    :currency    => 'usd'
 	  )
 
-	  flash[:notice] = "Thanks, you paid $10.00!"
+	  transfer = Stripe::Transfer.create(
+		  :amount => @donation.amount * 100,
+		  :currency => "usd",
+		  :recipient => @recipient.id,
+		  :statement_descriptor => "AlumnAngel Donation"
+		)
+
+	  flash[:notice] = "Thanks, you paid $%s!" % [@donation.amount]
 	  redirect_to project_path(@project)
 
 	  rescue Stripe::CardError => e
@@ -78,4 +87,9 @@ class DonationsController < ApplicationController
 	      	redirect_to project_path(@project)
 	      end
 	    end
+
+	    def set_recipient
+     		@recipient = @project.stripe_recipient
+   		end
+
 end

@@ -14,8 +14,6 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
-
-
   # GET /projects/1
   # GET /projects/1.json
   def show
@@ -50,6 +48,8 @@ class ProjectsController < ApplicationController
       :email => @current_user.email,
       :bank_account => token
     )
+
+    @project.stripe_recipient_id = recipient.id
 
     respond_to do |format|
       if @project.save

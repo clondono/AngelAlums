@@ -19,7 +19,7 @@
 </div>
 <div class = "proj-donations inlineb blurb">
 	<div class="stats"`
-		<h4>Number of Donors: <%= @project.donations.length%></h4>
+		<h4>Number of Donors: <%= @project.number_of_donators%></h4>
 		<h4>Total: $<%= @project.total_donation %>.0</h4>
 		<div class="progress progress-striped">
 		  <div class="bar" style="width: <%= (@project.total_donation / @project.goal)*100%>%;">$<%= @project.total_donation %></div>
