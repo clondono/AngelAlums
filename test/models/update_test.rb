@@ -19,4 +19,8 @@ class UpdateTest < ActiveSupport::TestCase
   	assert (@comment_a.creator == @gekko), "test 1 in creator test failed"
   	assert (@update_b.creator == @budfox), "test 2 in creator test failed"
   end
+
+  def
+    
+  end
 end
