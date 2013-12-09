@@ -17,7 +17,6 @@
  *= forms
  */
 
- 
 #logo {
   float: left;
   margin-right: 10px;
@@ -40,8 +39,7 @@
   margin: 15px 0px 0px 0px;
 }
 
-
- body {
+body {
   background-color: #c7f7ea;
   padding-top: 60px;
   height:100%;
@@ -49,6 +47,10 @@
   html {
       height:100%;
   }
+
+html{
+  background: none !important;
+}
 
 .update_entry {
   margin-bottom: 100px;

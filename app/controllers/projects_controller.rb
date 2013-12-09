@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    #Project.find_by(highlighted: true)
+    redirect_to root_path
     @projects = Project.all
   end
 
