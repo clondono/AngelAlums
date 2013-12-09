@@ -1,17 +1,13 @@
 <!-- Navigation bar -->
-<header class="navbar navbar-fixed-top">
-<div class="navbar-inner">
-    <div class="container">
-        
-        <nav>
-        <ul class="nav navbar-nav pull-right inlineb">
-            
-            <% if user_signed_in? %>
+<header>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">        
+            <ul class="nav navbar-nav pull-right">
                 <li><%= link_to('Home',root_path )%> </li>
-                <li><%= link_to "Profile",current_user.becomes(User)%></li>
-                    
+                <li><%= link_to "Profile",current_user.becomes(User)%></li>                
                 <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.first_name%> <%= current_user.last_name%>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name%>
                     <b class="caret" style="color:#ffffff"></b>
                 </a>
                 <ul class="dropdown-menu">
@@ -21,26 +17,17 @@
                     <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  </li>
                 </ul>
                 </li>
-
-
-            <% else %>
-                <li><%= link_to "Login", new_user_session_path %></li>
-                <li><%= link_to "Sign up", new_user_registration_path %></li>
-            <% end %>
-        </ul>
-        <div class="pull-left">
-            <form class="navbar-form navbar-search" role="search" action="/search" method="get">
+            </ul>            
+            <form class="navbar-search" role="search" action="/search" method="get">
                 <div class="input-group">
-                    <%= select("search", "tag_id", Tag.all.collect {|p| [ p.title, p.id ] }, { include_blank: true }, {:multiple => true, :class => "search-select form-control inlineb input input-groups"}) %>
-
+                    <%= select("search", "tag_id", Tag.all.collect {|p| [ p.title, p.id ] }, { include_blank: true }, {:multiple => true, :class => "search-select form-control input-groups"}) %>
                   <span class="input-group-btn">
-                    <button class="btn btn-default" type="button"><i class="icon-search inlineb"></i></button>
+                    <button class="btn btn-default" type = "button"><i class="icon-search"></i></button>
                   </span>
                 </div>
             </form>
+            <%= link_to "AngelAlums", root_path, id: "logo"%>
         </div>
-        <%= link_to "AngelAlums", root_path, id: "logo"%>
-        </nav>
     </div>
 </div>
 </header>
