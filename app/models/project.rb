@@ -69,6 +69,7 @@ class Project < ActiveRecord::Base
         donations.uniq_by(&:alum_id).length
     end
 
+    #return Stripe recipient object
     def stripe_recipient
         return nil if stripe_recipient_id.nil?
         Stripe::Recipient.retrieve stripe_recipient_id
