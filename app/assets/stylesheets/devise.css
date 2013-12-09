@@ -141,5 +141,7 @@ body {
 	display: block;
 }
 
-
+#error_explanation {
+	color:white;
+}
 

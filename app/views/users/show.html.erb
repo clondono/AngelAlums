@@ -10,10 +10,16 @@
       <div class="user-headings">      about
       </div>
       <div class="user-blurb">
-        <b>Name:</b> <%=@user.first_name%> <%=@user.last_name%><br>
+        <b>Name:</b> <%=@user.name%><br>
         <b>Major:</b> <%=@user.major%><br>
         <b>Graduation Year:</b> <%=@user.grad_year%><br>
+      </div>
+      <div class="user-headings">      Contact
+      </div>
+      <div class="user-blurb">
         <b>Email:</b><%=@user.email%><br>
+        <b>facebook:</b><%=@user.facebook%><br>
+        <b>Google hangout:</b> <%=@user.hangout%><br>
       </div>
     </div>
     <div id="user-main">
