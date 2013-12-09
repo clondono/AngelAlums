@@ -34,7 +34,7 @@
                     <%= select("search", "tag_id", Tag.all.collect {|p| [ p.title, p.id ] }, { include_blank: true }, {:multiple => true, :class => "search-select form-control inlineb input input-groups"}) %>
 
                   <span class="input-group-btn">
-                    <button class="btn btn-default" type="button"><i class="icon-search inlineb"></i></button>
+                    <button class="btn btn-default" type="submit"><i class="icon-search inlineb"></i></button>
                   </span>
                 </div>
             </form>
