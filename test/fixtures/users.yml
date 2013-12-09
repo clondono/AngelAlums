@@ -11,9 +11,16 @@ budfox:
  email: "budfox@mit.edu"
  first_name: "Bud"
  last_name: "Fox"
+ type: "Student"
 
 tony:
  email: "t@mit.edu"
  first_name: "Tony"
  last_name: "Stark"
+ type: "Alumni"
+
+richard:
+ email: "r@mit.edu"
+ first_name: "Richard"
+ last_name: "Park"
  type: "Alumni"
