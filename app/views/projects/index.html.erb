@@ -6,12 +6,12 @@
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-    <% if @projects.length == 0%>
+    <% if @highlighted_projects.length == 0%>
     <div class="item active">
       <%= image_tag "nothing.jpg"%>
     </div>
     <%end%>
-    <% @projects.each_with_index do |proj, index|%>
+    <% @highlighted_projects.each_with_index do |proj, index|%>
     <div class="item <%= 'active' if index == 0%>">
     <%= image_tag proj.image.url%>
       <div class="carousel-caption inlineb blurb">
@@ -33,7 +33,7 @@
 
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <% @projects.length.times do |i|%>
+    <% @highlighted_projects.length.times do |i|%>
       <%if i == 0%>
         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
       <%else%>
@@ -50,59 +50,3 @@
     <span class = "fa fa-angle-right carousel-btn-right"></span>
   </a>
 </div>
-
-
-<!-- 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Image</th>
-      <th>Video</th>
-      <th>Description</th>
-      <th>Goal</th>
-      <th>Advisors</th>
-      <th>Collaborators</th>
-      <th>Tags</th>
-      <th>Options</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title%></td>
-        <td><%= image_tag project.image.url(:thumb)%></td>
-        <td>
-          <iframe width="200" height="200" src="<%= strip_tags(project.youtube_embed)%>" frameborder="0" allowfullscreen></iframe>
-        </td>
-        <td><%= project.description%></td>
-        <td><%= project.goal%></td>
-        <td>
-        <%project.advisors.each do |advisor|%>
-          <p>name: <%=advisor.name%></p>
-          <p>email: <%= advisor.email%></p>
-        <%end%>
-        </td>
-        <td>
-        <%project.collaborations.each do |collaborator|%>
-          <p>name: <%=collaborator.name%></p>
-          <p>email: <%= collaborator.email%></p>
-        <%end%>
-        </td>
-        <td>
-        <%project.tags.each do |tag|%>
-          <p>name: <%=tag.title%></p>
-          <p>description: <%= tag.description%></p>
-        <%end%>
-        </td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br> 
- -->

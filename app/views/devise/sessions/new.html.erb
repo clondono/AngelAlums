@@ -1,21 +1,42 @@
+<h1 class = "logo"> AngelAlums </h1>
+<h2 class = "subheading"> 
+	Connect Alums and Students through Creative Projects
+	<br>
+	Define and Support MIT Innovation
+</h2>
+
 <div class="form-signIn">
 
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
     
     <div class="form">
-      <h2 class="form-title">Sign in</h2>
-      <div><%= f.label :email %>
-      <%= f.email_field :email, :autofocus => true %></div>
-
-      <div><%= f.label :password %>
-      <%= f.password_field :password %></div>
-
-      <% if devise_mapping.rememberable? -%>
-        <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-      <% end -%>
+      <div>
+        <%= f.email_field :email, autofocus: true, placeholder: "Email address", class: "input-large" %>
+      </div>
+      <div>      
+        <%= f.password_field :password, placeholder: "Password", class: "input-large" %>
+      </div> 
 
       <div><%= f.submit "Sign In", class:"btn inlineb btn-primary form-btn" %></div>
-      <%= link_to "Forgot your password?", new_password_path('user')%>
+      <%= render "devise/shared/links" %>
     </div>
-    <% end %>
+  <% end %>
 </div>
+
+
+<div class = "homepage-stats">
+	<div class = "stats_projects">
+		<div class = "number">250</div>
+		<div class = "description">projects</div>
+	</div>
+	<div class = "stats_students">
+		<div class = "number">2560</div>
+		<div class = "description">students</div>
+	</div>
+	<div class = "stats_alums">
+		<div class = "number">19234</div>
+		<div class = "description">alums</div>
+	</div>
+</div>
+
+>>>>>>> master

@@ -1,0 +1,56 @@
+<h3 class= "Headings">My Projects</h3>
+<div id="carousel-mine" class="carousel carousel-mine slide inlineb" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner inlineb">
+    <% if @my_projects.length == 0%>
+    <div class="item active">
+      <%= image_tag "nothing.jpg"%>
+    </div>
+    <%end%>
+    <%count = 0%>
+    <% @my_projects.each_slice(3) do |threeproj|%>
+    <div class="item <%= 'active' if count == 0 %>">
+      <% count= count+1%>
+      <div class="row inlineb">
+        <% threeproj.each do | proj|%>
+          <div class= "row-elements inlineb">
+            <%= image_tag proj.image.url%>
+            <div class="caption inlineb blurb">
+              <div class="proj-title inlineb">
+                <h2 class= "Headings"><%= proj.title%></h2>
+                By <%= proj.student.email%>
+              </div>
+              <div class = "funds">
+                Funds Raised:
+                <div class="progress progress-striped">
+                  <div class="bar" style="width: <%= (proj.total_donation / proj.goal)*100%>%;">$<%= proj.total_donation %></div>
+                </div>
+              </div>
+              <%= link_to 'View', proj , :class => 'btn btn-primary'%>
+            </div>
+          </div>
+        <%end%>
+      </div>
+    </div>
+    <%end%>
+  </div>
+
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% ((@my_projects.length / 3).ceil).times do |i|%>
+      <%if i == 0%>
+        <li data-target="#carousel-mine" data-slide-to="0" class="active"></li>
+      <%else%>
+        <li data-target="#carousel-mine" data-slide-to="<%= i%>"></li>
+      <%end%>
+    <%end%>
+  </ol>
+
+  <!-- Controls -->
+  <a class="left carousel-control carousel-btn" href="#carousel-mine" data-slide="prev">
+    <span class = "fa fa-angle-left carousel-btn-left"></span>
+  </a>
+  <a class="right carousel-control carousel-btn" href="#carousel-mine" data-slide="next">
+    <span class = "fa fa-angle-right carousel-btn-right"></span>
+  </a>
+</div>

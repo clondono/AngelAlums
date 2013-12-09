@@ -25,11 +25,9 @@
       <%= f.select :type, options_for_select(%w[Student Alumni]) %></div>
       <div style="margin-top:20px;margin-bottom:10px">
         <div style="display:inline"><%= f.submit "Sign Up", class:"btn inlineb btn-primary" %></div>
-        or
-        <%= link_to "Sign In", root_path, class:"btn inlineb btn-info"%>
       </div>
+      <%= render "devise/shared/links" %>
 
-      <%= link_to "Forgot your password?", new_password_path('user')%>
 
     </div>
 

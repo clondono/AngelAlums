@@ -57,6 +57,10 @@
 		.donate{
 			width: 90%;
 		}
+		.progress{
+			width: 300px;
+			margin-bottom: 4px;
+		}
 	}
 	.proj-tags{
 		width: 100%;
@@ -114,6 +118,10 @@
 	width: 400px;
 	vertical-align: top;
 	margin-top: 100px;
+	.text_area{
+		height: 300px;
+		width: 300px;
+	}
 }
 .proj-extra{
 	width: 500px;
@@ -124,37 +132,93 @@
 	}
 }
 
-.carousel-inner{
-	height: 500px;
-	.item{
-		height: inherit;
-		img{
-			width: 100%;
-			height: 70%;
-		}
-		.carousel-caption{
-			height: 25%;
-			background-color: #EEEEEE;
-			text-align: center;
-			.proj-title{
-				width: 300px;
-				h2{
-					margin-bottom: 0px;
-				}
+.carousel-main{
+	width: 800px;
+	margin-left: 15%;
+	.carousel-inner{
+		height: 520px;
+		width: inherit;
+		.item{
+			height: inherit;
+			width: inherit;
+			img{
+				width: 100%;
+				height: 70%;
 			}
-			.funds{
-				margin-top: 10px;
-				.progress{
-					width: 300px;
-					margin-bottom: 4px;
-					margin-left: 320px;
+			.carousel-caption{
+				height: 26%;
+				background-color: #EEEEEE;
+				text-align: center;
+				.proj-title{
+					h2{
+						margin: 0px;
+					}
 				}
-			}
-			.btn{
+				.funds{
+					margin-top: 10px;
+					.progress{
+						width: 300px;
+						margin-bottom: 4px;
+					}
+				}
 			}
 		}
 	}
 }
+.progress{
+	width: 300px;
+	display: inline-block;
+	.bar{
+		color: #645470;
+	}
+}
+
+.carousel-mine, .carousel-collab, .carousel-donate {
+	width: 1000px;
+	margin-left: 10%;
+	.carousel-inner{
+		height: 520px;
+		width: inherit;
+		.item{
+			height: 400px;
+			width: inherit;
+			>img{
+				width: 100%;
+				height: 100%;
+			}
+			.row-elements{
+				width: 333px;
+				height: 400px;
+				img{
+					width: 100%;
+					height: 70%;
+				}
+				.caption{
+					height: 25%;
+					background-color: #EEEEEE;
+					text-align: center;
+					width: 333px;
+					.proj-title{
+						width: inherit;
+						h2{
+							margin-bottom: 0px;
+						}
+					}
+					.funds{
+						margin-top: 10px;
+						.progress{
+							width: 200px;
+							margin-bottom: 4px;
+						}
+					}
+				}
+
+			}
+		}
+	}
+}
+
+
 
 .carousel-btn{
 	border: 1px solid #0BA2D9;
@@ -172,3 +236,38 @@
 	color:#0BA2D9;
 
 }
+
+.list-proj{
+	width: 300px;
+	height: 400px;
+	display: inline-block;
+	margin: 20px;
+	text-align: center;
+	img{
+		width: 100%;
+		height: 70%;
+	}
+	.caption{
+		height: 25%;
+		background-color: #EEEEEE;
+		text-align: center;
+		width: 266px;
+		.proj-title{
+			width: inherit;
+			h2{
+				margin-bottom: 0px;
+			}
+		}
+		.funds{
+			margin-top: 10px;
+			.progress{
+				width: 200px;
+				margin-bottom: 4px;
+			}
+		}
+	}
+
+}
+
+
+

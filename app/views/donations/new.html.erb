@@ -1,14 +1,45 @@
-<%= form_tag project_donations_path(@project) do %>	
-  <article>
-    <label class="amount">
-      <span>Amount: $10.00</span>
-    </label>
-  </article>
-	<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-			  data-key="pk_test_eZfnT3GTTvsfV42aAbSMPxC3"
-			  data-description="Project Donation"
-			  data-amount="1000"
-			  data-name="AngelAlums"
-		      data-email=<%=current_user.email%>
-		      data-label="Donate"></script>
+<center>
+  <div class = "project-title">
+    <h2><%= link_to @project.title, project_path(@project), {style: "TEXT-DECORATION: NONE"} %></h2>
+  </div>
+  <div class = "project-creator">
+    by <%= @project.student.name %>
+  </div> 
+</center>
+<hr>
+<%= hidden_field_tag :current_user_name, current_user.name %>
+<%= form_for [@project, @donation], html: {class: "form-horizontal"} do |f| %>
+  <span class="error_messages">
+  </span>
+  <%= f.hidden_field :project_id %>
+    <div class="control-group">
+        <%= label_tag :donation_amount, nil, class: "control-label" %>
+        <div class = "controls">
+        <%= number_field_tag :donation_amount, 1, min: 1, placeholder: "Donation Amount" %>
+        </div>
+    </div>
+    <div class="control-group">
+        <%= label_tag :card_number, nil, class: "control-label" %>
+        <div class = "controls">
+        <%= text_field_tag :card_number, nil, name: nil, placeholder: "Card Number", size: 20, data: {stripe: 'number'}%>
+        </div>
+    </div>
+    <div class="control-group">
+        <%= label_tag :card_code, nil, class: "control-label" %>
+        <div class = "controls">
+        <%= text_field_tag :card_code, nil, name: nil, placeholder: "CVC", size: 4, data: {stripe: 'cvc'}%>
+        </div>
+    </div>
+    <div class="control-group">
+      <%= label_tag "Card Expiration", nil, class: "control-label" %>
+      <div class = "controls">
+      <%= select_month nil, {add_month_numbers_true: true}, name: nil, data: {stripe: 'exp-month'}%>
+      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, name: nil, data: {stripe: 'exp-year'}%>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class = "controls">
+        <%= f.submit "Donate", class: "btn" %>
+      </div>
+    </div>
 <% end %>

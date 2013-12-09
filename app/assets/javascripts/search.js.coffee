@@ -2,8 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-ready = ->
+readysearch = ->
 	$(".search-select").select2({placeholder: "Search Projects by Tags"})
 
-$(document).ready(ready)
-$(document).on('page:load', ready)
+$(document).ready(readysearch)

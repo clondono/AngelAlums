@@ -9,14 +9,19 @@ class User < ActiveRecord::Base
 #method called in order to see if an email belongs to a 
 #certain user. If such a user exists they will be returned
 #if not a new user with be created and that will be returned
-  def check_Collaborator(email)
-    @user = User.find_by_email(email)
-    if @user == nil
-      @user = User.create(email: email, type: "Student", password: Devise.friendly_token[0,20])
-      @user.send_reset_password_instructions
-    end
-    @user
+def self.check_Collaborator(email)
+  @user = User.find_by_email(email)
+  if @user == nil
+    @user = User.create(email: email, type: "Student", password: Devise.friendly_token[0,20])
+    @user.send_reset_password_instructions
   end
+  @user
+end
+
+#return the name of a user by concatenating the first name and the last name
+def name
+  return self.first_name + " " + self.last_name
+end
 
   def send_update(project)
     send_devise_notification(:project_update, {project_title: project.title, project_id:project.id})

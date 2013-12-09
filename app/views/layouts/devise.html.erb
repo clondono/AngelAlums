@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AngelAlums</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>  
+  <%= javascript_include_tag "https://js.stripe.com/v2/"%>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+        <!--used in order to pass user authentication in AJAX  calls-->
+        <script> $(document).ajaxSend(function(e, xhr, options) {
+            var token = $("meta[name='csrf-token']").attr("content");
+            xhr.setRequestHeader("X-CSRF-Token", token);
+        });
+        </script>
+</head>
+<body>
+<%= yield %>
+</body>
+</html>

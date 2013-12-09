@@ -9,6 +9,8 @@ class DonationsController < ApplicationController
 	#Check if the user is alum
 	before_action :check_alum
 
+	before_filter :set_recipient
+
 	def new
 	  @donation = Donation.new
 	end
@@ -16,15 +18,17 @@ class DonationsController < ApplicationController
 	def create
 	  @donation = Donation.new
       # We will donate $10 for MVP, but will be able to change amount for the final
-      @donation.amount = 10
+      @donation.amount = params[:donation_amount]
       @donation.project_id = @project.id
       @donation.alum_id = current_user.id
       @donation.save
       @project.donations << @donation
       
+      token = params[:stripeToken]
+
 	  #Create a customer with the token created in the Stripe system
 	  customer = Stripe::Customer.create(
-	    :email => 'example@stripe.com',
+	    :email => current_user.email,
 	    :card  => params[:stripeToken]
 	  )
 
@@ -32,16 +36,23 @@ class DonationsController < ApplicationController
 	  charge = Stripe::Charge.create(
 	    :customer    => customer.id,
 	    :amount      => @donation.amount * 100,
-	    :description => 'AngelAlums Customer',
+	    :description => @project.title,
 	    :currency    => 'usd'
 	  )
 
-	flash[:notice] = "Thanks, you paid $10.00!"
-	redirect_to project_path(@project)
+	  transfer = Stripe::Transfer.create(
+		  :amount => @donation.amount * 100,
+		  :currency => "usd",
+		  :recipient => @recipient.id,
+		  :statement_descriptor => "AlumnAngel Donation"
+		)
 
-	rescue Stripe::CardError => e
-	  flash[:error] = e.message
+	  flash[:notice] = "Thanks, you paid $%s!" % [@donation.amount]
 	  redirect_to project_path(@project)
+
+	  rescue Stripe::CardError => e
+	    flash[:error] = e.message
+	    redirect_to project_path(@project)
 	end
 
 	private
@@ -76,4 +87,9 @@ class DonationsController < ApplicationController
 	      	redirect_to project_path(@project)
 	      end
 	    end
+
+	    def set_recipient
+     		@recipient = @project.stripe_recipient
+   		end
+
 end

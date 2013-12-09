@@ -1,12 +1,12 @@
 .form {
   text-align: right;
-  margin-right: 30%;
-  margin-left: 35%;
-  background-color: white;
+  margin-right: 25%;
+  margin-left: 40%;
   border: 1px solid transparent;
   border-radius: 20px;
-  padding: 50px;
+  padding: 40px;
   display:inline-block;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .form-label, label {
@@ -17,14 +17,19 @@
 .form-title {
   text-align:center; 
   margin-bottom:30px;
-}
+  color:white;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  }
 
 .form-btn {
   width: 100%
 }
 
 .form-signIn {
-  margin-top: 12%;
+  margin-top: 5%;
 
 }
 .form-signUp {
