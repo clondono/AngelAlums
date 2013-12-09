@@ -1,0 +1,57 @@
+#user-contain {
+	margin:0 auto;
+	width:870px;
+	font-family:helvetica,arial,sans-serif;
+	font-size:11px;
+	color:#222;
+	line-height:185%;
+	text-align:justify;
+	padding:10px;
+}
+
+#user-sidebar {
+	width:300px;padding-right:10px;float:left;text-align:left;
+}
+#user-avatar {
+	width:250px;background:#f9f9f9;margin:3px;border-radius:175px;
+}
+
+.user-headings {
+	margin-top:10px;font-size:25px;font-family:georgia;border-bottom:3px solid #eee;letter-spacing:-1px
+}
+
+.user-blurb {
+	background:#eee;padding:10px;border-radius:10px;
+}
+
+#user-main {
+	margin-left:330px;
+}
+
+#user-header2 {
+	padding-top:20px;
+}
+
+#user-name {
+	font-size:59px;font-family:georgia;letter-spacing:-3px;
+}
+
+.user-blurb2 {
+	width:80%;margin:0 auto 20px auto;background:#eee;padding:20px;border-radius:15px;
+}
+
+.user-headings2 {
+	font-size:25px;font-family:georgia;border-bottom:3px solid #eee;letter-spacing:-1px
+}
+
+.user-blurb3 {
+	width:100%;float:left;background:#eee;padding:10px;border-radius:10px;margin:5px;
+}
+
+.user-headings3 {
+	font-size:25px;font-family:georgia;border-bottom:3px solid #eee;letter-spacing:-1px
+}
+
+.user-blurb4 {
+	width:100%;float:left;background:#eee;padding:10px;border-radius:10px;margin:5px;
+}
