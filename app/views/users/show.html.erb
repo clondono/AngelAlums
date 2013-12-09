@@ -37,7 +37,7 @@
       </div>
       <div class="blurb" style="width:100%;float:left;background:#eee;padding:10px;border-radius:10px;margin:5px;">
         <table class="table">
-          <% @user.projects.each do |project| %>
+          <% @user.projects.uniq_by(&:id)each do |project| %>
               <tr>
                   <td>
                       <%= link_to ""+ project.title, project %>
