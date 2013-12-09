@@ -133,8 +133,12 @@ class ProjectsController < ApplicationController
       params[:taggables].each do |id|
         tagids.push({:tag_id => id})
       end
-      params[:project][:advisors_attributes] = params[:project][:advisors_attributes].values
+      if params[:project][:advisors_attributes]
+        params[:project][:advisors_attributes] = params[:project][:advisors_attributes].values
+      end
+      if params[:project][:collaborations_attributes]
+        params[:project][:collaborations_attributes] = params[:project][:collaborations_attributes].values
+      end
       params[:project][:taggables_attributes] = tagids
-      params[:project][:collaborations_attributes] = params[:project][:collaborations_attributes].values
     end
 end

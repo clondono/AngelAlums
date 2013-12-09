@@ -41,8 +41,7 @@
 
 body {
   background-color: #c7f7ea;
-  padding-top: 60px;
-  height:100%;
+  padding-top: 60px !important;
 }
   html {
       height:100%;

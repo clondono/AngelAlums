@@ -1,33 +1,32 @@
-  <div id="contain" style="margin:0 auto;width:870px;font-family:helvetica,arial,sans-serif;font-size:11px;color:#222;line-height:185%;text-align:justify;padding:10px;">
-    <div id="sidebar" style="width:300px;padding-right:10px;float:left;text-align:left;">
+  <div id="user-contain">
+    <div id="user-sidebar">
       <table cellpadding="0" cellspacing="0" width="100%">
         <tr>
           <td>
-            <img src="<%=@user.avatar.url%>" align="center" style="width:250px;background:#f9f9f9;margin:3px;border-radius:175px;"><br>
+            <img src="<%=@user.avatar.url%>" align="center" id = "user-avatar"><br>
           </td>
         </tr>
       </table>
-      <div class="Headings" style="margin-top:10px;font-size:25px;font-family:georgia;border-bottom:3px solid #eee;letter-spacing:-1px">      about
+      <div class="user-headings">      about
       </div>
-      <div class="blurb" style="background:#eee;padding:10px;border-radius:10px;">
+      <div class="user-blurb">
         <b>Name:</b> <%=@user.first_name%> <%=@user.last_name%><br>
         <b>Major:</b> <%=@user.major%><br>
         <b>Graduation Year:</b> <%=@user.grad_year%><br>
         <b>Email:</b><%=@user.email%><br>
       </div>
     </div>
-
-    <div id="main" style="margin-left:330px;">
-      <div id="header" class ="Headings" style="padding-top:20px">
-        <div id="name" style="font-size:59px;font-family:georgia;letter-spacing:-3px;">
+    <div id="user-main">
+      <div id="user-header2" class ="Headings">
+        <div id="user-name">
           <i style="color:#aaa">{</i>
           <%=@user.first_name%> <%=@user.last_name%>
         </div>
-        <div class="blurb" style="width:80%;margin:0 auto 20px auto;background:#eee;padding:20px;border-radius:15px;">
+        <div class="user-blurb2">
           <!-- sub title -->
         </div>
       </div>
-      <div class="Headings" style="font-size:25px;font-family:georgia;border-bottom:3px solid #eee;letter-spacing:-1px">
+      <div class="user-headings2">
         <% if @user.type == "Student" %>   
 
           Projects
@@ -35,9 +34,9 @@
                  Projects Donated to
         <% end %>
       </div>
-      <div class="blurb" style="width:100%;float:left;background:#eee;padding:10px;border-radius:10px;margin:5px;">
+      <div class="user-blurb3">
         <table class="table">
-          <% @user.projects.each do |project| %>
+          <% @user.projects.uniq_by(&:id).each do |project| %>
               <tr>
                   <td>
                       <%= link_to ""+ project.title, project %>
@@ -54,11 +53,11 @@
       </div>  
 
       <% if @user.type == "Student" %>   
-        <div class="Headings" style="font-size:25px;font-family:georgia;border-bottom:3px solid #eee;letter-spacing:-1px">
+        <div class="user-headings3">
           Collaborating Projects
 
         </div>
-        <div class="blurb" style="width:100%;float:left;background:#eee;padding:10px;border-radius:10px;margin:5px;">
+        <div class="user-blurb4">
           <table class="table">
             <% @user.shared_projects.each do |project| %>
                 <tr>
