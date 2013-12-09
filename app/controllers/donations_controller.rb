@@ -8,22 +8,25 @@ class DonationsController < ApplicationController
 	before_action :set_project
 	#Check if the user is alum
 	before_action :check_alum
-
+	#Set the recipient of the donation before creating donations
 	before_filter :set_recipient
 
+	#Getting a new donation form
 	def new
 	  @donation = Donation.new
 	end
 
+	#Creating a new donation
 	def create
-	  @donation = Donation.new
-      # We will donate $10 for MVP, but will be able to change amount for the final
+	  @donation = Donation.new(donation_params)
+	  #pulling donation amount
       @donation.amount = params[:donation_amount]
       @donation.project_id = @project.id
       @donation.alum_id = current_user.id
       @donation.save
       @project.donations << @donation
       
+      #Getting a card token from the Stripe - any sensitive information does not touch server
       token = params[:stripeToken]
 
 	  #Create a customer with the token created in the Stripe system
@@ -32,7 +35,7 @@ class DonationsController < ApplicationController
 	    :card  => params[:stripeToken]
 	  )
 
-	  #Charge the card with 1000 cents via the Stripe system
+	  #Charge the card with the specified amount via the Stripe system
 	  charge = Stripe::Charge.create(
 	    :customer    => customer.id,
 	    :amount      => @donation.amount * 100,
@@ -40,6 +43,7 @@ class DonationsController < ApplicationController
 	    :currency    => 'usd'
 	  )
 
+	  #Transfer the donation to the recipient who is the creator of the project
 	  transfer = Stripe::Transfer.create(
 		  :amount => @donation.amount * 100,
 		  :currency => "usd",
@@ -47,9 +51,11 @@ class DonationsController < ApplicationController
 		  :statement_descriptor => "AlumnAngel Donation"
 		)
 
+	  #Give success message with the specified amount
 	  flash[:notice] = "Thanks, you paid $%s!" % [@donation.amount]
 	  redirect_to project_path(@project)
 
+	  #If there is any errors while charing the card, give appropriate error messages
 	  rescue Stripe::CardError => e
 	    flash[:error] = e.message
 	    redirect_to project_path(@project)
@@ -88,6 +94,7 @@ class DonationsController < ApplicationController
 	      end
 	    end
 
+	    #Set the recipient of the donation by calling the bank information the creator put in when creating the project
 	    def set_recipient
      		@recipient = @project.stripe_recipient
    		end
