@@ -9,7 +9,7 @@
 			<h2><%= @project.title%></h2>
 		</div>
 		<div class="proj-owner inlineb">
-			By <%= @project.student.name%>
+			By <%= link_to @project.student.name, user_path(@project.student)%>
 		</div>
 	</div>	
 </div>
@@ -18,8 +18,8 @@
 	<iframe src="<%= strip_tags(@project.youtube_embed)%>" frameborder="0" allowfullscreen></iframe>
 </div>
 <div class = "proj-donations inlineb blurb">
-	<div class="stats"`
-		<h4>Number of Donors: <%= @project.number_of_donators%></h4>
+	<div class="stats inlineb"`
+		<h4>Number of Donors: <%= @project.donations.length%></h4>
 		<h4>Total: $<%= @project.total_donation %>.0</h4>
 		<div class="progress progress-striped">
 		  <div class="bar" style="width: <%= (@project.total_donation / @project.goal)*100%>%;">$<%= @project.total_donation %></div>
